@@ -40,7 +40,7 @@ li {
 
 a {
     display: block;
-
+    scroll-behavior: smooth;
     text-decoration: none;
     color: black;
     text-transform: uppercase;
