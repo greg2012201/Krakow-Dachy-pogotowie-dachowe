@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    content: "";
+    clear: both;
+    display: block;
+
+}
+
+
+body {
+    height: 200vh;
+
+}
+
+nav {
+    display: block;
+    text-align: right;
+
+
+}
+
+ul {
+    list-style: none;
+    /*  margin-left: 60%; */
+
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+
+
+}
+
+
+a {
+    display: block;
+
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+
+p {
+    position: absolute;
+    left: 50%;
+    top: 160%;
+}
