@@ -26,9 +26,9 @@ const move = () => { // spoko funkcja na przsuwanie
 
 
 
-    let intervalIndex = setInterval((e) => {
+    let intervalIndex = setInterval((e) => { // można napsać funkcję która przeszukuje pixel po pixelu albo odwrócić obliczenie z windows scrol
         window.scroll(0, px += 5);
-        console.log(Math.round(window.scrollY)); // trzeba użyć zaokrąglenia
+        console.log(Math.round(window.scrollY)); // trzeba ustalić dokładną pozycję znaleźć metodę która odszukuje czy w polu widzenia znajduje się element
         console.log(Math.round(p.offsetTop));
 
 
