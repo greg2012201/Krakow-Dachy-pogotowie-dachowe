@@ -14,24 +14,28 @@
 
 // na zdjęcia w galerii dodajemy powiększanie lekkie po :hover tak jak w projekcie z samurajem 
 
-console.log(document.documentElement.scrollLeft);
-console.log(window.pageYOffset);
+/* console.log(document.documentElement.scrollLeft);
+console.log(window.pageYOffset); */
 const p = document.querySelector('p');
 
 const move = () => { // spoko funkcja na przsuwanie
-    let px = 0.1;
+    let px = 1;
     /* let speed */
+    let y = window.scrollY;
+    let elementPosition = p.offsetLeft;
 
 
-    let intervalIndex = setInterval((index) => {
-        window.scroll(0, px++), 100000;
-        console.log(window.scrollY); // trzeba użyć zaokrąglenia
-        console.log(p.offsetLeft);
-        stopMoving()
-    })
+
+    let intervalIndex = setInterval((e) => {
+        window.scroll(0, px += 5);
+        console.log(Math.round(window.scrollY)); // trzeba użyć zaokrąglenia
+        console.log(Math.round(p.offsetTop));
 
 
-    return intervalIndex
+    }, 10)
+
+
+    /* return intervalIndex */
 
 
 }
