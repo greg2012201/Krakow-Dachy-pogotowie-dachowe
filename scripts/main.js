@@ -19,21 +19,33 @@ console.log(window.pageYOffset); */
 const p = document.querySelector('p');
 
 const move = () => { // spoko funkcja na przsuwanie
-    let px = 1;
-    /* let speed */
-    let y = window.scrollY;
-    let elementPosition = p.offsetLeft;
+    let px = 1; // to powinno w miare działać
+    let speed = 4;
+
+
+
 
 
 
     let intervalIndex = setInterval((e) => { // można napsać funkcję która przeszukuje pixel po pixelu albo odwrócić obliczenie z windows scrol
-        window.scroll(0, px += 5);
-        console.log(Math.round(window.scrollY)); // trzeba ustalić dokładną pozycję znaleźć metodę która odszukuje czy w polu widzenia znajduje się element
-        console.log(Math.round(p.offsetTop));
 
+            window.scroll(0, px += speed);
+            // trzeba ustalić dokładną pozycję znaleźć metodę która odszukuje czy w polu widzenia znajduje się element
+            console.log(px);
+            /* console.log(speed); */
+            // ogónie napisać to bardziej przejrzyście może w classie ? 
+            let distance = (Math.round(p.offsetTop)) - (Math.round(window.scrollY))
+            let pPosition = (Math.round(p.offsetTop));
+            let scrollYPosition = (Math.round(window.scrollY) - 1)
+            /*   console.log(pPosition);
+              console.log(scrollYPosition); */
+            console.log(distance);
 
-    }, 10)
-
+            if ( /* pPosition == scrollYPosition */ distance <= 0) /* console.log('działa'); */ stopMoving(intervalIndex)
+        },
+        1)
+    // trzeba jeszcze dodać usunięcie linka
+    console.log(p.offsetTop);
 
     /* return intervalIndex */
 
@@ -42,11 +54,11 @@ const move = () => { // spoko funkcja na przsuwanie
 document.querySelector('.about').addEventListener('click', move);
 
 
-const stopMoving = () => {
+const stopMoving = (intervalIndex) => {
+
+    clearInterval(intervalIndex)
 
 
-
-    if (p.offsetleft == window.screenY - 200) console.log('ok');
 
 
 
