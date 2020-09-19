@@ -2,7 +2,7 @@ const p = document.querySelectorAll('p'); //funkcja musi być uniwersalna dla pr
 
 const navBtns = document.querySelectorAll('a');
 
-let px = 1;
+let px = 1; // zasięg globalny żeby się px się zapisywało a nie aktualizowało  z każdym przyciśnięciem w  navie 
 
 const move = (e, obj) => {
     e.preventDefault();
@@ -16,15 +16,17 @@ const move = (e, obj) => {
 
     scrollFinish = document.querySelector(`p[data-set = "${e.target.dataset.set}"]`).offsetTop;
 
-    console.log(scrollFinish);
 
 
     let speed = 1;
 
+
+
+
     let intervalIndex = setInterval(() => {
-        speed++
-        console.log(px);
-        window.scroll(0, px += speed);
+
+        /* console.log(px); */
+        /* window.scroll(0, px += speed); */
         // zrobić tak że if position większa niż px to wtedy += speed
         // if position mniejsza niż px to wtedy -= speed
         /* console.log(Math.round(scrollFinish)); */
@@ -32,19 +34,28 @@ const move = (e, obj) => {
         let distance = (Math.round(scrollFinish)) - (Math.round(window.scrollY)); // zastanowić się czy zaokrąglenie jest tutaj potrzebne
         let pPosition = (Math.round(scrollFinish));
 
-        if (px > scrollFinish) {
 
-            /* console.log('ok'); */
+
+        console.log((Math.round(scrollFinish)) + (Math.round(window.scrollY)));
+        if (scrollFinish > px) {
+
+            speed++
+            window.scroll(0, px += speed);
+
+
+        } else if (scrollFinish < px) {
+
+            speed++
+            window.scroll(0, px -= speed);
         }
-
-
 
 
         if (distance <= 0) {
 
-            window.scrollTo(0, pPosition);
+            /*  window.scrollTo(0, pPosition); */
             stopMoving(intervalIndex);
         }
+
     }, 10);
 
 
