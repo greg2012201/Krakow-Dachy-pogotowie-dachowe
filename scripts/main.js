@@ -34,14 +34,16 @@ const move = (e, obj) => {
         let distance = (Math.round(scrollFinish)) - (Math.round(window.scrollY)); // zastanowić się czy zaokrąglenie jest tutaj potrzebne
         let pPosition = (Math.round(scrollFinish));
 
+        console.log(distance);
 
 
-        console.log((Math.round(scrollFinish)) + (Math.round(window.scrollY)));
         if (scrollFinish > px) {
 
             speed++
             window.scroll(0, px += speed);
+            if (distance <= 0) {
 
+            }
 
         } else if (scrollFinish < px) {
 
@@ -50,11 +52,15 @@ const move = (e, obj) => {
         }
 
 
-        if (distance <= 0) {
+        if (distance < 0) {
 
-            /*  window.scrollTo(0, pPosition); */
-            stopMoving(intervalIndex);
+
+
+            window.scrollTo(0, pPosition);
         }
+
+        if ((Math.round(window.scrollY)) == (Math.round(scrollFinish))) stopMoving(intervalIndex);
+        // trzeba jakoś obliczyć odległość od pozycji okna do elementu docelowego
 
     }, 10);
 

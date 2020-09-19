@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+
+html {
+    scroll-behavior: smooth;
+}
+
 nav {
     position: fixed;
     content: "";
@@ -24,6 +29,7 @@ body {
 nav {
     display: block;
     text-align: right;
+
 
 
 }
@@ -50,15 +56,15 @@ a {
     text-transform: uppercase;
 }
 
-.about {
+#about {
     position: absolute;
     left: 40%;
     top: 100%;
 }
 
-.offer {
+#offer {
 
     position: absolute;
     left: 40%;
-    top: 250%;
+    top: 990%;
 }
