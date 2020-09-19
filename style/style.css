@@ -1,3 +1,5 @@
+/* uwaga do szerokośći użyj % nie vw bo się rozjedzie przy pasku */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,9 +7,11 @@
 }
 
 nav {
+    position: fixed;
     content: "";
     clear: both;
     display: block;
+
 
 }
 
@@ -46,8 +50,15 @@ a {
     text-transform: uppercase;
 }
 
-p {
+.about {
     position: absolute;
-    left: 50%;
-    top: 900%;
+    left: 40%;
+    top: 100%;
+}
+
+.offer {
+
+    position: absolute;
+    left: 40%;
+    top: 250%;
 }
