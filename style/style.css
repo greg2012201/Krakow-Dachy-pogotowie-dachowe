@@ -7,9 +7,9 @@
 }
 
 
-html {
+/* html {
     scroll-behavior: smooth;
-}
+} */
 
 nav {
     position: fixed;
@@ -22,7 +22,7 @@ nav {
 
 
 body {
-    height: 1000vh;
+    height: 2000vh;
 
 }
 
@@ -66,5 +66,5 @@ a {
 
     position: absolute;
     left: 40%;
-    top: 990%;
+    top: 1500%;
 }
