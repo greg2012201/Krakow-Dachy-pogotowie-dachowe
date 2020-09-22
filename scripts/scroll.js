@@ -1,28 +1,18 @@
-const p = document.querySelectorAll('p'); //funkcja musi być uniwersalna dla przewijania w górę i w dół jeszcze to ogarnąć
+const p = document.querySelectorAll('p');
+const smoothScroll = (link, duration) => {
 
-
-
-
-function smoothScroll(e, duration) {
-
-
-    const href = this.getAttribute('href');
-    const targetPosition = document.querySelector(href).offsetTop;
-    console.log(offset);
-    e.preventDefault();
-
-
-
+    const targetPosition = document.querySelector(link).offsetTop;
     const startPosition = window.pageYOffset;
-    const distance = startPosition - targetPosition;
-    const startTime = null;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
 
     const animation = (currentTime) => {
-        if (!startTime) startTime = currentTime;
+        if (startTime === null) startTime = currentTime;
         const timeElapsed = currentTime - startTime;
         const run = ease(timeElapsed, startPosition, distance, duration);
-        window.scrollTo(o, run);
-        if (timeElapsed < duration) requestAnimationFrame(aniamtion);
+
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
 
     }
 
@@ -41,4 +31,11 @@ function smoothScroll(e, duration) {
 
 
 
-const navBtns = document.querySelectorAll('a').forEach(btn => btn.addEventListener('click', smoothScroll(element, 1000))); // trzeba to dokończyć żeby przekazywało do środka hrefa
+const navBtns = document.querySelectorAll('a').forEach(btn => btn.addEventListener('click', function (e) {
+
+    const link = this.getAttribute('href');
+
+    e.preventDefault();
+
+    smoothScroll(link, 1000);
+}));
