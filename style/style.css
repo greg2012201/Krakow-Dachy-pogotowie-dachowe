@@ -11,6 +11,9 @@
     scroll-behavior: smooth;
 } */
 
+
+
+
 nav {
     position: fixed;
     content: "";
@@ -20,6 +23,79 @@ nav {
 
 }
 
+.burger {
+    /* zastanowić się czy burgera nie lepiej pseudoelementem  koniecznie żeby nie stylować spanami w html bo to zła praktyka*/
+    position: fixed;
+
+    right: 50px;
+    top: 20px;
+    height: 30px;
+    width: 40px;
+    /* border: 1px solid black; */
+    overflow: hidden;
+
+
+}
+
+/* .burger::after {
+    content: '';
+} */
+
+span {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 3px solid gray;
+    height: 1px;
+    background-color: gray;
+    width: 100%;
+    border-radius: 10px;
+    transition: .3s .1s ease-in-out;
+
+}
+
+span:nth-child(2) {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+
+
+
+}
+
+span:nth-child(3) {
+    top: 100%;
+    left: 0;
+    transform: translateY(-100%);
+
+}
+
+.burger:hover>span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg) translateX(0);
+    width: 100%;
+
+    /* transform-origin: left center; */
+
+}
+
+.burger:hover>span:nth-child(2) {
+
+    left: -100%;
+    opacity: 0;
+}
+
+.burger:hover>span:nth-child(3) {
+
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg) translateX(0);
+    width: 100%;
+    /*  transform-origin: left center; */
+
+
+
+}
 
 body {
     height: 2000vh;

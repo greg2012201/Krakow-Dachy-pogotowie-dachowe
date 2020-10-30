@@ -28,14 +28,8 @@ const smoothScroll = (link, duration) => {
     requestAnimationFrame(animation)
 }
 
-
-
-
 const navBtns = document.querySelectorAll('a').forEach(btn => btn.addEventListener('click', function (e) {
-
     const link = this.getAttribute('href');
-
     e.preventDefault();
-
     smoothScroll(link, 1000);
 }));
