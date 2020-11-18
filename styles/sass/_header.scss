@@ -1,0 +1,14 @@
+.header {
+    background-image: url('/assets/dach-320px-mobile.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.menu-bar {
+    @include position(fixed, 0, 0, 13vh);
+    background-color: black;
+    height: 13vh;
+
+}

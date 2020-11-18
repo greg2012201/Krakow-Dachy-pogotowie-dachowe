@@ -4,4 +4,45 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  margin: 0 auto;
+  max-width: 1600px;
+  min-height: 200vh;
+}
+
+.header {
+  min-height: 100vh;
+}
+
+.header {
+  background-image: url("/assets/dach-320px-mobile.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.menu-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 13vh;
+  left: 0;
+  background-color: black;
+  height: 13vh;
+}
 /*# sourceMappingURL=style.css.map */

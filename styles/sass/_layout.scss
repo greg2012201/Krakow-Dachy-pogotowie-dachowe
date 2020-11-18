@@ -1,0 +1,10 @@
+.page {
+    @include flex-box (column, start, stretch);
+    @include centering;
+    max-width: 1600px;
+    min-height: 200vh;
+}
+
+.header {
+    min-height: 100vh;
+}

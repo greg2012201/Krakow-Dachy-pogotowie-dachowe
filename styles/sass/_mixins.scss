@@ -1,0 +1,19 @@
+@mixin flex-box($direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin centering ($top:0) {
+
+    margin: $top auto;
+}
+
+@mixin position ($postition:static, $top:0, $right:$top, $bottom:$top, $left:$right) {
+    position: $postition;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
