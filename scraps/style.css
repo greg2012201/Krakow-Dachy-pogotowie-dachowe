@@ -33,6 +33,7 @@ nav {
     width: 40px;
     /* border: 1px solid black; */
     overflow: hidden;
+    cursor: pointer;
 
 
 }
@@ -46,8 +47,8 @@ span {
     position: absolute;
     top: 0;
     left: 0;
-    border: 3px solid gray;
-    height: 1px;
+    border: 1px solid gray;
+    height: 20%;
     background-color: gray;
     width: 100%;
     border-radius: 10px;
@@ -73,7 +74,9 @@ span:nth-child(3) {
 
 .burger:hover>span:nth-child(1) {
     top: 50%;
-    transform: translateY(-50%) rotate(45deg) translateX(0);
+    transform: translateY(-50%) rotate(45deg)
+        /* -135deg */
+        translateX(0);
     width: 100%;
 
     /* transform-origin: left center; */
@@ -89,7 +92,9 @@ span:nth-child(3) {
 .burger:hover>span:nth-child(3) {
 
     top: 50%;
-    transform: translateY(-50%) rotate(-45deg) translateX(0);
+    transform: translateY(-50%) rotate(-45deg)
+        /* -135deg */
+        translateX(0);
     width: 100%;
     /*  transform-origin: left center; */
 
