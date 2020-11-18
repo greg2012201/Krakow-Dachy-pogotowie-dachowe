@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -42,7 +43,80 @@
   right: 0;
   bottom: 13vh;
   left: 0;
-  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.79);
   height: 13vh;
+  padding: 0 0.5rem;
+}
+
+.burger {
+  /* dać w buttom ? */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 30px;
+  width: 47px;
+  margin-left: 3.5rem;
+  padding: 0;
+  background-color: transparent;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.burger::before {
+  content: '';
+  height: 5px;
+  width: 100%;
+  background-color: gray;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  border-radius: 20px;
+}
+
+.burger__element {
+  height: 5px;
+  width: 100%;
+  background-color: gray;
+  border-radius: 20px;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.burger::after {
+  content: '';
+  height: 5px;
+  width: 100%;
+  background-color: gray;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  border-radius: 20px;
 }
 /*# sourceMappingURL=style.css.map */

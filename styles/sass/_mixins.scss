@@ -17,3 +17,9 @@
     bottom: $bottom;
     left: $left;
 }
+
+@mixin rect ($height, $width) {
+    height: $height;
+    width: $width;
+
+}
