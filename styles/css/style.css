@@ -93,7 +93,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(0, 0, 0, 0.79);
+  background-color: rgba(0, 0, 0, 0.4);
   height: 13vh;
   padding: 0 0.5rem;
 }
@@ -117,7 +117,8 @@
       flex-wrap: wrap;
   height: 34px;
   width: 47px;
-  margin-left: 3.5rem;
+  margin-left: auto;
+  margin-right: 1rem;
   padding: 0;
   background-color: transparent;
   -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
