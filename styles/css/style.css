@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;1,400&family=Roboto:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +21,7 @@
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  margin: 0 auto;
+  margin: 0 auto 0;
   max-width: 1600px;
   min-height: 200vh;
 }
@@ -54,6 +55,23 @@
   width: 100%;
   height: 100vh;
   opacity: 20%;
+}
+
+.header__title, .header__slogan {
+  color: #FCFDFB;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-align: center;
+}
+
+.header__title {
+  margin-top: 50%;
+  font: normal bold 3.125rem/3.687rem "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.header__slogan {
+  margin-top: 20%;
+  font: italic normal 1.625rem/2.5rem "Roboto Condensed", sans-serif;
 }
 
 .menu-bar {
@@ -111,7 +129,7 @@
 
 .burger__element, .burger::before, .burger::after {
   height: 5px;
-  width: 100%;
+  width: 95%;
   border-radius: 20px;
   background-color: #808080;
 }
@@ -141,6 +159,7 @@
 .burger:hover > .burger__element {
   -webkit-transform: translate(-100%, 0);
           transform: translate(-100%, 0);
+  opacity: 0;
 }
 
 .burger:hover::before {
@@ -151,5 +170,7 @@
 .burger:hover::after {
   -webkit-transform: translate(0, -14.5px) rotate(-45deg);
           transform: translate(0, -14.5px) rotate(-45deg);
+  /* minus pół kontenera oraz pół wysokości elementu */
+  /* &--active::after */
 }
 /*# sourceMappingURL=style.css.map */

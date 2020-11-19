@@ -2,6 +2,7 @@
     /* dać w buttom ? */
     @include flex-box (row, center, center);
     flex-wrap: wrap;
+
     @include rect (34px, 47px);
     margin-left: 3.5rem;
     padding: 0;
@@ -15,7 +16,7 @@
     &__element,
     &::before,
     &::after {
-        @include rect(5px, 100%);
+        @include rect(5px, 95%);
         border-radius: 20px;
         background-color: $burger-color;
 
@@ -42,6 +43,7 @@
 
     &:hover>&__element {
         transform: translate(-100%, 0);
+        opacity: 0;
     }
 
     &:hover::before {
@@ -52,7 +54,10 @@
     &:hover::after {
 
         transform: translate(0, -14.5px) rotate(-45deg);
+        /* minus pół kontenera oraz pół wysokości elementu */
+        /* &--active::after */
     }
+
 
 
 }

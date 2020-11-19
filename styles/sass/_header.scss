@@ -17,5 +17,29 @@
         opacity: 20%;
     }
 
+    &__title,
+    &__slogan {
+        color: $main-font-color;
+        @include text-border;
+        text-align: center;
+    }
+
+    &__title {
+
+        margin-top: 50%;
+        font: normal bold 3.125rem/3.687rem $title-font;
+
+        text-transform: uppercase;
+
+
+
+    }
+
+    &__slogan {
+
+        margin-top: 20%;
+        font: italic normal 1.625rem/2.5rem $main-font;
+    }
+
 
 }
