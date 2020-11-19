@@ -1,0 +1,58 @@
+.burger {
+    /* dać w buttom ? */
+    @include flex-box (row, center, center);
+    flex-wrap: wrap;
+    @include rect (34px, 47px);
+    margin-left: 3.5rem;
+    padding: 0;
+    background-color: transparent;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+
+
+    &__element,
+    &::before,
+    &::after {
+        @include rect(5px, 100%);
+        border-radius: 20px;
+        background-color: $burger-color;
+
+    }
+
+    &::before {
+        content: '';
+        align-self: start;
+        transition: .3s .1s;
+    }
+
+
+    &__element {
+        transition: .3s linear;
+    }
+
+
+
+    &::after {
+        content: '';
+        align-self: flex-end;
+        transition: .3s .1s;
+    }
+
+    &:hover>&__element {
+        transform: translate(-100%, 0);
+    }
+
+    &:hover::before {
+
+        transform: translate(0, 14.5px) rotate(45deg);
+    }
+
+    &:hover::after {
+
+        transform: translate(0, -14.5px) rotate(-45deg);
+    }
+
+
+}

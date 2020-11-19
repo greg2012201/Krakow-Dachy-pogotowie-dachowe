@@ -10,10 +10,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
@@ -27,6 +27,12 @@
 
 .header {
   min-height: 100vh;
+  max-height: 100vh;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .header {
@@ -35,6 +41,19 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  opacity: 20%;
 }
 
 .menu-bar {
@@ -78,7 +97,7 @@
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 30px;
+  height: 34px;
   width: 47px;
   margin-left: 3.5rem;
   padding: 0;
@@ -90,33 +109,47 @@
   overflow: hidden;
 }
 
-.burger::before {
-  content: '';
+.burger__element, .burger::before, .burger::after {
   height: 5px;
   width: 100%;
-  background-color: gray;
+  border-radius: 20px;
+  background-color: #808080;
+}
+
+.burger::before {
+  content: '';
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
-  border-radius: 20px;
+  -webkit-transition: .3s .1s;
+  transition: .3s .1s;
 }
 
 .burger__element {
-  height: 5px;
-  width: 100%;
-  background-color: gray;
-  border-radius: 20px;
-  -webkit-transition: .2s linear;
-  transition: .2s linear;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
 }
 
 .burger::after {
   content: '';
-  height: 5px;
-  width: 100%;
-  background-color: gray;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  border-radius: 20px;
+  -webkit-transition: .3s .1s;
+  transition: .3s .1s;
+}
+
+.burger:hover > .burger__element {
+  -webkit-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+}
+
+.burger:hover::before {
+  -webkit-transform: translate(0, 14.5px) rotate(45deg);
+          transform: translate(0, 14.5px) rotate(45deg);
+}
+
+.burger:hover::after {
+  -webkit-transform: translate(0, -14.5px) rotate(-45deg);
+          transform: translate(0, -14.5px) rotate(-45deg);
 }
 /*# sourceMappingURL=style.css.map */

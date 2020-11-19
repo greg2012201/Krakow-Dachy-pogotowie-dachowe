@@ -1,5 +1,5 @@
 .page {
-    @include flex-box (column, start, stretch);
+    @include flex-box (row, start, stretch);
     @include centering;
     max-width: 1600px;
     min-height: 200vh;
@@ -7,4 +7,9 @@
 
 .header {
     min-height: 100vh;
+    max-height: 100vh;
+    flex-basis: 100%;
+    flex-grow: 1;
+
+
 }
