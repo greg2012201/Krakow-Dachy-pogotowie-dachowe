@@ -185,17 +185,32 @@
 }
 
 .section__title {
+  margin-bottom: 0.8rem;
   padding-bottom: 1.3rem;
   font: normal normal 1.625rem/2.5rem "Roboto", sans-serif;
   text-transform: uppercase;
   border-bottom: 2px solid black;
 }
 
-.article__image-container {
-  width: 20px;
+.article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.article__content {
+  font: normal 300 1.14rem/1.5rem "Roboto Condensed", sans-serif;
 }
 
 .article__image {
-  width: 205px;
+  padding: 2rem 0;
+  width: 100%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,15 +1,17 @@
 .article {
 
+    display: flex;
+    flex-direction: column;
 
+    &__content {
 
-
-
-    &__image-container {
-        width: 20px;
+        font: normal 300 1.14rem/1.5rem $main-font;
     }
 
     &__image {
-        width: 205px;
+        padding: 2rem 0;
+        width: 100%;
+        align-self: center;
 
     }
 
