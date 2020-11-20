@@ -184,6 +184,13 @@
   /* &--active::after */
 }
 
+.section__title {
+  padding-bottom: 1.3rem;
+  font: normal normal 1.625rem/2.5rem "Roboto", sans-serif;
+  text-transform: uppercase;
+  border-bottom: 2px solid black;
+}
+
 .article__image-container {
   width: 20px;
 }

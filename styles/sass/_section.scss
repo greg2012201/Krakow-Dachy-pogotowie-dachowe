@@ -1,0 +1,10 @@
+.section {
+
+    &__title {
+        padding-bottom: 1.3rem;
+        font: normal normal 1.625rem/2.5rem $title-font;
+        text-transform: uppercase;
+        border-bottom: 2px solid black;
+
+    }
+}
