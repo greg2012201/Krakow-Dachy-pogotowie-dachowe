@@ -212,4 +212,8 @@
       -ms-grid-row-align: center;
       align-self: center;
 }
+
+.list-wrapper {
+  position: relative;
+}
 /*# sourceMappingURL=style.css.map */
