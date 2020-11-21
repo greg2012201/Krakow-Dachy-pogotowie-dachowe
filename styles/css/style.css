@@ -35,10 +35,9 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  flex-basis: 100%;
 }
 
-.about {
+.section {
   padding: 2rem;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
@@ -72,7 +71,7 @@
 }
 
 .header__title {
-  /* letter spacing jeszcze !!!  */
+  letter-spacing: .2rem;
   margin-top: 50%;
   font: normal bold 3.125rem/3.687rem "Roboto", sans-serif;
   text-transform: uppercase;
@@ -207,7 +206,7 @@
 }
 
 .article__image {
-  padding: 2rem 0;
+  padding: 2rem;
   width: 100%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
