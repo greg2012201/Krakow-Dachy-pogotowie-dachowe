@@ -4,7 +4,7 @@
     height: 70px;
 
     padding: 10px;
-    transition: 1s;
+    transition: .5s;
     margin: 10px;
 
 
@@ -31,7 +31,7 @@
     &__list {
 
         opacity: 0;
-        transition: 1s;
+        transition: .5s;
         transform: translateY(-1000px);
         margin-bottom: 10px;
         /* overflow: hidden; */

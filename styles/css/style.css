@@ -216,8 +216,8 @@
 .list-wrapper {
   height: 70px;
   padding: 10px;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: .5s;
+  transition: .5s;
   margin: 10px;
   /*    &__item {
 
@@ -254,8 +254,8 @@
 
 .list-wrapper__list {
   opacity: 0;
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: .5s;
+  transition: .5s;
   -webkit-transform: translateY(-1000px);
           transform: translateY(-1000px);
   margin-bottom: 10px;
