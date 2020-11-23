@@ -2,10 +2,16 @@
 
 
     height: 0;
-    transition: 3s;
+    transition: .1s;
     padding: 10px;
     transition: 1s;
 
+
+
+    &__list-container {
+        width: 100%;
+        overflow: hidden;
+    }
 
     &__title {
         cursor: pointer;
@@ -16,21 +22,21 @@
     &__list {
         opacity: 0;
         transition: 1s;
-        transform: translateX(-300px);
+        transform: translateY(-200px);
 
-        /* overflow: hidden; */
+        overflow: hidden;
         height: 0px;
         padding: 10px;
 
 
     }
 
-    &__item {
+    /*    &__item {
 
         height: 0;
 
 
-    }
+    } */
 
 
 
@@ -49,11 +55,11 @@
         height: auto;
         overflow: visible;
 
-        .list-wrapper__item {
+        /* .list-wrapper__item {
 
             height: 100px;
         }
-
+ */
 
     }
 
@@ -75,3 +81,9 @@
 
 
 }
+
+.offer {
+    overflow: hidden;
+}
+
+/* wywalić w inny plik */

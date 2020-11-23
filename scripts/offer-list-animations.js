@@ -28,7 +28,7 @@ button.forEach(btn => btn.addEventListener('click', (e) => {
 
             listHeight = element.getBoundingClientRect().height;
 
-            console.log(listHeight);
+
             e.target.parentNode.style.height = `${listHeight+btnHeight}px`
         });
 
