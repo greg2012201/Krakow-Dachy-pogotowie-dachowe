@@ -12,16 +12,20 @@ document.querySelectorAll('.list-wrapper').forEach((wrapp, i) => {
 
 /* if e.target.parentNode === wrapper */
 
-
+const getDefaultListWrapperHeight = () => {}
 
 
 button.forEach(btn => btn.addEventListener('click', (e) => {
 
 
+
+
     if (e.target.parentNode.dataset.key === e.target.dataset.key) {
+        const containerHeight = e.target.
+        parentNode.getBoundingClientRect().height;
         let listHeight;
-        const btnHeight = e.target.getBoundingClientRect().height;
-        console.log(btnHeight);
+        let btnHeight = e.target.getBoundingClientRect().height;
+
         e.target.parentNode.querySelectorAll('.list-wrapper__list').forEach(element => {
 
             element.classList.toggle('list-wrapper__list--active')
@@ -29,7 +33,14 @@ button.forEach(btn => btn.addEventListener('click', (e) => {
             listHeight = element.getBoundingClientRect().height;
 
 
-            e.target.parentNode.style.height = `${listHeight+btnHeight}px`
+
+            if (listHeight + btnHeight > containerHeight) {
+                e.target.parentNode.style.height = `${element.offsetHeight+btnHeight}px`
+            } else {
+                e.target.parentNode.style.height = '70px' /* coś musi wykryć ile tu jest defaultowo */
+            }
+
+
         });
 
         /* e.target.parentNode.classList.toggle("list-wrapper--ative") */

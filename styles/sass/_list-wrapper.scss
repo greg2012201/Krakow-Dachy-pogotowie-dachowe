@@ -1,32 +1,42 @@
 .list-wrapper {
 
 
-    height: 0;
+    height: 70px;
     transition: .1s;
     padding: 10px;
     transition: 1s;
+    margin: 10px;
 
 
 
     &__list-container {
+
         width: 100%;
         overflow: hidden;
+
     }
 
     &__title {
+        display: block;
         cursor: pointer;
+        padding: 20px;
+        border: 1px solid black;
+
+
 
 
     }
 
     &__list {
+
         opacity: 0;
         transition: 1s;
         transform: translateY(-200px);
-
+        margin-bottom: 10px;
         overflow: hidden;
         height: 0px;
-        padding: 10px;
+        padding: 15px;
+
 
 
     }
@@ -82,8 +92,8 @@
 
 }
 
-.offer {
-    overflow: hidden;
-}
+/* .offer {
+    min-height: 100vh;
+} */
 
 /* wywalić w inny plik */
