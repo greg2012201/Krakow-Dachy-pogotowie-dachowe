@@ -2,7 +2,7 @@
 
 
     height:
-        40px;
+        70px;
     transition: .5s;
 
 
@@ -15,14 +15,14 @@
     }
 
     &__title {
-
-        width: 90%;
+        position: relative;
+        width: 88%;
         padding-left: 1rem;
         background: #FFFFFF;
         border: 1px solid rgba(0, 0, 0, 0.5);
         ;
         border-radius: 2px;
-        font: normal normal 1.125rem/30px $main-font;
+        font: normal normal 1.125rem/45px $main-font;
         text-transform: uppercase;
         transition: .5s;
         cursor: default;
@@ -36,7 +36,16 @@
 
     &__title--active {
         background-color: $active-button-color;
-        color: $main-font;
+        color: $main-font-color;
+
+        .list-wrapper__arrow {
+            transform: translate(-50%, -50%) rotate(-180deg);
+
+
+            &--light {
+                z-index: 1;
+            }
+        }
     }
 
     &__list {
@@ -65,6 +74,16 @@
         transform: translateX(0);
         height: auto;
 
+
+    }
+
+    &__arrow {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 92%;
+        width: 4%;
+        transition: .5s;
 
     }
 
