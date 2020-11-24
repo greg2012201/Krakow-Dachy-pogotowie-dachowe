@@ -1,16 +1,17 @@
 const button = document.querySelectorAll('.list-wrapper__title');
-/* const li = document.querySelectorAll('.list-wrapper__item'); */
-document.querySelectorAll('.list-wrapper').forEach((wrapp, i) => {
-    wrapp.dataset.key = i;
-    wrapp.firstElementChild.dataset.key = i;
-
-});
-/* const list = document.querySelectorAll('.list-wrapper__list'); */
-
 const listWrappers = document.querySelectorAll('.list-wrapper');
 
+const setDataset = () => {
 
-/* if e.target.parentNode === wrapper */
+
+    listWrappers.forEach((wrapp, i) => {
+        wrapp.dataset.key = i;
+        wrapp.firstElementChild.dataset.key = i;
+
+    });
+
+}
+setDataset();
 
 const getDefaultListWrapperHeight = () => {
     const output = [];
@@ -23,11 +24,8 @@ const getDefaultListWrapperHeight = () => {
 
 }
 const rootHeight = getDefaultListWrapperHeight();
-console.log(rootHeight);
+
 button.forEach(btn => btn.addEventListener('click', (e) => {
-
-
-
 
     if (e.target.parentNode.dataset.key === e.target.dataset.key) {
 
@@ -48,22 +46,10 @@ button.forEach(btn => btn.addEventListener('click', (e) => {
             if (listHeight + btnHeight > containerHeight) {
                 e.target.parentNode.style.height = `${element.offsetHeight+btnHeight}px`
             } else {
-                e.target.parentNode.style.height = `${rootHeight[e.target.parentNode.dataset.key]}px` /* coś musi wykryć ile tu jest defaultowo */
-
+                e.target.parentNode.style.height = `${rootHeight[e.target.parentNode.dataset.key]}px`
             }
 
-            console.log(e.target.parentNode.dataset.key);
         });
 
-        /* e.target.parentNode.classList.toggle("list-wrapper--ative") */
-
-
-
     }
-
-
-
-    /* document.querySelectorAll('.list-wrapper__list').forEach(element => element.classList.toggle('list-wrapper__list--active')) */
-
-
-}))
+}));
