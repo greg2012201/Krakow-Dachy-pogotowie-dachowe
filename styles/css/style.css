@@ -219,19 +219,6 @@
   -webkit-transition: .5s;
   transition: .5s;
   margin: 10px;
-  /*    &__item {
-
-        height: 0;
-
-
-    } */
-  /* &__title:hover~&__list {
-        opacity: 1;
-        transform: translateX(0);
-        height: auto;
-
-
-    } */
   /* &--active {
 
         height: auto;
@@ -250,6 +237,12 @@
   cursor: pointer;
   padding: 20px;
   border: 1px solid black;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.list-wrapper__title--active {
+  background-color: gray;
 }
 
 .list-wrapper__list {
@@ -261,7 +254,7 @@
   margin-bottom: 10px;
   /* overflow: hidden; */
   height: 0px;
-  padding: 30px;
+  padding: 20px;
 }
 
 .list-wrapper__list--active {
@@ -281,9 +274,4 @@
   height: auto;
   opacity: 1;
 }
-
-/* .offer {
-    min-height: 100vh;
-} */
-/* wywalić w inny plik */
 /*# sourceMappingURL=style.css.map */
