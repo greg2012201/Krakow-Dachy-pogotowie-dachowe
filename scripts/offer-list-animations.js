@@ -26,30 +26,26 @@ const getDefaultListWrapperHeight = () => {
 const rootHeight = getDefaultListWrapperHeight();
 
 button.forEach(btn => btn.addEventListener('click', (e) => {
+    const parent = e.target.parentNode;
 
-    if (e.target.parentNode.dataset.key === e.target.dataset.key) {
+    if (parent.dataset.key === e.target.dataset.key) {
 
         e.target.classList.toggle('list-wrapper__title--active')
-        const containerHeight = e.target.
-        parentNode.getBoundingClientRect().height;
+        const containerHeight = parent.getBoundingClientRect().height;
         let listHeight;
         let btnHeight = e.target.getBoundingClientRect().height;
+        const list = parent.querySelector('.list-wrapper__list');
 
-        e.target.parentNode.querySelectorAll('.list-wrapper__list').forEach(element => {
+        list.classList.toggle('list-wrapper__list--active')
 
-            element.classList.toggle('list-wrapper__list--active')
+        listHeight = list.getBoundingClientRect().height;
 
-            listHeight = element.getBoundingClientRect().height;
+        if (listHeight + btnHeight > containerHeight) {
+            parent.style.height = `${list.offsetHeight+btnHeight}px`
+        } else {
+            parent.style.height = `${rootHeight[parent.dataset.key]}px`
+        }
 
-
-
-            if (listHeight + btnHeight > containerHeight) {
-                e.target.parentNode.style.height = `${element.offsetHeight+btnHeight}px`
-            } else {
-                e.target.parentNode.style.height = `${rootHeight[e.target.parentNode.dataset.key]}px`
-            }
-
-        });
 
     }
 }));

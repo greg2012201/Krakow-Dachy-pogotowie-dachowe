@@ -2,35 +2,41 @@
 
 
     height:
-        70px;
-
-    padding: 10px;
+        40px;
     transition: .5s;
-    margin: 10px;
+
 
 
 
     &__list-container {
-        /* tutaj musi iść height takie jak ul byc  */
         height: 100%;
         width: 100%;
         overflow: hidden;
-
-
     }
 
     &__title {
-        display: block;
-        cursor: pointer;
-        padding: 20px;
-        border: 1px solid black;
+
+        width: 90%;
+        padding-left: 1rem;
+        background: #FFFFFF;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        ;
+        border-radius: 2px;
+        font: normal normal 1.125rem/30px $main-font;
+        text-transform: uppercase;
         transition: .5s;
+        cursor: default;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+
 
 
     }
 
     &__title--active {
-        background-color: gray;
+        background-color: $active-button-color;
+        color: $main-font;
     }
 
     &__list {
@@ -39,11 +45,16 @@
         transition: .5s;
         transform: translateY(-1000px);
         margin-bottom: 10px;
-        /* overflow: hidden; */
         height: 0px;
-        padding: 20px;
+        padding: 20px 70px 20px 14px;
 
 
+
+    }
+
+    &__item {
+        font: normal 300 1rem/1.5rem $main-font;
+        padding: 0.1rem 0;
 
     }
 
@@ -53,31 +64,8 @@
         opacity: 1;
         transform: translateX(0);
         height: auto;
-        /* overflow: visible; */
 
-        /* .list-wrapper__item {
-
-            height: 100px;
-        }
- */
 
     }
-
-    &__item--active {
-        height: auto;
-        opacity: 1;
-    }
-
-
-    /* &--active {
-
-        height: auto;
-    } */
-
-
-
-
-
-
 
 }

@@ -1,0 +1,11 @@
+.offer {
+
+    padding: 2rem;
+
+    &__slogan {
+        margin: 2rem 0 4rem 0;
+        padding-right: 4rem;
+        font: italic 300 1.125rem/1.5em $main-font;
+        color: $gray;
+    }
+}
