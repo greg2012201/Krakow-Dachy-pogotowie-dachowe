@@ -2,7 +2,7 @@
 
 
     height:
-        70px;
+        50px;
     transition: .5s;
 
 
@@ -31,12 +31,18 @@
         -webkit-user-select: none;
 
 
+        background-image: url('/assets/arow-up-down.svg');
+        background-position: 95% 100%;
+        background-repeat: no-repeat;
+
 
     }
 
     &__title--active {
         background-color: $active-button-color;
         color: $main-font-color;
+
+        background-position-y: 3%;
 
         .list-wrapper__arrow {
             transform: translate(-50%, -50%) rotate(-180deg);
@@ -78,10 +84,10 @@
     }
 
     &__arrow {
-        position: absolute;
+        /*  uwaga trzeba uaktywnić także strzałkę jako button */
+
+        @include position(absolute, 50%, 92%);
         transform: translate(-50%, -50%);
-        top: 50%;
-        left: 92%;
         width: 4%;
         transition: .5s;
 

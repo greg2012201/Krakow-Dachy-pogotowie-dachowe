@@ -225,7 +225,7 @@
 }
 
 .list-wrapper {
-  height: 70px;
+  height: 50px;
   -webkit-transition: .5s;
   transition: .5s;
 }
@@ -251,11 +251,15 @@
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
+  background-image: url("/assets/arow-up-down.svg");
+  background-position: 95% 100%;
+  background-repeat: no-repeat;
 }
 
 .list-wrapper__title--active {
   background-color: #5A6C79;
   color: #FCFDFB;
+  background-position-y: 3%;
 }
 
 .list-wrapper__title--active .list-wrapper__arrow {
@@ -291,11 +295,14 @@
 }
 
 .list-wrapper__arrow {
+  /*  uwaga trzeba uaktywnić także strzałkę jako button */
   position: absolute;
+  top: 50%;
+  right: 92%;
+  bottom: 50%;
+  left: 92%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  top: 50%;
-  left: 92%;
   width: 4%;
   -webkit-transition: .5s;
   transition: .5s;
