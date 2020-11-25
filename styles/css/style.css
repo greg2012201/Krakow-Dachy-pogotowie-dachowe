@@ -104,6 +104,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   height: 13vh;
   padding: 0 0.5rem;
+  z-index: 999;
 }
 
 .burger {
@@ -262,15 +263,6 @@
   background-position-y: 3%;
 }
 
-.list-wrapper__title--active .list-wrapper__arrow {
-  -webkit-transform: translate(-50%, -50%) rotate(-180deg);
-          transform: translate(-50%, -50%) rotate(-180deg);
-}
-
-.list-wrapper__title--active .list-wrapper__arrow--light {
-  z-index: 1;
-}
-
 .list-wrapper__list {
   opacity: 0;
   -webkit-transition: .5s;
@@ -294,17 +286,27 @@
   height: auto;
 }
 
-.list-wrapper__arrow {
-  /*  uwaga trzeba uaktywnić także strzałkę jako button */
-  position: absolute;
-  top: 50%;
-  right: 92%;
-  bottom: 50%;
-  left: 92%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 4%;
-  -webkit-transition: .5s;
-  transition: .5s;
+.gallery__container {
+  min-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.gallery__image {
+  width: 100%;
+  margin: 10px 0 10px;
 }
 /*# sourceMappingURL=style.css.map */

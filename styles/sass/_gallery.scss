@@ -1,0 +1,14 @@
+.gallery {
+
+    &__container {
+
+        min-width: 100%;
+        @include flex-box(row, start, center);
+        flex-wrap: wrap;
+    }
+
+    &__image {
+        width: 100%;
+        margin: 10px 0 10px;
+    }
+}
