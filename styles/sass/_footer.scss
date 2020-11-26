@@ -1,0 +1,13 @@
+.footer {
+    @include flex-box(row, center, center);
+    height: 10vh;
+    width: 100%;
+    background-color: $transparent-gray;
+
+    &__content {
+
+
+        font: 300 normal 0.5rem/3.125em $main-font;
+
+    }
+}

@@ -327,4 +327,27 @@
 .contact__image {
   width: 100%;
 }
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10vh;
+  width: 100%;
+  background-color: rgba(90, 108, 121, 0.12);
+}
+
+.footer__content {
+  font: 300 normal 0.5rem/3.125em "Roboto Condensed", sans-serif;
+}
 /*# sourceMappingURL=style.css.map */
