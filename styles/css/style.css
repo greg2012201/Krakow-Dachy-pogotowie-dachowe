@@ -252,7 +252,7 @@
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
-  background-image: url("https://greg2012201.github.io/assets/dach-320px-mobile.png");
+  background-image: url("/assets/arow-up-down.svg");
   background-position: 95% 100%;
   background-repeat: no-repeat;
 }
@@ -286,27 +286,25 @@
   height: auto;
 }
 
+.gallery {
+  /* użyj tutaj grida będzie to fajniej siedzieć i responsywnie */
+}
+
 .gallery__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 550px))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(200px, 550px));
+  grid-auto-flow: max-content;
   min-width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  grid-gap: 15px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 3rem;
 }
 
 .gallery__image {
   width: 100%;
-  margin: 10px 0 10px;
 }
 /*# sourceMappingURL=style.css.map */
