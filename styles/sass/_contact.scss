@@ -1,0 +1,27 @@
+.contact {
+
+
+    &__item {
+        width: 50%;
+    }
+
+
+
+    &__content-name {
+
+        font: normal normal 1.125rem/1.3em $title-font;
+    }
+
+    &__content {
+        margin: 0.5rem 0 1rem;
+        font: normal 300 1rem/1.5em $main-font;
+    }
+
+    &__map {
+        margin-top: 2rem;
+    }
+
+    &__image {
+        width: 100%;
+    }
+}

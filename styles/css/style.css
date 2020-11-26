@@ -44,7 +44,7 @@
 }
 
 .header {
-  background-image: url("https://greg2012201.github.io/assets/dach-320px-mobile.png");
+  background-image: url("/assets/dach-320px-mobile.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -185,7 +185,7 @@
 }
 
 .section__title {
-  margin-bottom: 0.8rem;
+  margin-bottom: 3rem;
   padding-bottom: 1.3rem;
   font: normal normal 1.625rem/2.5rem "Roboto", sans-serif;
   text-transform: uppercase;
@@ -301,10 +301,30 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 3rem;
 }
 
 .gallery__image {
+  width: 100%;
+}
+
+.contact__item {
+  width: 50%;
+}
+
+.contact__content-name {
+  font: normal normal 1.125rem/1.3em "Roboto", sans-serif;
+}
+
+.contact__content {
+  margin: 0.5rem 0 1rem;
+  font: normal 300 1rem/1.5em "Roboto Condensed", sans-serif;
+}
+
+.contact__map {
+  margin-top: 2rem;
+}
+
+.contact__image {
   width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

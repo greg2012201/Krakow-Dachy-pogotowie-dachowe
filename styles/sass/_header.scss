@@ -2,7 +2,9 @@
 
 
 
-    background-image: url(/* '/assets/dach-320px-mobile.png' */'https://greg2012201.github.io/assets/dach-320px-mobile.png');
+    background-image: url('/assets/dach-320px-mobile.png'
+            /* 'https://greg2012201.github.io/assets/dach-320px-mobile.png' */
+        );
 
     background-repeat: no-repeat;
     background-position: center;
