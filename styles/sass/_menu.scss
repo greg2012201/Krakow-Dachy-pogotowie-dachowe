@@ -3,7 +3,7 @@
     width: 100%;
     max-width: 100%;
     top:
-        -313.6px;
+        -315.6px;
     left: 0;
     @include flex-box(row, end, start);
     background-color: rgba(0, 0, 0, 0.21);
@@ -16,6 +16,8 @@
     z-index: 999;
     flex-wrap: wrap;
     transition: .3s .2s;
+    padding: 0;
+
 
 
     &__logo {
@@ -37,6 +39,7 @@
         @include flex-box(row, start, stretch);
         flex-wrap: wrap;
         list-style: none;
+        padding-left: 2rem;
     }
 
     &__list-item {

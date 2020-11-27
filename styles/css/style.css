@@ -86,7 +86,7 @@
   position: fixed;
   width: 100%;
   max-width: 100%;
-  top: -313.6px;
+  top: -315.6px;
   left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,6 +113,7 @@
       flex-wrap: wrap;
   -webkit-transition: .3s .2s;
   transition: .3s .2s;
+  padding: 0;
 }
 
 .menu__logo {
@@ -158,6 +159,7 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   list-style: none;
+  padding-left: 2rem;
 }
 
 .menu__list-item {
