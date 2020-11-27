@@ -42,17 +42,17 @@
         transition: .3s .1s;
     }
 
-    &:hover>&__element {
+    &--active>&__element {
         transform: translate(-100%, 0);
         opacity: 0;
     }
 
-    &:hover::before {
+    &--active::before {
 
         transform: translate(0, 14.5px) rotate(45deg);
     }
 
-    &:hover::after {
+    &--active::after {
 
         transform: translate(0, -14.5px) rotate(-45deg);
         /* minus pół kontenera oraz pół wysokości elementu */

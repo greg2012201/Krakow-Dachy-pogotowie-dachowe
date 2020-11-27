@@ -111,6 +111,8 @@
   z-index: 999;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-transition: .3s .2s;
+  transition: .3s .2s;
 }
 
 .menu__logo {
@@ -176,6 +178,12 @@
   padding: 0.8rem 0 0.8rem 0;
 }
 
+.menu--droped {
+  top: 0;
+  left: 0;
+  background-color: rgba(17, 17, 17, 0.99);
+}
+
 .burger {
   /* popracować jeszcze z właściwością outline tutaj */
   display: -webkit-box;
@@ -235,18 +243,18 @@
   transition: .3s .1s;
 }
 
-.burger:hover > .burger__element {
+.burger--active > .burger__element {
   -webkit-transform: translate(-100%, 0);
           transform: translate(-100%, 0);
   opacity: 0;
 }
 
-.burger:hover::before {
+.burger--active::before {
   -webkit-transform: translate(0, 14.5px) rotate(45deg);
           transform: translate(0, 14.5px) rotate(45deg);
 }
 
-.burger:hover::after {
+.burger--active::after {
   -webkit-transform: translate(0, -14.5px) rotate(-45deg);
           transform: translate(0, -14.5px) rotate(-45deg);
   /* minus pół kontenera oraz pół wysokości elementu */

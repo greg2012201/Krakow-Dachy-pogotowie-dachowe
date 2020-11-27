@@ -15,7 +15,7 @@
     opacity: .98;
     z-index: 999;
     flex-wrap: wrap;
-
+    transition: .3s .2s;
 
 
     &__logo {
@@ -54,9 +54,13 @@
         color: white;
         text-transform: uppercase;
         padding: 0.8rem 0 0.8rem 0;
-
-
-
     }
 
+
+    &--droped {
+        top: 0;
+        left: 0;
+        background-color: rgba(#111111, 0.99);
+        ;
+    }
 }

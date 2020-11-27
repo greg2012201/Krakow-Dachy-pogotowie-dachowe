@@ -1,6 +1,6 @@
 const button = document.querySelectorAll('.list-wrapper__title');
 const listWrappers = document.querySelectorAll('.list-wrapper');
-console.log(button);
+
 const setDataset = () => {
 
 
