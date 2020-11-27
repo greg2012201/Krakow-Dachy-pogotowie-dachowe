@@ -28,3 +28,10 @@
 @mixin text-border {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
+@mixin link-style-reset {
+
+    color: black;
+    text-decoration: none;
+
+}
