@@ -37,18 +37,19 @@
         background-position: 95% 100%;
         background-repeat: no-repeat;
 
+        &--active {
+            background-color: $main-button-color;
+            color: $main-font-color;
+
+            background-position-y: 3%;
+
+
+
+        }
 
     }
 
-    &__title--active {
-        background-color: $active-button-color;
-        color: $main-font-color;
 
-        background-position-y: 3%;
-
-
-
-    }
 
     &__list {
 
@@ -59,8 +60,13 @@
         height: 0px;
         padding: 20px 70px 20px 14px;
 
+        &--active {
+            opacity: 1;
+            transform: translateX(0);
+            height: auto;
 
 
+        }
     }
 
     &__item {
@@ -71,13 +77,6 @@
 
 
 
-    &__list--active {
-        opacity: 1;
-        transform: translateX(0);
-        height: auto;
-
-
-    }
 
 
 

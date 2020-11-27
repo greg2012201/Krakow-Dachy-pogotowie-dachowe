@@ -82,11 +82,10 @@
   font: italic normal 1.625rem/2.5rem "Roboto Condensed", sans-serif;
 }
 
-.menu-bar {
+.menu {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 13vh;
+  width: 100%;
+  top: 0vh;
   left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -95,16 +94,48 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  background-color: #5C52F7;
+  /*  height: 80vh; */
+  opacity: .98;
+  z-index: 999;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.menu__logo {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.menu__navigation {
+  height: 50vh;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.menu__nav-bar {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  height: 13vh;
-  padding: 0 0.5rem;
-  z-index: 999;
+  padding: 10px;
 }
 
 .burger {
@@ -141,7 +172,7 @@
   height: 5px;
   width: 95%;
   border-radius: 20px;
-  background-color: #5A6C79;
+  background-color: #5C52F7;
 }
 
 .burger::before {
@@ -258,7 +289,7 @@
 }
 
 .list-wrapper__title--active {
-  background-color: #5A6C79;
+  background-color: #5C52F7;
   color: #FCFDFB;
   background-position-y: 3%;
 }
@@ -274,16 +305,16 @@
   padding: 20px 70px 20px 14px;
 }
 
-.list-wrapper__item {
-  font: normal 300 1rem/1.5rem "Roboto Condensed", sans-serif;
-  padding: 0.1rem 0;
-}
-
 .list-wrapper__list--active {
   opacity: 1;
   -webkit-transform: translateX(0);
           transform: translateX(0);
   height: auto;
+}
+
+.list-wrapper__item {
+  font: normal 300 1rem/1.5rem "Roboto Condensed", sans-serif;
+  padding: 0.1rem 0;
 }
 
 .gallery {

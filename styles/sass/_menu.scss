@@ -1,0 +1,30 @@
+.menu {
+    position: fixed;
+    width: 100%;
+    top: 0vh;
+    left: 0;
+    @include flex-box(row, end, start);
+    background-color:
+        /*  rgba(#000000, 0.40) */
+        $main-button-color;
+    /*  height: 80vh; */
+    opacity: .98;
+    z-index: 999;
+    flex-wrap: wrap;
+
+
+    &__logo {
+        flex-basis: 100%;
+    }
+
+    &__navigation {
+        height: 50vh;
+        flex-basis: 100%;
+    }
+
+    &__nav-bar {
+        flex-basis: 100%;
+        @include flex-box(row, center, center);
+        padding: 10px;
+    }
+}

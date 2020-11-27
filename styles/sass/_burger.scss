@@ -19,7 +19,7 @@
     &::after {
         @include rect(5px, 95%);
         border-radius: 20px;
-        background-color: $active-button-color;
+        background-color: $main-button-color;
 
     }
 

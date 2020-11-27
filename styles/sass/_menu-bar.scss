@@ -1,8 +1,0 @@
-.menu-bar {
-    @include position(fixed, 0, 0, 13vh);
-    @include flex-box(row, start, center);
-    background-color: rgba(#000000, 0.40);
-    height: 13vh;
-    padding: 0 0.5rem;
-    z-index: 999;
-}
