@@ -165,7 +165,6 @@
 .menu__list-item {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-  border-bottom: 1px solid white;
   margin-right: 10px;
 }
 
@@ -178,12 +177,23 @@
   color: white;
   text-transform: uppercase;
   padding: 0.8rem 0 0.8rem 0;
+  border-bottom: 1px solid white;
 }
 
-.menu--droped {
+.menu__link:hover {
+  color: #0095da;
+  border-bottom: 1px solid #0095da;
+}
+
+.menu--open {
   top: 0;
   left: 0;
   background-color: rgba(17, 17, 17, 0.99);
+}
+
+.menu--hidden {
+  top: -315.6px;
+  left: 0;
 }
 
 .burger {
@@ -220,7 +230,7 @@
   height: 5px;
   width: 95%;
   border-radius: 20px;
-  background-color: #5C52F7;
+  background-color: #0095da;
 }
 
 .burger::before {
@@ -337,7 +347,7 @@
 }
 
 .list-wrapper__title--active {
-  background-color: #5C52F7;
+  background-color: #0095da;
   color: #FCFDFB;
   background-position-y: 3%;
 }

@@ -44,8 +44,9 @@
 
     &__list-item {
         flex-basis: 100%;
-        border-bottom: 1px solid white;
+
         margin-right: 10px;
+
 
     }
 
@@ -57,13 +58,25 @@
         color: white;
         text-transform: uppercase;
         padding: 0.8rem 0 0.8rem 0;
+        border-bottom: 1px solid white;
+
+        &:hover {
+
+            color: $main-button-color;
+            border-bottom: 1px solid $main-button-color;
+        }
     }
 
 
-    &--droped {
+    &--open {
         top: 0;
         left: 0;
         background-color: rgba(#111111, 0.99);
         ;
+    }
+
+    &--hidden {
+        top: -315.6px; // dać to w zmienną tutaj lokalnie w tym pliku
+        left: 0;
     }
 }
