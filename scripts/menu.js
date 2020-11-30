@@ -1,57 +1,34 @@
+/* MENU */
 const burger = document.querySelector('.burger');
 const dropDownMenu = document.querySelector('.menu');
 
 let menuIsOpen = false;
-/* 
-let whereClicked;
-const whereIsClick = (e) => {
-    whereClicked = e.target;
-}
-// TREBA DAĆ FUNCKJĘ WHERE I CLICKED I DO ACTIVATE TO DAĆ FUNKCJA TA MA ZWRÓCIĆ E.TARGET 
-document.addEventListener('click', whereIsClick); */
-
-const toggle = function (e) {
+const openMenu = function () {
     menuIsOpen = true;
-    e.classList.toggle('burger--active');
 
-
-
-    dropDownMenu.classList.toggle('menu--droped');
-
-
+    dropDownMenu.classList.toggle('menu--open');
 
 };
-let isDroped = false;
-const active = function (e) {
-
-    toggle(this);
-    isDroped = true
-
-
-
+const burgerClassToggle = function () {
+    burger.classList.toggle('burger--active');
+}
+const activateBurger = function () {
+    burgerClassToggle();
+    openMenu();
 };
-
-
-
-burger.addEventListener('click', active);
-
-;
+burger.addEventListener('click', activateBurger);
 
 const closeWhenClickOutOfMenu = function (e) {
 
     const childs = [...dropDownMenu.querySelectorAll('*')];
-
     const isChild = childs.find(element => element === e.target)
-    console.log(isChild);
-
-
     if (menuIsOpen || isChild) {
 
         return menuIsOpen = false;
-    } else if (dropDownMenu.classList.contains('menu--droped') && !menuIsOpen) {
-
-        toggle(burger);
+    } else if (dropDownMenu.classList.contains('menu--open') && !menuIsOpen) {
+        burgerClassToggle();
+        openMenu();
     }
 
 };
-document.addEventListener('click', closeWhenClickOutOfMenu)
+document.addEventListener('click', closeWhenClickOutOfMenu);
