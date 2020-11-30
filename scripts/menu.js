@@ -20,9 +20,8 @@ burger.addEventListener('click', activateBurger);
 
 const closeWhenClickOutOfMenu = function (e) {
 
-    const childs = [...dropDownMenu.querySelectorAll('*')];
-    const isChild = childs.find(element => element === e.target)
-    if (menuIsOpen /*  || isChild */ ) {
+
+    if (menuIsOpen) {
 
         return menuIsOpen = false;
     } else if (dropDownMenu.classList.contains('menu--open') && !menuIsOpen) {
@@ -33,6 +32,9 @@ const closeWhenClickOutOfMenu = function (e) {
 };
 document.addEventListener('click', closeWhenClickOutOfMenu);
 
+
+console.log(window.onscroll);
+/* const hideNavBar = function(){}; */
 
 /* SCROLL TO */
 
