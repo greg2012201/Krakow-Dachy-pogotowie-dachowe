@@ -3,22 +3,22 @@ const burger = document.querySelector('.burger');
 const dropDownMenu = document.querySelector('.menu');
 
 let menuIsOpen = false;
-const openMenu = function () {
+const openMenu = () => {
     menuIsOpen = true;
 
     dropDownMenu.classList.toggle('menu--open');
 
 };
-const burgerClassToggle = function () {
+const burgerClassToggle = () => {
     burger.classList.toggle('burger--active');
 }
-const activateBurger = function () {
+const activateBurger = () => {
     burgerClassToggle();
     openMenu();
 };
 burger.addEventListener('click', activateBurger);
 
-const closeWhenClickOutOfMenu = function (e) {
+const closeWhenClickOutOfMenu = (e) => {
 
 
     if (menuIsOpen) {
@@ -68,7 +68,7 @@ const smoothScroll = (link, duration) => {
     requestAnimationFrame(animation)
 }
 
-const navBtns = document.querySelectorAll('.menu__link').forEach(btn => btn.addEventListener('click', function (e) {
+const navBtns = document.querySelectorAll('.menu__link, .logo').forEach(btn => btn.addEventListener('click', function (e) {
     const link = this.dataset.destination;
 
     e.preventDefault();
