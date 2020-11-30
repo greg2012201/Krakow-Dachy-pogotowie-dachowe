@@ -22,7 +22,7 @@ const closeWhenClickOutOfMenu = function (e) {
 
     const childs = [...dropDownMenu.querySelectorAll('*')];
     const isChild = childs.find(element => element === e.target)
-    if (menuIsOpen || isChild) {
+    if (menuIsOpen /*  || isChild */ ) {
 
         return menuIsOpen = false;
     } else if (dropDownMenu.classList.contains('menu--open') && !menuIsOpen) {
@@ -32,3 +32,43 @@ const closeWhenClickOutOfMenu = function (e) {
 
 };
 document.addEventListener('click', closeWhenClickOutOfMenu);
+
+
+/* SCROLL TO */
+
+const sections = document.querySelectorAll('.section');
+const smoothScroll = (link, duration) => {
+
+    const targetPosition = document.querySelector(`.${link}`).offsetTop;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    let startTime = null;
+
+    const animation = (currentTime) => {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, distance, duration);
+
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+
+    }
+
+    const ease = (t, b, c, d) => {
+
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+
+    }
+
+    requestAnimationFrame(animation)
+}
+
+const navBtns = document.querySelectorAll('.menu__link').forEach(btn => btn.addEventListener('click', function (e) {
+    const link = this.dataset.destination;
+
+    e.preventDefault();
+    smoothScroll(link, 1000);
+}));
