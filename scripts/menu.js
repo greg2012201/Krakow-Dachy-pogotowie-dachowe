@@ -31,10 +31,28 @@ const closeWhenClickOutOfMenu = (e) => {
 
 };
 document.addEventListener('click', closeWhenClickOutOfMenu);
+/* HIDE MENU */
+const menu = document.querySelector('.menu');
+let scrolling = false;
+let startPagePosition = window.pageYOffset;
 
+const hideMenu = () => menu.classList.add('menu--hidden');
 
-console.log(window.onscroll);
-/* const hideNavBar = function(){}; */
+const showMenu = () => {
+    menu.classList.remove('menu--hidden');
+
+}
+window.onscroll = () => {
+    let currentPagePosition = window.pageYOffset;
+    if (currentPagePosition < startPagePosition) {
+        showMenu();
+
+    } else hideMenu();
+
+    startPagePosition = currentPagePosition;
+
+}
+const hideNavBar = function () {};
 
 /* SCROLL TO */
 
