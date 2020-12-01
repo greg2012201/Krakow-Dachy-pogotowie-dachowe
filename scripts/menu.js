@@ -34,10 +34,7 @@ document.addEventListener('click', closeWhenClickOutOfMenu);
 /* HIDE MENU */
 const sections = document.querySelectorAll('.section');
 const menu = document.querySelector('.menu');
-
-
 let startPagePosition = window.pageYOffset;
-
 const hideMenu = () => {
     menu.classList.add('menu--hidden');
 
@@ -61,10 +58,7 @@ const autoHideMenu = () => {
     startPagePosition = currentPagePosition;
 }
 document.addEventListener('scroll', autoHideMenu)
-
 /* SCROLL TO */
-
-
 const smoothScroll = (link, duration) => {
 
     const targetPosition = document.querySelector(`.${link}`).offsetTop;
@@ -81,7 +75,6 @@ const smoothScroll = (link, duration) => {
         if (timeElapsed < duration) requestAnimationFrame(animation);
 
     }
-
     const ease = (t, b, c, d) => {
 
         t /= d / 2;
