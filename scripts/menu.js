@@ -18,7 +18,7 @@ const activateBurger = () => {
 };
 burger.addEventListener('click', activateBurger);
 
-const closeWhenClickOutOfMenu = (e) => {
+const closeWhenClickOutOfMenu = () => {
 
 
     if (menuIsOpen) {
@@ -32,31 +32,39 @@ const closeWhenClickOutOfMenu = (e) => {
 };
 document.addEventListener('click', closeWhenClickOutOfMenu);
 /* HIDE MENU */
+const sections = document.querySelectorAll('.section');
 const menu = document.querySelector('.menu');
-let scrolling = false;
+
+
 let startPagePosition = window.pageYOffset;
 
-const hideMenu = () => menu.classList.add('menu--hidden');
+const hideMenu = () => {
+    menu.classList.add('menu--hidden');
 
+}
 const showMenu = () => {
     menu.classList.remove('menu--hidden');
 
 }
-window.onscroll = () => {
+const autoHideMenu = () => {
     let currentPagePosition = window.pageYOffset;
-    if (currentPagePosition < startPagePosition) {
-        showMenu();
+    let sectionsPositions = [...sections];
+    let hidePosition = sectionsPositions.find(element =>
+        output = element.offsetTop === parseInt(currentPagePosition.toFixed()));
 
+    if (hidePosition) {
+        hideMenu();
+    } else if (currentPagePosition < startPagePosition) {
+        showMenu();
     } else hideMenu();
 
     startPagePosition = currentPagePosition;
-
 }
-const hideNavBar = function () {};
+document.addEventListener('scroll', autoHideMenu)
 
 /* SCROLL TO */
 
-const sections = document.querySelectorAll('.section');
+
 const smoothScroll = (link, duration) => {
 
     const targetPosition = document.querySelector(`.${link}`).offsetTop;
