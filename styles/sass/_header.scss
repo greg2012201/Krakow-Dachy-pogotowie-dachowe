@@ -1,7 +1,7 @@
 .header {
 
 
-
+    position: relative;
     background-image: url('/assets/dach-320px-mobile.png'
             /* 'https://greg2012201.github.io/assets/dach-320px-mobile.png' */
         );
@@ -11,12 +11,12 @@
     background-size: cover;
     background-attachment: fixed;
 
-    &::before {
-        content: '';
+    &--mask {
+
         @include position(absolute, 0, 0);
         background-color: black;
         width: 100%;
-        height: 100vh;
+        height: 100%;
         opacity: 20%;
     }
 

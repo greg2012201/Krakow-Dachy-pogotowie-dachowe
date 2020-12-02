@@ -32,7 +32,7 @@ const closeWhenClickOutOfMenu = () => {
 };
 document.addEventListener('click', closeWhenClickOutOfMenu);
 /* HIDE MENU */
-const sections = document.querySelectorAll('.section');
+const sections = [...document.querySelectorAll('.section')];
 const menu = document.querySelector('.menu');
 let startPagePosition = window.pageYOffset;
 const hideMenu = () => {
@@ -45,11 +45,11 @@ const showMenu = () => {
 }
 const autoHideMenu = () => {
     let currentPagePosition = window.pageYOffset;
-    let sectionsPositions = [...sections];
-    let hidePosition = sectionsPositions.find(element =>
+
+    let sectionsPosition = sections.find(element =>
         output = element.offsetTop === parseInt(currentPagePosition.toFixed()));
 
-    if (hidePosition) {
+    if (sectionsPosition) {
         hideMenu();
     } else if (currentPagePosition < startPagePosition) {
         showMenu();
