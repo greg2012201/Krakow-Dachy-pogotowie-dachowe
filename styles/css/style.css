@@ -50,6 +50,8 @@
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+  -webkit-transition: .2s .1s;
+  transition: .2s .1s;
 }
 
 .header--mask {
