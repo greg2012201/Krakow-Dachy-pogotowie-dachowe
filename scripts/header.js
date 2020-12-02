@@ -7,23 +7,26 @@ let scrollPos = 0;
 
 
 
-const colorChange = (isScrollDown, inOffset) => {
+const colorChange = (isScrollDown, inOffset, pagePosition, percent) => {
 
 
 
     /* if (headerTop == pagePosition) opacity = 100;
     else if (headerBottom == pagePosition) opacity = 0;
     console.log(opacity); */
-    console.log(inOffset);
-    if (isScrollDown && inOffset) {
-        /* count++; */
-        opacity -= 2;
 
-    } else {
+    if (isScrollDown && inOffset) {
+        /* spróbować bardziej zabezpieczyć to elseifem */
+        /* count++; */
+
+
+    } else if (!isScrollDown && inOffset) {
+        /* muszę to bardziej zabezpieczyć bo chyba dla tego nie działa że jest nie zabezpieczone bo musi być tu też in offset =true */
         /*  count--; */
         opacity += 2;
     }
-    console.log(opacity);
+
+
     if (opacity <= 0) opacity = 0
     else if (opacity >= 100) opacity = 100
     if (count <= 0) count = 0
@@ -31,13 +34,11 @@ const colorChange = (isScrollDown, inOffset) => {
 
 
     mask.style.backgroundColor = `rgb(${count},${count},${count})`;
-    header.style.opacity = `${opacity}%`
+    header.style.opacity = `${opacity = percent}%`
 
 
 
 }
-
-
 
 
 
@@ -48,8 +49,8 @@ const scroll = () => {
     const headerBottom = header.getBoundingClientRect().bottom
     const pagePosition = window.pageYOffset
     const headerHeight = header.getBoundingClientRect().height
-
-
+    console.log(pagePosition / headerHeight * 100);
+    const percent = headerBottom / headerHeight * 100
     /*  console.log(headerBottom);
      console.log(headerHeight);
      console.log(headerTop); */
@@ -74,7 +75,7 @@ const scroll = () => {
 
 
 
-    colorChange(scrollDown, inOffset)
+    colorChange(scrollDown, inOffset, pagePosition, percent)
 
 }
 
