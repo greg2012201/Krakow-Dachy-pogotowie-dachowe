@@ -1,12 +1,17 @@
 /* MENU */
+const sections = [...document.querySelectorAll('.section')];
 const burger = document.querySelector('.burger');
 const dropDownMenu = document.querySelector('.menu');
-/* gdy się najedzie trzeba zrobić żeby menu się rozwijało z góry */
+const navBar = document.querySelector('.menu__nav-bar');
+
 let menuIsOpen = false;
+let isMenuOpen;
 const openMenu = () => {
     menuIsOpen = true;
 
     dropDownMenu.classList.toggle('menu--open');
+
+    isMenuOpen = () => menuIsOpen = true;
 
 };
 const burgerClassToggle = () => {
@@ -32,11 +37,13 @@ const closeWhenClickOutOfMenu = () => {
 };
 document.addEventListener('click', closeWhenClickOutOfMenu);
 /* HIDE MENU */
-const sections = [...document.querySelectorAll('.section')];
 const menu = document.querySelector('.menu');
 let startPagePosition = window.pageYOffset;
 const hideMenu = () => {
+
+    /* if (isMenuOpen ? isMenuOpen() : false) */
     menu.classList.add('menu--hidden');
+
 
 }
 const showMenu = () => {
@@ -48,6 +55,7 @@ const autoHideMenu = () => {
 
     let sectionsPosition = sections.find(element =>
         output = element.offsetTop === parseInt(currentPagePosition.toFixed()));
+    // tutuaj trzeba uniwersalną metodę napisać bo jest użyta już 2 razy
 
     if (sectionsPosition) {
         hideMenu();
@@ -57,7 +65,21 @@ const autoHideMenu = () => {
 
     startPagePosition = currentPagePosition;
 }
-document.addEventListener('scroll', autoHideMenu)
+document.addEventListener('scroll', autoHideMenu);
+/* SHOW MENU  */
+
+
+const mouseOver = (e) => {
+
+
+
+    const navBarHeight = navBar.getBoundingClientRect().height;
+    if (e.clientY <= navBarHeight) showMenu();
+    /* else hideMenu(); */
+}
+document.addEventListener('mousemove', mouseOver)
+
+
 /* SCROLL TO */
 const smoothScroll = (link, duration) => {
 
