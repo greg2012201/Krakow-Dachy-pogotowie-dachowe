@@ -1,7 +1,7 @@
 /* MENU */
 const burger = document.querySelector('.burger');
 const dropDownMenu = document.querySelector('.menu');
-
+/* gdy się najedzie trzeba zrobić żeby menu się rozwijało z góry */
 let menuIsOpen = false;
 const openMenu = () => {
     menuIsOpen = true;
