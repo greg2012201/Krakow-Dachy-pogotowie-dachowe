@@ -11,37 +11,39 @@ const openMenu = () => {
 };
 
 const closeMenu = () => {
-
+    console.log(menu);
+    console.log('wchodzi');
     dropDownMenu.classList.remove('menu--open');
-    /*  return menuIsOpen = false; */
+    /*   return menuIsOpen = false; */
 }
 const burgerClassToggle = () => {
     burger.classList.toggle('burger--active');
+
 }
-const activateBurger = () => {
 
-    if (!menuIsOpen) {
-        openMenu();
-        burgerClassToggle();
-        menuIsOpen = true;
-    } else {
-        closeMenu()
-        burgerClassToggle();
-        menuIsOpen = false;
-    }
-};
-burger.addEventListener('click', activateBurger);
 
-const closeWhenClickOutOfMenu = (e) => {
-    if (menuIsOpen && e.target === burger) {
-        return
+const menuManage = (e) => {
+
+    // trzeba zabezpieczyć child node
+
+    if (e.target === burger || e.target.parentNode === burger) {
+        if (!menuIsOpen) {
+            openMenu();
+            burgerClassToggle();
+            menuIsOpen = true;
+
+        } else if (menuIsOpen) {
+            closeMenu();
+            burgerClassToggle();
+            menuIsOpen = false;
+        }
     } else if (dropDownMenu.classList.contains('menu--open') && menuIsOpen) {
-        menuIsOpen = false;
-        burgerClassToggle();
         closeMenu();
+        burgerClassToggle();
+        menuIsOpen = false;
     }
 };
-document.addEventListener('click', closeWhenClickOutOfMenu);
+document.addEventListener('click', menuManage);
 /* HIDE MENU */
 const menu = document.querySelector('.menu');
 let startPagePosition = window.pageYOffset;
@@ -85,7 +87,7 @@ document.addEventListener('scroll', autoHideMenu);
 const mouseOver = (e) => {
 
 
-    console.log(menuIsOpen);
+
     const navBarHeight = navBar.getBoundingClientRect().height;
     if (e.clientY <= navBarHeight) showMenu();
     /*   else if (!isMenuOpen && dropDownMenu.classList.contains('menu--open')) hideMenu(); */
