@@ -7,42 +7,55 @@ const navBar = document.querySelector('.menu__nav-bar');
 let menuIsOpen = false;
 let isMenuOpen;
 const openMenu = () => {
-    menuIsOpen = true;
-
-    dropDownMenu.classList.toggle('menu--open');
-
-    isMenuOpen = () => menuIsOpen = true;
-
+    dropDownMenu.classList.add('menu--open');
 };
+
+const closeMenu = () => {
+
+    dropDownMenu.classList.remove('menu--open');
+    /*  return menuIsOpen = false; */
+}
 const burgerClassToggle = () => {
     burger.classList.toggle('burger--active');
 }
 const activateBurger = () => {
-    burgerClassToggle();
-    openMenu();
+
+    if (!menuIsOpen) {
+        openMenu();
+        burgerClassToggle();
+        menuIsOpen = true;
+    } else {
+        closeMenu()
+        burgerClassToggle();
+        menuIsOpen = false;
+    }
 };
 burger.addEventListener('click', activateBurger);
 
-const closeWhenClickOutOfMenu = () => {
-
-
-    if (menuIsOpen) {
-
-        return menuIsOpen = false;
-    } else if (dropDownMenu.classList.contains('menu--open') && !menuIsOpen) {
+const closeWhenClickOutOfMenu = (e) => {
+    if (menuIsOpen && e.target === burger) {
+        return
+    } else if (dropDownMenu.classList.contains('menu--open') && menuIsOpen) {
+        menuIsOpen = false;
         burgerClassToggle();
-        openMenu();
+        closeMenu();
     }
-
 };
 document.addEventListener('click', closeWhenClickOutOfMenu);
 /* HIDE MENU */
 const menu = document.querySelector('.menu');
 let startPagePosition = window.pageYOffset;
-const hideMenu = () => {
+let menuHidden = false;
+const hideMenu = () => { // hideNavBar
+
 
     /* if (isMenuOpen ? isMenuOpen() : false) */
+    /*   if (menuHidden && !isMenuOpen) */
     menu.classList.add('menu--hidden');
+    /*  else return */
+    /* else if (isMenuOpen ? isMenuOpen() : false)
+        return */
+
 
 
 }
@@ -72,10 +85,11 @@ document.addEventListener('scroll', autoHideMenu);
 const mouseOver = (e) => {
 
 
-
+    console.log(menuIsOpen);
     const navBarHeight = navBar.getBoundingClientRect().height;
     if (e.clientY <= navBarHeight) showMenu();
-    /* else hideMenu(); */
+    /*   else if (!isMenuOpen && dropDownMenu.classList.contains('menu--open')) hideMenu(); */
+    /* isMenuOpen = true; */
 }
 document.addEventListener('mousemove', mouseOver)
 
