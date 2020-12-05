@@ -51,7 +51,8 @@ const hideNavBar = () => {
     menu.classList.add('menu--hidden');
 
 }
-const showMenu = () => {
+const showNavBar = () => {
+    /* if (menuIsOpen) */
     menu.classList.remove('menu--hidden');
 
 }
@@ -65,7 +66,7 @@ const autoHideMenu = () => {
     if (sectionsPosition) {
         hideNavBar();
     } else if (currentPagePosition < startPagePosition) {
-        showMenu();
+        showNavBar();
     } else hideNavBar();
 
     startPagePosition = currentPagePosition;
@@ -78,9 +79,9 @@ const mouseOver = (e) => {
 
     const navBarHeight = navBar.getBoundingClientRect().height;
     if (e.clientY <= navBarHeight) {
-        showMenu();
+        showNavBar();
     } else if (!menuIsOpen) {
-        hideMenu();
+        hideNavBar();
     }
 
 }
