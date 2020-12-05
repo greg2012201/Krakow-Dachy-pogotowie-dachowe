@@ -5,7 +5,6 @@ const dropDownMenu = document.querySelector('.menu');
 const navBar = document.querySelector('.menu__nav-bar');
 
 let menuIsOpen = false;
-let isMenuOpen;
 const openMenu = () => {
     dropDownMenu.classList.add('menu--open');
 };
@@ -24,7 +23,7 @@ const burgerClassToggle = () => {
 
 const menuManage = (e) => {
 
-    // trzeba zabezpieczyć child node
+
 
     if (e.target === burger || e.target.parentNode === burger) {
         if (!menuIsOpen) {
@@ -48,17 +47,9 @@ document.addEventListener('click', menuManage);
 const menu = document.querySelector('.menu');
 let startPagePosition = window.pageYOffset;
 let menuHidden = false;
-const hideMenu = () => { // hideNavBar
+const hideMenu = () => {
 
-
-    /* if (isMenuOpen ? isMenuOpen() : false) */
-    /*   if (menuHidden && !isMenuOpen) */
     menu.classList.add('menu--hidden');
-    /*  else return */
-    /* else if (isMenuOpen ? isMenuOpen() : false)
-        return */
-
-
 
 }
 const showMenu = () => {
@@ -87,10 +78,13 @@ document.addEventListener('scroll', autoHideMenu);
 const mouseOver = (e) => {
 
 
-
+    console.log(menuIsOpen);
     const navBarHeight = navBar.getBoundingClientRect().height;
-    if (e.clientY <= navBarHeight) showMenu();
-    /*   else if (!isMenuOpen && dropDownMenu.classList.contains('menu--open')) hideMenu(); */
+    if (e.clientY <= navBarHeight) {
+        showMenu();
+    } else if (!menuIsOpen) {
+        hideMenu();
+    }
     /* isMenuOpen = true; */
 }
 document.addEventListener('mousemove', mouseOver)
