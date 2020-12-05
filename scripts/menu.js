@@ -10,8 +10,7 @@ const openMenu = () => {
 };
 
 const closeMenu = () => {
-    console.log(menu);
-    console.log('wchodzi');
+
     dropDownMenu.classList.remove('menu--open');
     /*   return menuIsOpen = false; */
 }
@@ -47,7 +46,7 @@ document.addEventListener('click', menuManage);
 const menu = document.querySelector('.menu');
 let startPagePosition = window.pageYOffset;
 let menuHidden = false;
-const hideMenu = () => {
+const hideNavBar = () => {
 
     menu.classList.add('menu--hidden');
 
@@ -64,10 +63,10 @@ const autoHideMenu = () => {
     // tutuaj trzeba uniwersalną metodę napisać bo jest użyta już 2 razy
 
     if (sectionsPosition) {
-        hideMenu();
+        hideNavBar();
     } else if (currentPagePosition < startPagePosition) {
         showMenu();
-    } else hideMenu();
+    } else hideNavBar();
 
     startPagePosition = currentPagePosition;
 }
@@ -77,15 +76,13 @@ document.addEventListener('scroll', autoHideMenu);
 
 const mouseOver = (e) => {
 
-
-    console.log(menuIsOpen);
     const navBarHeight = navBar.getBoundingClientRect().height;
     if (e.clientY <= navBarHeight) {
         showMenu();
     } else if (!menuIsOpen) {
         hideMenu();
     }
-    /* isMenuOpen = true; */
+
 }
 document.addEventListener('mousemove', mouseOver)
 
