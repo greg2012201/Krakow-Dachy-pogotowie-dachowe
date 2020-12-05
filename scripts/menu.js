@@ -3,6 +3,7 @@ const sections = [...document.querySelectorAll('.section')];
 const burger = document.querySelector('.burger');
 const dropDownMenu = document.querySelector('.menu');
 const navBar = document.querySelector('.menu__nav-bar');
+const header = document.querySelector('.header');
 
 let menuIsOpen = false;
 const openMenu = () => {
@@ -48,11 +49,11 @@ let startPagePosition = window.pageYOffset;
 let menuHidden = false;
 const hideNavBar = () => {
 
-    menu.classList.add('menu--hidden');
+    if (!menuIsOpen) menu.classList.add('menu--hidden');
 
 }
 const showNavBar = () => {
-    /* if (menuIsOpen) */
+
     menu.classList.remove('menu--hidden');
 
 }
@@ -61,7 +62,7 @@ const autoHideMenu = () => {
 
     let sectionsPosition = sections.find(element =>
         output = element.offsetTop === parseInt(currentPagePosition.toFixed()));
-    // tutuaj trzeba uniwersalną metodę napisać bo jest użyta już 2 razy
+
 
     if (sectionsPosition) {
         hideNavBar();
