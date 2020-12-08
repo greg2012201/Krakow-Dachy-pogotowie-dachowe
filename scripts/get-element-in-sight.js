@@ -1,23 +1,20 @@
-const detectAndChangeClassOfElement = (elements) => {
+const detectAndChangeClassOfElement = (elements, modifier) => {
     const vieportHeight = window.innerHeight;
     elements.forEach(element => {
-        const classOfElement = `${getClass(element)}--into-view`;
-        console.log(classOfElement);
+
         const rect = element.getBoundingClientRect();
         const top = rect.top;
         const bottom = rect.bottom;
-        console.log(bottom);
-        top - vieportHeight <= 0 && bottom >= 0 ? element.classList.add(classOfElement) : element.classList.remove(classOfElement);
+        top - vieportHeight <= 0 && bottom >= 0 ? setClass(element, modifier) : removeClass(element, modifier);
     });
 
-
-
-
 };
-const getClass = (element) => element.classList.item(0);
-const setElementsToView = (elements) => {
+const getClass = (element, index) => element.classList.item(index);
+const setClass = (element, modifier) => element.classList.add(`${getClass(element, 0)}${modifier}`);
 
-    return window.addEventListener('scroll', () => detectAndChangeClassOfElement(elements));
+const removeClass = (element, modifier) => {
+    element.classList.remove(`${getClass(element, 0)}${modifier}`);
+}
+const setElementsToView = (elements, modifier) => {
+    return window.addEventListener('scroll', () => detectAndChangeClassOfElement(elements, modifier));
 };
-
-setElementsToView(sections)
