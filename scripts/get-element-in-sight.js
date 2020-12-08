@@ -5,16 +5,16 @@ const detectAndChangeClassOfElement = (elements, modifier) => {
         const rect = element.getBoundingClientRect();
         const top = rect.top;
         const bottom = rect.bottom;
-        top - vieportHeight <= 0 && bottom >= 0 ? setClass(element, modifier) : removeClass(element, modifier);
+        top - vieportHeight <= 0 && bottom >= 0 ? setModifier(element, modifier) : removeModifier(element, modifier);
     });
 
 };
 const getClass = (element, index) => element.classList.item(index);
-const setClass = (element, modifier) => element.classList.add(`${getClass(element, 0)}${modifier}`);
+const setModifier = (element, modifier) => element.classList.add(`${getClass(element, 0)}${modifier}`);
 
-const removeClass = (element, modifier) => {
+const removeModifier = (element, modifier) => {
     element.classList.remove(`${getClass(element, 0)}${modifier}`);
 }
-const setElementsToView = (elements, modifier) => {
+const addModifier = (elements, modifier) => {
     return window.addEventListener('scroll', () => detectAndChangeClassOfElement(elements, modifier));
 };
