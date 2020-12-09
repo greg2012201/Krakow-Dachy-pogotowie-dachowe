@@ -21,7 +21,11 @@ const getParameters = (element) => {
     };
 };
 
-const isInView = (parameters) => parameters.top - parameters.vieport <= 0 && parameters.bottom >= 0;
+const isInView = ({
+    top,
+    bottom,
+    vieport
+} = parameters) => top - vieport <= 0 && bottom >= 0;
 
 
 const getClass = (element, index) => element.classList.item(index);
