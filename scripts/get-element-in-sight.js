@@ -12,20 +12,19 @@ const modifierManage = (elements, modifier) => {
     });
 };
 const getParameters = (element) => {
-    const vieportHeight = window.innerHeight;
     const rect = element.getBoundingClientRect();
     return {
         top: rect.top,
         bottom: rect.bottom,
-        vieport: vieportHeight,
+        vieportHeight: window.innerHeight,
     };
 };
 
 const isInView = ({
     top,
     bottom,
-    vieport
-} = parameters) => top - vieport <= 0 && bottom >= 0;
+    vieportHeight,
+} = parameters) => top - vieportHeight <= 0 && bottom >= 0;
 
 
 const getClass = (element, index) => element.classList.item(index);
