@@ -1,7 +1,12 @@
 const detectAndChangeClassOfElement = (elements, modifier) => {
-    const vieportHeight = window.innerHeight;
-    elements.forEach(element => {
 
+
+
+    const vieportHeight = window.innerHeight;
+    let arr;
+    elements.map(element => [...element]).sort((a, b) => arr = a.concat(b));
+    arr.forEach(element => {
+        console.log(element);
         const rect = element.getBoundingClientRect();
         const top = rect.top;
         const bottom = rect.bottom;
