@@ -13,7 +13,7 @@ const openMenu = () => {
 const closeMenu = () => {
 
     dropDownMenu.classList.remove('menu--open');
-    /*   return menuIsOpen = false; */
+
 }
 const burgerClassToggle = () => {
     burger.classList.toggle('burger--active');
@@ -44,6 +44,7 @@ const menuManage = (e) => {
 };
 document.addEventListener('click', menuManage);
 /* HIDE MENU */
+// nie wiem czy cały ten skrypt niżej nie jest przypadkiem zadaniem hovera w css
 const menu = document.querySelector('.menu');
 let startPagePosition = window.pageYOffset;
 let menuHidden = false;
@@ -72,7 +73,7 @@ const autoHideMenu = () => {
 
     startPagePosition = currentPagePosition;
 }
-document.addEventListener('scroll', autoHideMenu);
+document.addEventListener('scroll', autoHideMenu); // zastanów się na touchStart i touch ???? 
 /* SHOW MENU  */
 
 
