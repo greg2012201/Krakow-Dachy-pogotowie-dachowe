@@ -8,6 +8,14 @@
     &__content {
 
         font: normal 300 1.14rem/1.5rem $main-font;
+        opacity: 0;
+        transition: 1.5s .2s;
+        transform: translateY(-4%);
+
+        &--into-view {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     &__image {
