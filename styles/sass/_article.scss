@@ -30,7 +30,7 @@
 
 
         &--into-view {
-            transform: translateX(0);
+            transform: translateX(0) rotate(-360deg);
             opacity: 1;
         }
 
@@ -38,7 +38,7 @@
 
     &:nth-of-type(even) &__image {
 
-        transform: translateX(-100%);
+        transform: translateX(-100%) rotate(-360deg);
         opacity: 1;
     }
 
