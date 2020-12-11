@@ -68,6 +68,7 @@
 
 .header {
   min-height: 100vh;
+  max-height: 100vh;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   -webkit-box-flex: 1;
@@ -112,13 +113,13 @@
 
 .header__title {
   letter-spacing: .2rem;
-  margin-top: 50%;
+  margin-top: 30vh;
   font: normal bold 3.125rem/3.687rem "Roboto", sans-serif;
   text-transform: uppercase;
 }
 
 .header__slogan {
-  margin-top: 20%;
+  margin-top: 15vh;
   font: italic normal 1.625rem/2.5rem "Roboto Condensed", sans-serif;
 }
 
@@ -126,7 +127,7 @@
   position: fixed;
   width: 100%;
   max-width: 100%;
-  top: -315.6px;
+  top: -183.2px;
   left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -211,11 +212,11 @@
   color: black;
   text-decoration: none;
   width: 100%;
-  font: normal normal 1.625rem/2em "Roboto", sans-serif;
+  font: normal normal 1.2rem/2em "Roboto", sans-serif;
   display: block;
   color: white;
   text-transform: uppercase;
-  padding: 0.8rem 0 0.8rem 0;
+  padding: 0.2rem 0 0.2rem 0;
   border-bottom: 1px solid white;
 }
 
@@ -332,7 +333,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .article__content {
@@ -353,6 +355,8 @@
 .article__image {
   padding: 2rem;
   width: 256px;
+  -ms-grid-column-align: center;
+      justify-self: center;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -372,7 +376,7 @@
 .article:nth-of-type(even) .article__image {
   -webkit-transform: translateX(-100%) rotate(-360deg);
           transform: translateX(-100%) rotate(-360deg);
-  opacity: 1;
+  opacity: 0;
 }
 
 .article:nth-of-type(even) .article__image--into-view {
