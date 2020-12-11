@@ -299,6 +299,17 @@
 
 .article__content {
   font: normal 300 1.14rem/1.5rem "Roboto Condensed", sans-serif;
+  opacity: 0;
+  -webkit-transition: 1.5s .2s;
+  transition: 1.5s .2s;
+  -webkit-transform: translateY(-4%);
+          transform: translateY(-4%);
+}
+
+.article__content--into-view {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
 }
 
 .article__image {
