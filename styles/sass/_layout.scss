@@ -9,6 +9,7 @@
 
 .header {
     min-height: 100vh;
+    max-height: 100vh;
     flex-basis: 100%;
     flex-grow: 1;
 
@@ -20,4 +21,6 @@
 .section {
     padding: 2rem;
     flex-basis: 100%;
+
+
 }
