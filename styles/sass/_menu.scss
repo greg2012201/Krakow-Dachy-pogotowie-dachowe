@@ -1,9 +1,11 @@
 .menu {
+    $menu-height: 285px;
+    $nav-bar-heigth: 76px;
     position: fixed;
     width: 100%;
     max-width: 100%;
-    top:
-        -315.6px;
+    height: $menu-height;
+    top: -$menu-height+$nav-bar-heigth;
     left: 0;
     @include flex-box(row, end, start);
     background-color: rgba(0, 0, 0, 0.21);
@@ -28,6 +30,8 @@
         flex-basis: 100%;
         @include flex-box(row, center, center);
         padding: 10px 10px;
+        height: $nav-bar-heigth;
+        ;
 
 
 
@@ -52,11 +56,11 @@
     &__link {
         @include link-style-reset;
         width: 100%;
-        font: normal normal 1.625rem/2em $title-font;
+        font: normal normal 1.4rem/2em $title-font;
         display: block;
         color: white;
         text-transform: uppercase;
-        padding: 0.8rem 0 0.8rem 0;
+        padding: 0.2rem 0 0.2rem 0;
         border-bottom: 1px solid white;
 
         &:hover {
@@ -75,7 +79,7 @@
     }
 
     &--hidden {
-        top: -390.6px; // dać to w zmienną tutaj lokalnie w tym pliku
+        top: -$menu-height; // dać to w zmienną tutaj lokalnie w tym pliku
         left: 0;
     }
 }

@@ -127,7 +127,8 @@
   position: fixed;
   width: 100%;
   max-width: 100%;
-  top: -183.2px;
+  height: 285px;
+  top: -209px;
   left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -178,6 +179,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding: 10px 10px;
+  height: 76px;
 }
 
 .menu__navigation {
@@ -212,7 +214,7 @@
   color: black;
   text-decoration: none;
   width: 100%;
-  font: normal normal 1.2rem/2em "Roboto", sans-serif;
+  font: normal normal 1.4rem/2em "Roboto", sans-serif;
   display: block;
   color: white;
   text-transform: uppercase;
@@ -232,7 +234,7 @@
 }
 
 .menu--hidden {
-  top: -390.6px;
+  top: -285px;
   left: 0;
 }
 
