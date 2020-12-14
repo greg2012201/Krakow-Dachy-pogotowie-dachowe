@@ -473,7 +473,7 @@
   height: 50px;
   -webkit-transition: .5s;
   transition: .5s;
-  width: 260px;
+  width: 240px;
 }
 
 .list-wrapper__list-container {
@@ -552,8 +552,33 @@
   width: 100%;
 }
 
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (orientation: landscape) {
+  .contact {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.contact__title {
+  width: 100%;
+}
+
 .contact__item {
-  width: 50%;
+  width: 45%;
 }
 
 .contact__content-name {

@@ -1,8 +1,19 @@
 .contact {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 
+    @media(orientation:landscape) {
+        flex-direction: row;
+    }
+
+    &__title {
+
+        width: 100%;
+    }
 
     &__item {
-        width: 50%;
+        width: 45%;
     }
 
 
