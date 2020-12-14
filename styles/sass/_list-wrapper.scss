@@ -4,6 +4,9 @@
     height:
         50px;
     transition: .5s;
+    width: 260px;
+
+
 
 
 
@@ -16,7 +19,8 @@
 
     &__title {
         position: relative;
-        width: 88%;
+
+
         padding-left: 1rem;
         background: #FFFFFF;
         border: 1px solid rgba(0, 0, 0, 0.5);
@@ -29,6 +33,7 @@
         -moz-user-select: none;
         -khtml-user-select: none;
         -webkit-user-select: none;
+
 
 
         background-image: url('/assets/arow-up-down.svg'
@@ -52,7 +57,7 @@
 
 
     &__list {
-
+        box-sizing: border-box;
         opacity: 0;
         transition: .5s;
         transform: translateY(-1000px);
@@ -60,6 +65,8 @@
         height: 0px;
         padding: 20px 70px 20px 14px;
         z-index: -10;
+        margin-left: 2px;
+
 
         &--active {
             opacity: 1;

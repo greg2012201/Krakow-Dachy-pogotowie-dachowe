@@ -434,21 +434,47 @@
 
 .offer {
   padding: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50%;
+      grid-template-columns: 50%;
+  -ms-grid-rows: auto auto auto auto auto;
+      grid-template-rows: auto auto auto auto auto;
+  grid-auto-flow: column;
+}
+
+@media (orientation: landscape) {
+  .offer {
+    -ms-grid-rows: auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
+    grid-row-gap: 20px;
+  }
+}
+
+.offer__title {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
 }
 
 .offer__slogan {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
   margin: 2rem 0 4rem 0;
   padding-right: 4rem;
   font: italic 300 1.125rem/1.5em "Roboto Condensed", sans-serif;
   color: #808080;
   -webkit-animation: shake 3s 1s both linear infinite;
           animation: shake 3s 1s both linear infinite;
+  max-width: 350px;
 }
 
 .list-wrapper {
   height: 50px;
   -webkit-transition: .5s;
   transition: .5s;
+  width: 260px;
 }
 
 .list-wrapper__list-container {
@@ -459,7 +485,6 @@
 
 .list-wrapper__title {
   position: relative;
-  width: 88%;
   padding-left: 1rem;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -484,6 +509,8 @@
 }
 
 .list-wrapper__list {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   opacity: 0;
   -webkit-transition: .5s;
   transition: .5s;
@@ -493,6 +520,7 @@
   height: 0px;
   padding: 20px 70px 20px 14px;
   z-index: -10;
+  margin-left: 2px;
 }
 
 .list-wrapper__list--active {
