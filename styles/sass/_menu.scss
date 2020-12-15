@@ -7,6 +7,7 @@
     height: $menu-height;
     top: -$menu-height + $nav-bar-heigth;
     left: 0;
+
     @include flex-box(row, end, start);
     background-color: rgba(0, 0, 0, 0.21);
     /* rgba(#111111, 0.99); */
@@ -18,10 +19,10 @@
     transition: .3s .2s;
     padding: 0;
 
-    @media(min-width:$desktop) {
+    @media(min-width:$small-desktop) {
         top: 0;
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
+
         height: auto;
         justify-content: space-between;
 
@@ -31,6 +32,7 @@
 
     &__logo {
         flex-basis: 100%;
+
 
     }
 
@@ -43,7 +45,7 @@
         height: $nav-bar-heigth;
         ;
 
-        @media(min-width:$desktop) {
+        @media(min-width:$small-desktop) {
             flex-basis: auto;
             order: -1;
 
@@ -60,13 +62,15 @@
         list-style: none;
         padding-left: 2rem;
 
-        @media(min-width:$desktop) {
+        @media(min-width:$small-desktop) {
             justify-content: flex-end;
             flex-basis: 70%;
             margin-right: 5%;
 
 
         }
+
+
     }
 
     &__list-item {
@@ -74,10 +78,16 @@
 
         margin-right: 10px;
 
-        @media(min-width:$desktop) {
+        @media(min-width:$small-desktop) {
 
             flex-basis: 10%;
             margin-left: 4em;
+        }
+
+        @media(min-width:$normal-desktop) {
+            font-size: 1.8rem;
+
+
         }
     }
 
@@ -91,6 +101,10 @@
         padding: 0.2rem 0 0.2rem 0;
         border-bottom: 1px solid white;
 
+        @media(min-width:$small-desktop) {
+
+            font-size: 1.4rem;
+        }
 
 
         &:hover {
@@ -108,8 +122,8 @@
         ;
     }
 
-    /*  &--hidden {
+    &--hidden {
         top: -$menu-height; // dać to w zmienną tutaj lokalnie w tym pliku
         left: 0;
-    } */
+    }
 }
