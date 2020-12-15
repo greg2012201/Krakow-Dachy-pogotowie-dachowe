@@ -2,7 +2,6 @@
     /* popracować jeszcze z właściwością outline tutaj */
     @include flex-box (row, center, center);
     flex-wrap: wrap;
-
     @include rect (34px, 47px);
     margin-left: auto;
     margin-right: 1rem;
@@ -13,6 +12,9 @@
     /* cursor: pointer; */
     overflow: hidden;
 
+    @media(min-width:$desktop) {
+        display: none;
+    }
 
     &__element,
     &::before,

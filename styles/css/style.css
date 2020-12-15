@@ -155,6 +155,23 @@
   -webkit-transition: .3s .2s;
   transition: .3s .2s;
   padding: 0;
+  /*  &--hidden {
+        top: -$menu-height; // dać to w zmienną tutaj lokalnie w tym pliku
+        left: 0;
+    } */
+}
+
+@media (min-width: 1025px) {
+  .menu {
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    height: auto;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 .menu__logo {
@@ -182,6 +199,16 @@
   height: 76px;
 }
 
+@media (min-width: 1025px) {
+  .menu__nav-bar {
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
+  }
+}
+
 .menu__navigation {
   -ms-flex-preferred-size: 90%;
       flex-basis: 90%;
@@ -204,10 +231,29 @@
   padding-left: 2rem;
 }
 
+@media (min-width: 1025px) {
+  .menu__navigation {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-preferred-size: 70%;
+        flex-basis: 70%;
+    margin-right: 5%;
+  }
+}
+
 .menu__list-item {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   margin-right: 10px;
+}
+
+@media (min-width: 1025px) {
+  .menu__list-item {
+    -ms-flex-preferred-size: 10%;
+        flex-basis: 10%;
+    margin-left: 4em;
+  }
 }
 
 .menu__link {
@@ -231,11 +277,6 @@
   top: 0;
   left: 0;
   background-color: rgba(17, 17, 17, 0.99);
-}
-
-.menu--hidden {
-  top: -285px;
-  left: 0;
 }
 
 .burger {
@@ -266,6 +307,12 @@
   border: none;
   /* cursor: pointer; */
   overflow: hidden;
+}
+
+@media (min-width: 1025px) {
+  .burger {
+    display: none;
+  }
 }
 
 .burger__element, .burger::before, .burger::after {
@@ -473,7 +520,7 @@
   height: 50px;
   -webkit-transition: .5s;
   transition: .5s;
-  width: 240px;
+  width: 260px;
 }
 
 .list-wrapper__list-container {
@@ -566,6 +613,9 @@
 
 @media (orientation: landscape) {
   .contact {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;

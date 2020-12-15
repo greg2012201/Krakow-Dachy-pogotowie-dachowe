@@ -5,7 +5,7 @@
     width: 100%;
     max-width: 100%;
     height: $menu-height;
-    top: -$menu-height+$nav-bar-heigth;
+    top: -$menu-height + $nav-bar-heigth;
     left: 0;
     @include flex-box(row, end, start);
     background-color: rgba(0, 0, 0, 0.21);
@@ -18,10 +18,20 @@
     transition: .3s .2s;
     padding: 0;
 
+    @media(min-width:$desktop) {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: auto;
+        justify-content: space-between;
+
+
+    }
 
 
     &__logo {
         flex-basis: 100%;
+
     }
 
 
@@ -33,6 +43,12 @@
         height: $nav-bar-heigth;
         ;
 
+        @media(min-width:$desktop) {
+            flex-basis: auto;
+            order: -1;
+
+        }
+
 
 
     }
@@ -43,6 +59,14 @@
         flex-wrap: wrap;
         list-style: none;
         padding-left: 2rem;
+
+        @media(min-width:$desktop) {
+            justify-content: flex-end;
+            flex-basis: 70%;
+            margin-right: 5%;
+
+
+        }
     }
 
     &__list-item {
@@ -50,7 +74,11 @@
 
         margin-right: 10px;
 
+        @media(min-width:$desktop) {
 
+            flex-basis: 10%;
+            margin-left: 4em;
+        }
     }
 
     &__link {
@@ -62,6 +90,8 @@
         text-transform: uppercase;
         padding: 0.2rem 0 0.2rem 0;
         border-bottom: 1px solid white;
+
+
 
         &:hover {
 
@@ -78,8 +108,8 @@
         ;
     }
 
-    &--hidden {
+    /*  &--hidden {
         top: -$menu-height; // dać to w zmienną tutaj lokalnie w tym pliku
         left: 0;
-    }
+    } */
 }
