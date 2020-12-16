@@ -35,3 +35,35 @@
     text-decoration: none;
 
 }
+
+@mixin for-phone-landscape {
+    @media(min-width:501px) {
+        @content;
+    }
+}
+
+@mixin for-huge-phone {
+    @media(min-width: 601px) {
+        @content;
+    }
+}
+
+@mixin for-tablet {
+    @media(min-width:901px) {
+        @content;
+    }
+}
+
+@mixin for-small-desktop {
+    @media(min-width:1025px) {
+        @content;
+    }
+}
+
+
+
+@mixin for-normal-desktoop {
+    @media(min-width:1281) {
+        @content;
+    }
+}

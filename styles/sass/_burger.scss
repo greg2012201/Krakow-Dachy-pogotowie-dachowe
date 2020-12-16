@@ -12,7 +12,7 @@
     /* cursor: pointer; */
     overflow: hidden;
 
-    @media(min-width:$small-desktop) {
+    @include for-small-desktop {
         display: none;
     }
 

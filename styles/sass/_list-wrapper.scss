@@ -8,7 +8,10 @@
 
 
 
+    @include for-phone-landscape {
+        margin-bottom: 20px;
 
+    }
 
 
     &__list-container {

@@ -1,5 +1,5 @@
 .menu {
-    $menu-height: 285px;
+    $menu-height: 286px;
     $nav-bar-heigth: 76px;
     position: fixed;
     width: 100%;
@@ -19,14 +19,12 @@
     transition: .3s .2s;
     padding: 0;
 
-    @media(min-width:$small-desktop) {
+
+    @include for-small-desktop {
         top: 0;
         left: 0;
-
         height: auto;
         justify-content: space-between;
-
-
     }
 
 
@@ -45,10 +43,10 @@
         height: $nav-bar-heigth;
         ;
 
-        @media(min-width:$small-desktop) {
+
+        @include for-small-desktop {
             flex-basis: auto;
             order: -1;
-
         }
 
 
@@ -62,11 +60,11 @@
         list-style: none;
         padding-left: 2rem;
 
-        @media(min-width:$small-desktop) {
+
+        @include for-small-desktop {
             justify-content: flex-end;
             flex-basis: 70%;
             margin-right: 5%;
-
 
         }
 
@@ -78,31 +76,30 @@
 
         margin-right: 10px;
 
-        @media(min-width:$small-desktop) {
 
+        @include for-small-desktop {
             flex-basis: 10%;
             margin-left: 4em;
         }
 
-        @media(min-width:$normal-desktop) {
+
+        @include for-normal-desktoop {
             font-size: 1.8rem;
-
-
         }
     }
 
     &__link {
         @include link-style-reset;
         width: 100%;
-        font: normal normal 1.4rem/2em $title-font;
+        font: normal normal 1.4rem/2em $title-font; //dodaj letter spacing
         display: block;
         color: white;
         text-transform: uppercase;
         padding: 0.2rem 0 0.2rem 0;
         border-bottom: 1px solid white;
 
-        @media(min-width:$small-desktop) {
 
+        @include for-small-desktop {
             font-size: 1.4rem;
         }
 
@@ -123,7 +120,7 @@
     }
 
     &--hidden {
-        top: -$menu-height; // dać to w zmienną tutaj lokalnie w tym pliku
+        top: -$menu-height;
         left: 0;
     }
 }

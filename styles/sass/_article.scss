@@ -4,14 +4,14 @@
     flex-direction: column;
 
 
-    @media(orientation:landscape) {
+
+    @include for-phone-landscape {
         flex-direction: row;
         justify-content: start;
         flex-wrap: wrap;
         align-content: space-between;
         align-items: center;
         min-height: 100vh;
-
     }
 
 
@@ -28,11 +28,10 @@
             opacity: 1;
         }
 
-        @media(orientation:landscape) {
+
+        @include for-phone-landscape {
             flex-basis: 60%;
             align-self: center;
-
-
         }
     }
 
@@ -46,11 +45,12 @@
         transition: 1s .2s;
         opacity: 0;
 
-        @media(orientation:landscape) {
 
+        @include for-phone-landscape {
             width: 40%;
             align-self: center;
         }
+
 
         &--into-view {
             transform: translateX(0) rotate(-360deg);
@@ -64,9 +64,8 @@
         transform: translateX(-100%) rotate(-360deg);
         opacity: 0;
 
-        @media(orientation:landscape) {
+        @include for-phone-landscape {
             order: -1;
-
         }
     }
 

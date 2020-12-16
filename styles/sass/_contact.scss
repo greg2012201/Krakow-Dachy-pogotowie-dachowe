@@ -3,9 +3,14 @@
     flex-direction: column;
     flex-wrap: wrap;
 
-    @media(orientation:landscape) {
+
+
+
+    @include for-phone-landscape {
+        justify-content: space-between;
         flex-direction: row;
     }
+
 
     &__title {
 
