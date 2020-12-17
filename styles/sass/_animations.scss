@@ -19,3 +19,16 @@
     }
 
 }
+
+@keyframes background-move {
+
+
+    50% {
+        background-position: -200px;
+
+    }
+
+    100% {
+        background-position: 0;
+    }
+}

@@ -5,7 +5,7 @@
     background-image: url('https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-2762600_640.jpg?raw=true');
 
     @include for-huge-phone {
-        background-image: url('https://raw.githubusercontent.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/master/assets/house-2762600_1280.jpg');
+        background-image: url('https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-2762600_1280.jpg?raw=true');
     }
 
 
@@ -16,9 +16,12 @@
 
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: 640px 100vh;
     background-attachment: fixed;
-    transition: .1s;
+    transition: 2s;
+    animation: background-move 60s ease infinite;
+    background-position-x: 0;
+    /*  background-size: auto; */
 
     &--mask {
 
