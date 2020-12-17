@@ -63,7 +63,7 @@
 
 
 @mixin for-normal-desktoop {
-    @media(min-width:1281) {
+    @media(min-width:1281px) {
         @content;
     }
 }

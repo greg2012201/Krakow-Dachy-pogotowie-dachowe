@@ -5,24 +5,42 @@
     background-image: url('https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-2762600_1280.jpg?raw=true');
 
 
-    @include for-huge-phone {
-        background-image: url('https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-2762600_1280.jpg?raw=true');
-    }
 
 
-    @include for-normal-desktoop {
-        background-image: url('https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-2762600_1920.jpg?raw=true');
-    }
 
 
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 640px 100vh;
+    background-size: 602px 100vh;
     background-attachment: fixed;
     transition: 2s;
     animation: background-move 60s ease infinite;
-    background-position-x: 0;
-    /*  background-size: auto; */
+    background-position: 0,
+        0;
+
+    @include for-phone-landscape {
+        background-size: 801px 100vh;
+    }
+
+    @include for-huge-phone {
+        background-size: 1101px 100vh;
+    }
+
+    @include for-tablet {
+
+        background-size: 1201px 100vh;
+    }
+
+    @include for-small-desktop {
+        background-image: url('https://raw.githubusercontent.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/master/assets/house-2762600_1920.jpg');
+        background-size: 1501px 100vh;
+    }
+
+    @include for-normal-desktoop {
+
+        background-size: 1920px auto;
+    }
+
 
     &--mask {
 
