@@ -97,8 +97,8 @@
   position: relative;
   -webkit-transition: 1s;
   transition: 1s;
-  -webkit-animation: background-move 6s ease infinite alternate;
-          animation: background-move 6s ease infinite alternate;
+  -webkit-animation: background-move 60s ease infinite alternate;
+          animation: background-move 60s ease infinite alternate;
   background: url("https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-2762600_1280.jpg?raw=true") no-repeat fixed;
   background-size: 602px 100vh;
 }
