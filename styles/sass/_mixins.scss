@@ -67,3 +67,17 @@
         @content;
     }
 }
+
+@mixin for-big-desktop {
+    @media(min-width:1601px) {
+        @content;
+    }
+
+}
+
+@mixin for-huge-desktop {
+    @media(min-width:1921px) {
+        @content;
+    }
+
+}

@@ -2,15 +2,15 @@
 
 
     position: relative;
-    background-size: 602px 100vh;
+
 
     transition: 1s;
-    animation: background-move 60s ease infinite alternate;
+    animation: background-move 6s ease infinite alternate;
 
 
 
     background: url('https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-2762600_1280.jpg?raw=true') no-repeat fixed;
-
+    background-size: 602px 100vh;
 
     @include for-phone-landscape {
         background-size: 801px 100vh;
@@ -32,7 +32,17 @@
 
     @include for-normal-desktoop {
 
-        background-size: 1920px auto;
+        background-size: 1901px auto;
+    }
+
+    @include for-big-desktop {
+        background-image: url('https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-huge.jpg?raw=true');
+        background-size: calc(100% + 200px) auto;
+    }
+
+    @include for-huge-desktop {
+        background-image: url('https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-huge.jpg?raw=true');
+
     }
 
 
@@ -41,7 +51,7 @@
         @include position(absolute, 0, 0);
         background-color: rgb(0, 0, 0);
         width: 100%;
-        height: 100%;
+        height: 100vh;
         opacity: 20%;
 
     }
