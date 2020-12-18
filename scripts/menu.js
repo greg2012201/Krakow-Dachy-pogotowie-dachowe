@@ -44,7 +44,6 @@ const menuManage = (e) => {
 };
 document.addEventListener('click', menuManage);
 /* HIDE MENU */
-// nie wiem czy cały ten skrypt niżej nie jest przypadkiem zadaniem hovera w css
 const menu = document.querySelector('.menu');
 let startPagePosition = window.pageYOffset;
 let menuHidden = false;
@@ -73,7 +72,7 @@ const autoHideMenu = () => {
 
     startPagePosition = currentPagePosition;
 }
-document.addEventListener('scroll', autoHideMenu); // zastanów się na touchStart i touch ???? 
+document.addEventListener('scroll', autoHideMenu);
 /* SHOW MENU  */
 
 
@@ -82,9 +81,8 @@ const mouseOver = (e) => {
     const navBarHeight = navBar.getBoundingClientRect().height;
     if (e.clientY <= navBarHeight) {
         showNavBar();
-    } else if (!menuIsOpen) {
-        hideNavBar();
     }
+
 
 }
 document.addEventListener('mousemove', mouseOver)
