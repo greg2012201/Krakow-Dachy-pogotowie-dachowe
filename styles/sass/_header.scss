@@ -20,9 +20,11 @@
         background-size: 1101px 100vh;
     }
 
+
+
     @include for-tablet {
 
-        background-size: 1201px 100vh;
+        background-size: 1304px 100vh;
     }
 
     @include for-small-desktop {
@@ -76,9 +78,17 @@
             transform: translate(-20px, -30px);
         }
 
+        @include for-small-tablet {
+            font-size: 3.5rem;
+        }
+
+        @include for-tablet {
+            transform: translate(-30px, -40px);
+        }
+
         @include for-small-desktop {
             font-size: 4.5rem;
-            transform: translate(-30px, -40px);
+
 
             letter-spacing: .5rem;
         }
@@ -96,6 +106,14 @@
 
         @include for-phone-landscape {
             transform: translate(20px, 30px);
+        }
+
+        @include for-small-tablet {
+            font-size: 2rem;
+        }
+
+        @include for-tablet {
+            transform: translate(30px, 40px);
         }
 
         @include for-small-desktop {

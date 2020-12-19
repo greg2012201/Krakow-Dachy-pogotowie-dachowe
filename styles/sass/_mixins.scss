@@ -48,6 +48,12 @@
     }
 }
 
+@mixin for-small-tablet {
+    @media(min-width: 701px) {
+        @content;
+    }
+}
+
 @mixin for-tablet {
     @media(min-width:901px) {
         @content;
