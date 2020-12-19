@@ -302,6 +302,7 @@
 .menu__logo {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
+  cursor: pointer;
 }
 
 .menu__nav-bar {
@@ -322,6 +323,7 @@
           align-items: center;
   padding: 10px 10px;
   height: 76px;
+  cursor: pointer;
 }
 
 @media (min-width: 1025px) {
@@ -393,10 +395,12 @@
   width: 100%;
   font: normal normal 1.4rem/2em "Roboto", sans-serif;
   display: block;
-  color: white;
+  color: #FCFDFB;
   text-transform: uppercase;
   padding: 0.2rem 0 0.2rem 0;
   border-bottom: 1px solid white;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 @media (min-width: 1025px) {

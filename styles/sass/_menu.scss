@@ -30,6 +30,7 @@
 
     &__logo {
         flex-basis: 100%;
+        cursor: pointer;
 
 
     }
@@ -42,11 +43,12 @@
         padding: 10px 10px;
         height: $nav-bar-heigth;
         ;
-
+        cursor: pointer;
 
         @include for-small-desktop {
             flex-basis: auto;
             order: -1;
+
         }
 
 
@@ -93,11 +95,12 @@
         width: 100%;
         font: normal normal 1.4rem/2em $title-font; //dodaj letter spacing
         display: block;
-        color: white;
+        color: $main-font-color;
         text-transform: uppercase;
         padding: 0.2rem 0 0.2rem 0;
         border-bottom: 1px solid white;
 
+        transition: .2s;
 
         @include for-small-desktop {
             font-size: 1.4rem;
