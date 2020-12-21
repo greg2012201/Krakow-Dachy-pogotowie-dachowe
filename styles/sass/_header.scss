@@ -70,8 +70,9 @@
         margin-top: 30vh;
         font: normal bold 3.125rem/3.687rem $title-font;
         text-transform: uppercase;
+        transition: 20s ease;
         transform: translate(-10px, -20px);
-        animation: move 20s ease both;
+        /* animation: move 20s ease both; */
 
 
         @include for-phone-landscape {
@@ -93,6 +94,10 @@
             letter-spacing: .5rem;
         }
 
+        &--into-view {
+
+            transform: translate(0, 0);
+        }
 
 
     }
@@ -102,7 +107,8 @@
         margin-top: 15vh;
         font: italic normal 1.625rem/2.5rem $main-font;
         opacity: 80%;
-        animation: move 20s ease both;
+        transition: 20s ease;
+        /* animation: move 20s ease both; */
 
         @include for-phone-landscape {
             transform: translate(20px, 30px);
@@ -119,6 +125,10 @@
         @include for-small-desktop {
             font-size: 2.2rem;
             transform: translate(30px, 40px);
+        }
+
+        &--into-view {
+            transform: translate(0, 0);
         }
     }
 
