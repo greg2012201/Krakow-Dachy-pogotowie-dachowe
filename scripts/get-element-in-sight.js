@@ -1,12 +1,18 @@
 const getElementToAddModifier = (elements, modifier, toggle = -1) => {
 
     let arr;
-    elements.map(element => [...element]).sort((a, b) => arr = a.concat(b));
+    if (elements.find(element => element instanceof HTMLElement))
+        return modifierManage(elements, modifier, toggle)
+    else
+        elements.map(element => [...element]).sort((a, b) => {
+            arr = a.concat(b)
+        });
+
+
     return modifierManage(arr, modifier, toggle)
 };
 const modifierManage = (elements, modifier, toggle) => {
     elements.forEach(element => {
-
         if (isInView(getParameters(element))) setModifier(element, modifier);
         else if (toggle > 0) removeModifier(element, modifier);
     });
@@ -34,5 +40,9 @@ const removeModifier = (element, modifier) => {
     element.classList.remove(`${getClass(element, 0)}${modifier}`);
 };
 const addModifier = (elements, modifier, toggle) => {
-    return window.addEventListener('scroll', () => getElementToAddModifier(elements, modifier, toggle));
+    const init = () => getElementToAddModifier(elements, modifier, toggle)
+
+    document.addEventListener('DOMContentLoaded', init);
+    window.addEventListener('scroll', init);
+
 };
