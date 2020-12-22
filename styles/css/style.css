@@ -72,7 +72,6 @@
       -ms-flex-align: stretch;
           align-items: stretch;
   margin: 0 auto 0;
-  max-width: 1920px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -101,18 +100,18 @@
   -webkit-animation: background-move 60s ease infinite alternate;
           animation: background-move 60s ease infinite alternate;
   background: url("https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-2762600_1280.jpg?raw=true") no-repeat fixed;
-  background-size: 602px 100vh;
+  background-size: 702px 100vh;
 }
 
 @media (min-width: 501px) {
   .header {
-    background-size: 801px 100vh;
+    background-size: 801px;
   }
 }
 
 @media (min-width: 601px) {
   .header {
-    background-size: 1101px 100vh;
+    background-size: 1101px;
   }
 }
 
@@ -162,7 +161,6 @@
 
 .header__title, .header__slogan {
   color: #FCFDFB;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   text-align: center;
 }
 
@@ -173,9 +171,8 @@
   text-transform: uppercase;
   -webkit-transition: 20s ease;
   transition: 20s ease;
-  -webkit-transform: translate(-10px, -20px);
-          transform: translate(-10px, -20px);
-  /* animation: move 20s ease both; */
+  -webkit-transform: translate(-5px, -20px);
+          transform: translate(-5px, -20px);
 }
 
 @media (min-width: 501px) {
@@ -195,6 +192,8 @@
   .header__title {
     -webkit-transform: translate(-30px, -40px);
             transform: translate(-30px, -40px);
+    font-size: 4rem;
+    letter-spacing: .3rem;
   }
 }
 
@@ -205,18 +204,40 @@
   }
 }
 
+@media (min-width: 1281px) {
+  .header__title {
+    font-size: 5rem;
+    letter-spacing: .6rem;
+  }
+}
+
+@media (min-width: 1601px) {
+  .header__title {
+    font-size: 5.5rem;
+    letter-spacing: .8rem;
+  }
+}
+
+@media (min-width: 1921px) {
+  .header__title {
+    font-size: 7rem;
+    letter-spacing: 1rem;
+  }
+}
+
 .header__title--into-view {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
 }
 
 .header__slogan {
+  margin: 15vh auto;
+  width: 70%;
   margin-top: 15vh;
   font: italic normal 1.625rem/2.5rem "Roboto Condensed", sans-serif;
   opacity: 80%;
   -webkit-transition: 20s ease;
   transition: 20s ease;
-  /* animation: move 20s ease both; */
 }
 
 @media (min-width: 501px) {
@@ -242,8 +263,12 @@
 @media (min-width: 1025px) {
   .header__slogan {
     font-size: 2.2rem;
-    -webkit-transform: translate(30px, 40px);
-            transform: translate(30px, 40px);
+  }
+}
+
+@media (min-width: 1601px) {
+  .header__slogan {
+    font-size: 2.8rem;
   }
 }
 
@@ -298,8 +323,6 @@
 }
 
 .menu__logo {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
   cursor: pointer;
 }
 

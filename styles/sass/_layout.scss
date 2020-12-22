@@ -1,7 +1,6 @@
 .page {
     @include flex-box (row, start, stretch);
     @include centering;
-    max-width: 1920px;
     flex-wrap: wrap;
 
 }
