@@ -23,14 +23,38 @@
     @include for-small-desktop {
         top: 0;
         left: 0;
-        height: auto;
+        height: 12vh;
+        justify-content: space-between;
+
+    }
+
+    @include for-big-desktop {
+        top: 0;
+        left: 0;
+        height: 17vh;
         justify-content: space-between;
     }
 
 
     &__logo {
-        flex-basis: 100%;
+        align-self: center;
+
         cursor: pointer;
+
+        @include for-small-desktop {
+
+            width: 220px;
+        }
+
+        @include for-normal-desktoop {
+
+            width: 235px;
+        }
+
+        @include for-big-desktop {
+
+            width: 300px;
+        }
 
 
     }
@@ -47,6 +71,8 @@
 
         @include for-small-desktop {
             flex-basis: auto;
+
+            height: 100%;
             order: -1;
 
         }
@@ -63,20 +89,25 @@
         padding-left: 2rem;
 
 
+
         @include for-small-desktop {
             justify-content: flex-end;
             flex-basis: 70%;
             margin-right: 5%;
+            height: 100%;
+
 
         }
+
 
 
     }
 
     &__list-item {
-        flex-basis: 100%;
 
-        margin-right: 10px;
+        flex-basis: 80%;
+
+
 
 
         @include for-small-desktop {
@@ -85,15 +116,14 @@
         }
 
 
-        @include for-normal-desktoop {
-            font-size: 1.8rem;
-        }
+
     }
 
     &__link {
         @include link-style-reset;
         width: 100%;
-        font: normal normal 1.4rem/2em $title-font; //dodaj letter spacing
+        font: normal normal 1.4rem/2em $title-font;
+        letter-spacing: .1rem;
         display: block;
         color: $main-font-color;
         text-transform: uppercase;
@@ -103,7 +133,18 @@
         transition: .2s;
 
         @include for-small-desktop {
-            font-size: 1.4rem;
+
+            font-size: 1.3rem;
+        }
+
+        @include for-normal-desktoop {
+            margin-top: 6px;
+            font-size: 1.6rem;
+        }
+
+        @include for-big-desktop {
+
+            font-size: 2rem;
         }
 
 
