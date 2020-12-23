@@ -28,3 +28,10 @@
 
 
 }
+
+@keyframes text-move {
+
+    to {
+        transform: translate(0, 0);
+    }
+}
