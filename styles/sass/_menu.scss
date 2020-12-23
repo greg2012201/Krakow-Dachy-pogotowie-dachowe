@@ -23,7 +23,7 @@
     @include for-small-desktop {
         top: 0;
         left: 0;
-        height: 12vh;
+        height: auto;
         justify-content: space-between;
 
     }
@@ -31,7 +31,6 @@
     @include for-big-desktop {
         top: 0;
         left: 0;
-        height: 17vh;
         justify-content: space-between;
     }
 
@@ -71,7 +70,6 @@
 
         @include for-small-desktop {
             flex-basis: auto;
-
             height: 100%;
             order: -1;
 
@@ -92,6 +90,7 @@
 
         @include for-small-desktop {
             justify-content: flex-end;
+            align-items: center;
             flex-basis: 70%;
             margin-right: 5%;
             height: 100%;

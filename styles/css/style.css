@@ -93,6 +93,17 @@
       flex-basis: 100%;
 }
 
+.page {
+  background-color: #E5E5E5;
+}
+
+.page--resize-animation-stopper * {
+  -webkit-transition: none !important;
+  transition: none !important;
+  -webkit-animation: none;
+          animation: none;
+}
+
 .header {
   position: relative;
   -webkit-transition: 1s;
@@ -321,7 +332,7 @@
   .menu {
     top: 0;
     left: 0;
-    height: 12vh;
+    height: auto;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -332,7 +343,6 @@
   .menu {
     top: 0;
     left: 0;
-    height: 17vh;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -423,6 +433,9 @@
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -ms-flex-preferred-size: 70%;
         flex-basis: 70%;
     margin-right: 5%;

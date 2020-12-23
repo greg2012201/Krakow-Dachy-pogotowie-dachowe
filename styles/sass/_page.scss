@@ -1,5 +1,8 @@
 .page {
     background-color: $main-background-color;
 
-
+    &--resize-animation-stopper * {
+        transition: none !important;
+        animation: none;
+    }
 }
