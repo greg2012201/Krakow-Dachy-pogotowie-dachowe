@@ -57,6 +57,20 @@
   }
 }
 
+@-webkit-keyframes text-move {
+  to {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes text-move {
+  to {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
 .page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -100,8 +114,8 @@
 .page--resize-animation-stopper * {
   -webkit-transition: none !important;
   transition: none !important;
-  -webkit-animation: none;
-          animation: none;
+  -webkit-animation: none !important;
+          animation: none !important;
 }
 
 .header {
@@ -180,8 +194,6 @@
   margin-top: 30vh;
   font: normal bold 3.125rem/3.687rem "Roboto", sans-serif;
   text-transform: uppercase;
-  -webkit-transition: 20s ease;
-  transition: 20s ease;
   -webkit-transform: translate(-2px, -20px);
           transform: translate(-2px, -20px);
 }
@@ -237,8 +249,8 @@
 }
 
 .header__title--into-view {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
+  -webkit-animation: text-move 20s ease both;
+          animation: text-move 20s ease both;
 }
 
 .header__slogan {
@@ -290,8 +302,8 @@
 }
 
 .header__slogan--into-view {
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
+  -webkit-animation: text-move 20s ease both;
+          animation: text-move 20s ease both;
 }
 
 .menu {

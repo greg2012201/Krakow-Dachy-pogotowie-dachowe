@@ -71,7 +71,6 @@
         margin-top: 30vh;
         font: normal bold 3.125rem/3.687rem $title-font;
         text-transform: uppercase;
-        transition: 20s ease;
         transform: translate(-2px, -20px);
 
 
@@ -120,7 +119,7 @@
 
         &--into-view {
 
-            transform: translate(0, 0);
+            animation: text-move 20s ease both;
         }
 
 
@@ -165,7 +164,7 @@
         }
 
         &--into-view {
-            transform: translate(0, 0);
+            animation: text-move 20s ease both;
         }
     }
 
