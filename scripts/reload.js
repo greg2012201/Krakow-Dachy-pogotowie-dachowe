@@ -1,1 +1,0 @@
-addEventListener('orientationchange', () => location.reload(true));
