@@ -119,7 +119,7 @@
 
         &--into-view {
 
-            animation: move 20s ease both;
+            animation: back-to-start-position 20s ease both;
         }
 
 
@@ -164,7 +164,7 @@
         }
 
         &--into-view {
-            animation: move 20s ease both;
+            animation: back-to-start-position 20s ease both;
         }
     }
 
