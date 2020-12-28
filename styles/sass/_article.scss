@@ -22,6 +22,25 @@
         transition: 1.5s .2s;
         transform: translateY(-4%);
 
+        @include for-small-desktop {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        @include for-normal-desktoop {
+            font-size: 1.8rem;
+            line-height: 2.5rem;
+        }
+
+        @include for-big-desktop {
+            font-size: 2.3rem;
+            line-height: 2.9rem;
+        }
+
+        @include for-huge-desktop {
+            font-size: 2.6rem;
+            line-height: 3.5rem;
+        }
 
         &--into-view {
             transform: translateY(0);
