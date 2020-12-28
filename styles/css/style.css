@@ -57,14 +57,14 @@
   }
 }
 
-@-webkit-keyframes text-move {
+@-webkit-keyframes move {
   to {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
   }
 }
 
-@keyframes text-move {
+@keyframes move {
   to {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
@@ -105,10 +105,6 @@
   padding: 2rem;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-}
-
-.page {
-  background-color: #E5E5E5;
 }
 
 .page--resize-animation-stopper * {
@@ -249,8 +245,8 @@
 }
 
 .header__title--into-view {
-  -webkit-animation: text-move 20s ease both;
-          animation: text-move 20s ease both;
+  -webkit-animation: move 20s ease both;
+          animation: move 20s ease both;
 }
 
 .header__slogan {
@@ -259,8 +255,6 @@
   margin-top: 15vh;
   font: italic normal 1.625rem/2.5rem "Roboto Condensed", sans-serif;
   opacity: 80%;
-  -webkit-transition: 20s ease;
-  transition: 20s ease;
 }
 
 @media (min-width: 501px) {
@@ -302,8 +296,8 @@
 }
 
 .header__slogan--into-view {
-  -webkit-animation: text-move 20s ease both;
-          animation: text-move 20s ease both;
+  -webkit-animation: move 20s ease both;
+          animation: move 20s ease both;
 }
 
 .menu {

@@ -119,7 +119,7 @@
 
         &--into-view {
 
-            animation: text-move 20s ease both;
+            animation: move 20s ease both;
         }
 
 
@@ -132,7 +132,7 @@
         margin-top: 15vh;
         font: italic normal 1.625rem/2.5rem $main-font;
         opacity: 80%;
-        transition: 20s ease;
+
 
 
         @include for-phone-landscape {
@@ -164,7 +164,7 @@
         }
 
         &--into-view {
-            animation: text-move 20s ease both;
+            animation: move 20s ease both;
         }
     }
 

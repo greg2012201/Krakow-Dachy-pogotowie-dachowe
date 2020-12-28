@@ -9,4 +9,4 @@ window.addEventListener('resize', () => {
     }, 400);
 
 
-})
+});
