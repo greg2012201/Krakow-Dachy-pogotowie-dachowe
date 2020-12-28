@@ -26,6 +26,7 @@
         height: auto;
         justify-content: space-between;
 
+
     }
 
     @include for-big-desktop {
@@ -39,6 +40,8 @@
         align-self: center;
 
         cursor: pointer;
+
+
 
         @include for-small-desktop {
 
@@ -88,12 +91,13 @@
 
 
 
+
         @include for-small-desktop {
             justify-content: flex-end;
-            align-items: center;
+
             flex-basis: 70%;
             margin-right: 5%;
-            height: 100%;
+
 
 
         }
@@ -134,11 +138,14 @@
         @include for-small-desktop {
 
             font-size: 1.3rem;
+            line-height: 2.6em;
+
         }
 
         @include for-normal-desktoop {
             margin-top: 6px;
             font-size: 1.6rem;
+            line-height: 2em;
         }
 
         @include for-big-desktop {
