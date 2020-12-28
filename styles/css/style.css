@@ -57,14 +57,14 @@
   }
 }
 
-@-webkit-keyframes text-move {
+@-webkit-keyframes back-to-start-position {
   to {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
   }
 }
 
-@keyframes text-move {
+@keyframes back-to-start-position {
   to {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
@@ -120,6 +120,7 @@
   transition: 1s;
   -webkit-animation: background-move 60s ease infinite alternate;
           animation: background-move 60s ease infinite alternate;
+  overflow: hidden;
   background: url("https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-2762600_1280.jpg?raw=true") no-repeat fixed;
   background-size: 702px 100vh;
 }
@@ -176,7 +177,7 @@
   left: 0;
   background-color: black;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   opacity: 20%;
 }
 
@@ -218,7 +219,7 @@
 
 @media (min-width: 1029px) {
   .header__title {
-    font-size: 4.5rem;
+    font-size: 4.7rem;
     letter-spacing: .5rem;
   }
 }
@@ -245,8 +246,8 @@
 }
 
 .header__title--into-view {
-  -webkit-animation: move 20s ease both;
-          animation: move 20s ease both;
+  -webkit-animation: back-to-start-position 20s ease both;
+          animation: back-to-start-position 20s ease both;
 }
 
 .header__slogan {
@@ -280,24 +281,32 @@
   .header__slogan {
     -webkit-transform: translate(30px, 40px);
             transform: translate(30px, 40px);
+    font-size: 2.2rem;
   }
 }
 
 @media (min-width: 1029px) {
   .header__slogan {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
+    line-height: 3.6rem;
   }
 }
 
 @media (min-width: 1601px) {
   .header__slogan {
-    font-size: 2.8rem;
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1921px) {
+  .header__slogan {
+    font-size: 3.9rem;
   }
 }
 
 .header__slogan--into-view {
-  -webkit-animation: move 20s ease both;
-          animation: move 20s ease both;
+  -webkit-animation: back-to-start-position 20s ease both;
+          animation: back-to-start-position 20s ease both;
 }
 
 .menu {
@@ -605,6 +614,34 @@
   font: normal normal 1.625rem/2.5rem "Roboto", sans-serif;
   text-transform: uppercase;
   border-bottom: 2px solid black;
+}
+
+@media (min-width: 901px) {
+  .section__title {
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+  }
+}
+
+@media (min-width: 1029px) {
+  .section__title {
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+  }
+}
+
+@media (min-width: 1601px) {
+  .section__title {
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+  }
+}
+
+@media (min-width: 1921px) {
+  .section__title {
+    font-size: 3.9rem;
+    line-height: 5rem;
+  }
 }
 
 .article {
