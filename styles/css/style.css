@@ -915,7 +915,7 @@
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
-  background-image: url("https://raw.githubusercontent.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/7e576e05dac10029996600c087cc188a6b2bbcb0/assets/arow-up-down.svg");
+  background-image: url("https://raw.githubusercontent.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/497bc5b3d528deb83246341318c1695f79577638/assets/arrow-up-down.svg");
   background-position: 95% 100%;
   background-repeat: no-repeat;
 }
@@ -930,6 +930,7 @@
   .list-wrapper__title {
     font-size: 2rem;
     line-height: 59px;
+    background-image: url("https://raw.githubusercontent.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/497bc5b3d528deb83246341318c1695f79577638/assets/arrow-up-down-normal-desktop.svg");
   }
 }
 
@@ -937,6 +938,7 @@
   .list-wrapper__title {
     font-size: 2.5rem;
     line-height: 67px;
+    background-image: url("https://raw.githubusercontent.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/497bc5b3d528deb83246341318c1695f79577638/assets/arrow-up-down-big-desktop.svg");
   }
 }
 
@@ -944,6 +946,7 @@
   .list-wrapper__title {
     font-size: 3rem;
     line-height: 75px;
+    background-image: url("https://raw.githubusercontent.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/497bc5b3d528deb83246341318c1695f79577638/assets/arrow-up-down-huge-desktop.svg");
   }
 }
 
