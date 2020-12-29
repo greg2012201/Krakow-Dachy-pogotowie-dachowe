@@ -4,13 +4,38 @@
     height:
         50px;
     transition: .5s;
-    width: 260px;
+    width:
+        260px;
+    /*  33%; */
+
+
 
 
 
     @include for-phone-landscape {
         margin-bottom: 20px;
 
+    }
+
+    @include for-small-desktop {
+        width:
+            // 320px
+            33%;
+    }
+
+    @include for-normal-desktoop {
+        width:
+            // 405px
+            32%;
+    }
+
+    @include for-big-desktop {
+        width: 33%;
+    }
+
+    @include for-huge-desktop {
+
+        width: 620px;
     }
 
 
@@ -43,6 +68,27 @@
             );
         background-position: 95% 100%;
         background-repeat: no-repeat;
+
+        @include for-small-desktop {
+            font-size: 1.4rem;
+
+        }
+
+        @include for-normal-desktoop {
+            font-size: 2rem;
+            line-height: 59px;
+        }
+
+        @include for-big-desktop {
+            font-size: 2.5rem;
+            line-height: 67px;
+
+        }
+
+        @include for-huge-desktop {
+            font-size: 3rem;
+            line-height: 75px;
+        }
 
         &--active {
             background-color: $main-button-color;

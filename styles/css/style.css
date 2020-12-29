@@ -797,6 +797,14 @@
   }
 }
 
+@media (min-width: 1921px) {
+  .offer {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 .offer__title {
   width: 100%;
 }
@@ -853,11 +861,36 @@
   -webkit-transition: .5s;
   transition: .5s;
   width: 260px;
+  /*  33%; */
 }
 
 @media (min-width: 501px) {
   .list-wrapper {
     margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1029px) {
+  .list-wrapper {
+    width: 33%;
+  }
+}
+
+@media (min-width: 1281px) {
+  .list-wrapper {
+    width: 32%;
+  }
+}
+
+@media (min-width: 1601px) {
+  .list-wrapper {
+    width: 33%;
+  }
+}
+
+@media (min-width: 1921px) {
+  .list-wrapper {
+    width: 620px;
   }
 }
 
@@ -885,6 +918,33 @@
   background-image: url("https://raw.githubusercontent.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/7e576e05dac10029996600c087cc188a6b2bbcb0/assets/arow-up-down.svg");
   background-position: 95% 100%;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 1029px) {
+  .list-wrapper__title {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1281px) {
+  .list-wrapper__title {
+    font-size: 2rem;
+    line-height: 59px;
+  }
+}
+
+@media (min-width: 1601px) {
+  .list-wrapper__title {
+    font-size: 2.5rem;
+    line-height: 67px;
+  }
+}
+
+@media (min-width: 1921px) {
+  .list-wrapper__title {
+    font-size: 3rem;
+    line-height: 75px;
+  }
 }
 
 .list-wrapper__title--active {

@@ -10,7 +10,9 @@
         flex-direction: row;
     }
 
-
+    @include for-huge-desktop {
+        justify-content: space-between;
+    }
 
 
     &__title {
