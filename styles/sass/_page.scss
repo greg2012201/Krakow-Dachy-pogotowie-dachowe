@@ -4,6 +4,8 @@
         width: 0;
     }
 
+    scrollbar-width: none;
+
     &--resize-animation-stopper * {
         transition: none !important;
         animation: none !important;

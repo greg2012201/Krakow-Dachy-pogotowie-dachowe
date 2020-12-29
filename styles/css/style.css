@@ -107,6 +107,10 @@
       flex-basis: 100%;
 }
 
+.page {
+  scrollbar-width: none;
+}
+
 .page::-webkit-scrollbar {
   width: 0;
 }
