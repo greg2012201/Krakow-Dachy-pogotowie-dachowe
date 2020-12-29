@@ -107,6 +107,10 @@
       flex-basis: 100%;
 }
 
+.page::-webkit-scrollbar {
+  width: 0;
+}
+
 .page--resize-animation-stopper * {
   -webkit-transition: none !important;
   transition: none !important;
