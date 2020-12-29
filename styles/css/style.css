@@ -812,6 +812,42 @@
   text-align: left;
 }
 
+@media (min-width: 601px) {
+  .offer__slogan {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 701px) {
+  .offer__slogan {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1029px) {
+  .offer__slogan {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1281px) {
+  .offer__slogan {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1601px) {
+  .offer__slogan {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width: 1921px) {
+  .offer__slogan {
+    font-size: 3.2rem;
+  }
+}
+
 .list-wrapper {
   height: 50px;
   -webkit-transition: .5s;
