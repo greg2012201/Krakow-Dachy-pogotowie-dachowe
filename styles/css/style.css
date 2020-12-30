@@ -931,14 +931,13 @@
   background-repeat: no-repeat;
 }
 
-.list-wrapper__title:hover {
-  cursor: pointer;
-  background-color: #0095da;
-}
-
 @media (min-width: 1029px) {
   .list-wrapper__title {
     font-size: 1.4rem;
+  }
+  .list-wrapper__title:hover {
+    cursor: pointer;
+    background-color: #0095da;
   }
 }
 

@@ -71,16 +71,17 @@
         background-position: 95% 100%;
         background-repeat: no-repeat;
 
-        &:hover {
-            cursor: pointer;
-            background-color: $main-button-color;
 
-
-        }
 
         @include for-small-desktop {
             font-size: 1.4rem;
 
+            &:hover {
+                cursor: pointer;
+                background-color: $main-button-color;
+
+
+            }
 
         }
 
