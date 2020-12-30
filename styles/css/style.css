@@ -985,6 +985,7 @@
   z-index: -10;
   margin-left: 2px;
   font: normal 300 1rem/1.5rem "Roboto Condensed", sans-serif;
+  list-style-type: circle;
 }
 
 @media (min-width: 1029px) {
@@ -1024,12 +1025,18 @@
 
 .list-wrapper__item {
   padding: 0.1rem 0;
+  margin-top: 0.5rem;
 }
 
 @media (min-width: 1281px) {
   .list-wrapper__item {
     margin-top: 0.8rem;
   }
+}
+
+.list-wrapper__item::marker {
+  content: '☞ ';
+  color: #0095da;
 }
 
 .gallery__container {
