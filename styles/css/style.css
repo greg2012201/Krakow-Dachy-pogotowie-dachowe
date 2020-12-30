@@ -7,6 +7,14 @@
           box-sizing: border-box;
 }
 
+:root {
+  scrollbar-width: none;
+}
+
+:root::-webkit-scrollbar {
+  width: 0;
+}
+
 @-webkit-keyframes shake {
   10% {
     -webkit-transform: translateX(-10px);
@@ -105,10 +113,6 @@
   padding: 2rem;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
-}
-
-.page {
-  scrollbar-width: none;
 }
 
 .page::-webkit-scrollbar {
@@ -869,7 +873,6 @@
   -webkit-transition: .5s;
   transition: .5s;
   width: 260px;
-  /*  33%; */
 }
 
 @media (min-width: 501px) {
@@ -926,6 +929,11 @@
   background-image: url("https://raw.githubusercontent.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/497bc5b3d528deb83246341318c1695f79577638/assets/arrow-up-down.svg");
   background-position: 95% 100%;
   background-repeat: no-repeat;
+}
+
+.list-wrapper__title:hover {
+  cursor: pointer;
+  background-color: #0095da;
 }
 
 @media (min-width: 1029px) {
