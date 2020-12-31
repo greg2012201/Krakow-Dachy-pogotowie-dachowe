@@ -1,13 +1,40 @@
 .footer {
-    @include flex-box(row, center, center);
+    @include flex-box(column, space-evenly, center);
+
     height: 10vh;
     width: 100%;
-    background-color: $transparent-gray;
+
 
     &__content {
 
 
         font: 300 normal 0.5rem/3.125em $main-font;
 
+        @include for-huge-phone {
+            font-size: 0.6rem;
+        }
+
+        @include for-small-desktop {
+            font-size: 0.8rem;
+        }
+
+        @include for-normal-desktoop {
+            font-size: 1rem;
+        }
+
+        @include for-huge-desktop {
+            font-size: 1.5rem;
+        }
     }
+
+    &::before {
+
+        display: block;
+        content: '';
+        border-top: 2px solid black;
+        width: 100%;
+        height: 2px;
+
+    }
+
 }
