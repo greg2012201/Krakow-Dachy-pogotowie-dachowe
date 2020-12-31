@@ -18,7 +18,18 @@
     }
 
     &__item {
-        width: 45%;
+        flex-basis: 45%;
+        margin-left: 2%;
+
+        @include for-phone-landscape {
+            flex-basis: 40%;
+        }
+
+        @include for-small-desktop {
+            flex-basis: 35%;
+        }
+
+
     }
 
 
@@ -26,11 +37,54 @@
     &__content-name {
 
         font: normal normal 1.125rem/1.3em $title-font;
+
+
+        @include for-small-tablet {
+            font-size: 1.6rem;
+        }
+
+        @include for-small-desktop {
+            font-size: 2rem;
+        }
+
+        @include for-normal-desktoop {
+            font-size: 2.4rem;
+        }
+
+        @include for-big-desktop {
+            font-size: 3.2rem;
+        }
+
+        @include for-huge-desktop {
+            font-size: 3.8rem;
+        }
+
     }
 
     &__content {
         margin: 0.5rem 0 1rem;
         font: normal 300 1rem/1.5em $main-font;
+
+
+        @include for-small-tablet {
+            font-size: 1.4rem;
+        }
+
+        @include for-small-desktop {
+            font-size: 1.6rem;
+        }
+
+        @include for-normal-desktoop {
+            font-size: 1.8rem;
+        }
+
+        @include for-big-desktop {
+            font-size: 2.5rem;
+        }
+
+        @include for-huge-desktop {
+            font-size: 2.8rem;
+        }
     }
 
     &__map {
