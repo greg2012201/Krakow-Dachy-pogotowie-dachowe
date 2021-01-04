@@ -36,6 +36,18 @@
 
 }
 
+@mixin title-font-style ($font-size, $line-height) {
+    text-transform: uppercase;
+    font: normal normal $font-size/$line-height;
+    font-family: $title-font;
+}
+
+
+
+
+
+
+
 @mixin for-phone-landscape {
     @media (min-width:501px) {
         @content;
