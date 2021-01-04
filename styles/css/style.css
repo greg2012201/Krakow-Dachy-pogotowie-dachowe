@@ -1084,6 +1084,27 @@
   width: 100%;
 }
 
+.form__label {
+  margin: 5px 0 5px;
+  text-transform: uppercase;
+  font: normal normal 0.7377;
+  font-family: "Roboto", sans-serif;
+}
+
+.form__input {
+  padding: 3px 10px;
+  font: normal normal 1rem/1.5rem "Roboto Condensed", sans-serif;
+}
+
+.form__input--text-area {
+  line-height: 1.2rem;
+}
+
+.form__button {
+  margin: 29.2px 0 29.2px;
+  font-weight: bold;
+}
+
 .contact {
   display: -webkit-box;
   display: -ms-flexbox;

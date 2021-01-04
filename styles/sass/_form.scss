@@ -1,0 +1,27 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+
+    &__label {
+        margin: 5px 0 5px;
+        @include title-font-style(1.125rem, 1.525rem)
+    }
+
+    &__input {
+        padding: 3px 10px;
+        font: normal normal 1rem/1.5rem $main-font;
+
+        &--text-area {
+            line-height: 1.2rem;
+
+        }
+    }
+
+    &__button {
+        margin: 29.2px 0 29.2px;
+        font-weight: bold;
+    }
+
+}
