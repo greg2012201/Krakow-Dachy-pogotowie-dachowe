@@ -2,19 +2,117 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    font-size: $root-font-size;
+    /* max-height: 100vh; */
+
+    // inputy na boki przycisk mniejszy i wyśrodkowany
+    @include for-phone-landscape {
+        // przy refaktorze trzeba wszystkie te selektory umieszczać tutaj (te co są w breakpointach)
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+
+    }
+
+    @include for-small-tablet {
+
+        font-size: 1.6rem;
+    }
+
+    @include for-small-desktop {
+        font-size: 1.8rem;
+
+    }
+
+    @include for-normal-desktoop {
+        font-size: 2.2rem;
+    }
+
+    @include for-big-desktop {
+        font-size: 2.9rem;
+    }
+
+    @include for-huge-desktop {
+        font-size: 3.1rem;
+    }
 
 
     &__label {
         margin: 5px 0 5px;
-        @include title-font-style(1.125rem, 1.525rem)
+        text-transform: uppercase;
+        font: normal normal 1.125em/1.5em $title-font;
+
+        @include for-phone-landscape {
+            flex-basis: 45%;
+            align-self: flex-start;
+
+
+        }
+
+        &--name {
+            @include for-phone-landscape {
+                order: -4;
+            }
+        }
+
+        &--email {
+
+            @include for-phone-landscape {
+
+                align-self: flex-end;
+                order: -3;
+
+
+
+            }
+
+            &--message {
+                @include for-phone-landscape {
+                    flex-basis: 100%;
+                }
+            }
+
+        }
+
+
     }
+
 
     &__input {
         padding: 3px 10px;
-        font: normal normal 1rem/1.5rem $main-font;
+        font: normal normal 1em/1.5em $main-font;
+        flex-basis: 50%;
+
+        @include for-phone-landscape {
+            flex-basis: 45%;
+            align-self: flex-start;
+
+        }
+
+
+        &--name {
+            @include for-phone-landscape {
+                justify-self: flex-start;
+            }
+        }
+
+        &--email {
+
+            @include for-phone-landscape {
+                width: 45%;
+                align-self: flex-end;
+            }
+
+        }
 
         &--text-area {
-            line-height: 1.2rem;
+            line-height: 1.2em;
+
+            @include for-phone-landscape {
+
+                flex-basis: 100%;
+            }
 
         }
     }
@@ -22,6 +120,11 @@
     &__button {
         margin: 29.2px 0 29.2px;
         font-weight: bold;
+
+        @include for-phone-landscape {
+            @include centering(20px);
+            flex-basis: 60%;
+        }
     }
 
 }
