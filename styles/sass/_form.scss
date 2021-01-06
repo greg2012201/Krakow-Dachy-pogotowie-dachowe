@@ -1,13 +1,20 @@
 .form {
     display: flex;
     flex-direction: column;
+    @include centering;
     width: 100%;
+    padding: 30px;
+    /*  border: 1px solid gray; */
+    border-radius: 10px;
     font-size: $root-font-size;
+    /* background-color: $transparent-gray; */
     /* max-height: 100vh; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     // inputy na boki przycisk mniejszy i wyśrodkowany
     @include for-phone-landscape {
         // przy refaktorze trzeba wszystkie te selektory umieszczać tutaj (te co są w breakpointach)
+        width: 70%;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -33,11 +40,27 @@
         font-size: 2.9rem;
     }
 
+    &__header {
+        text-align: left;
+        width: 100%;
+        height: 100px;
+        order: -5;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font: normal bold 1.7em/1em $title-font;
+        color: $transparent-blue;
+        letter-spacing: 1px;
+
+    }
+
 
     &__label {
         margin: 5px 0 5px;
-        text-transform: uppercase;
+
         font: normal normal 1.125em/1.5em $title-font;
+        color: $transparent-blue;
 
         @include for-phone-landscape {
             flex-basis: 45%;
@@ -79,6 +102,10 @@
         padding: 3px 10px;
         font: normal normal 1em/1.5em $main-font;
         flex-basis: 50%;
+        border: none;
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+        border-radius: 5px;
+        //jeszcze do ostylowania pod względem wyglądu
 
         @include for-phone-landscape {
             flex-basis: 45%;
@@ -116,11 +143,26 @@
     &__button {
         margin: 29.2px 0 29.2px;
         font-weight: bold;
+        padding: 0;
+        text-transform: none;
+        @include centering(20px);
+        width: 35%;
+        background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 51%, #1FA2FF 100%);
+        border: 1px solid $transparent-blue;
+        color: #244;
+        background-size: 200% auto;
+        /*  border-radius: 10px; */
+
+        &:hover {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, $transparent-blue 0px 18px 36px -18px inset;
+            color: white;
+
+            background-position: right center;
+        }
 
         @include for-phone-landscape {
-            @include centering(20px);
-            flex-basis: 60%;
+
+            flex-basis: 30%;
         }
     }
-
 }
