@@ -11,10 +11,11 @@
     /* max-height: 100vh; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+
     // inputy na boki przycisk mniejszy i wyśrodkowany
     @include for-phone-landscape {
         // przy refaktorze trzeba wszystkie te selektory umieszczać tutaj (te co są w breakpointach)
-        width: 70%;
+        width: 95%;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -23,21 +24,26 @@
     }
 
     @include for-small-tablet {
+        width: 70%;
 
+    }
+
+    @include for-small-desktop {
         font-size: 1.2rem;
     }
 
-
     @include for-normal-desktoop {
-        font-size: 1.8rem;
+        width: 50%;
+        font-size: 1.4rem;
     }
 
     @include for-big-desktop {
-        font-size: 2.2rem;
+        width: 50%;
+        font-size: 1.6rem;
     }
 
     @include for-huge-desktop {
-        font-size: 2.9rem;
+        font-size: 1.8rem;
     }
 
     &__header {
@@ -49,7 +55,7 @@
 
     &__title {
         text-transform: uppercase;
-        font: normal bold 1.7em/1em $title-font;
+        font: normal bold 1.5em/1em $title-font;
         color: $transparent-blue;
         letter-spacing: 1px;
 
@@ -105,6 +111,7 @@
         border: none;
         box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
         border-radius: 5px;
+        color: $transparent-blue;
         //jeszcze do ostylowania pod względem wyglądu
 
         @include for-phone-landscape {
@@ -147,11 +154,11 @@
         text-transform: none;
         @include centering(20px);
         width: 35%;
-        background-image: linear-gradient(to right, #1FA2FF 0%, #12D8FA 51%, #1FA2FF 100%);
+
         border: 1px solid $transparent-blue;
-        color: #244;
-        background-size: 200% auto;
-        /*  border-radius: 10px; */
+        color: $transparent-blue;
+        /*  background-size: 200% auto; */
+        border-radius: 10px;
 
         &:hover {
             box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, $transparent-blue 0px 18px 36px -18px inset;
