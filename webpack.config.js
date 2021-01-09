@@ -11,12 +11,12 @@ const env = process.env.NODE_ENV;
 module.exports = {
   entry: './src/index.js',
 
-  mode: 'production',
+  mode: 'development',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name]-[contenthash].js',
-    /* publicPath: '/' */
+    filename: '[name].js',
+    /*  publicPath: '/' */
   },
 
   devServer: {
@@ -39,7 +39,7 @@ module.exports = {
         use: [{
             loader: 'file-loader',
             options: {
-              name: '[name][contenthash:6].[ext]',
+              name: '[name].[ext]',
               outputPath: 'images',
               publicPath: 'images',
             }
@@ -81,13 +81,14 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name]-[contenthash].css",
+      filename: "[name].css",
       chunkFilename: "[id].css"
     }), new CopyPlugin({
       patterns: [{
         from: 'public/images',
         to: 'images',
       }]
-    }), new CleanWebpackPlugin(),
+    }),
+    new CleanWebpackPlugin(),
   ]
 };
