@@ -3,7 +3,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-cli serve  --config ./webpack.config.js",
-    "build": "cross-env NODE_ENV=production webpack"
+    "dev": "cross-env NODE_ENV=production webpack"
   },
   "keywords": [
     "webpack",
@@ -20,6 +20,7 @@
     "babel-plugin-transform-es2015-arrow-functions": "6.22.0",
     "babel-plugin-transform-es2015-classes": "6.24.1",
     "babel-preset-env": "1.7.0",
+    "copy-webpack-plugin": "^7.0.0",
     "cross-env": "7.0.3",
     "css-hot-loader": "1.4.4",
     "css-loader": "5.0.1",
