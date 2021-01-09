@@ -13,23 +13,29 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    publicPath: '/'
+    /* publicPath: '/' */
   },
 
   devServer: {
+
     open: true,
     hot: true,
-
     static: [{
       directory: path.join(__dirname, 'public'),
       watch: true,
 
     }],
+
     port: 8080,
+
   },
 
   module: {
     rules: [{
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: 'babel-loader'
