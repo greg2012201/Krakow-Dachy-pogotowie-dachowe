@@ -15,7 +15,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: '[name]-[contenthash].js',
     /* publicPath: '/' */
   },
 
@@ -35,8 +35,14 @@ module.exports = {
 
   module: {
     rules: [{
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         loader: 'file-loader',
+        options: {
+          name: '[name][contenthash].[ext]',
+          outputPath: 'images',
+          publicPath: 'images',
+
+        }
       },
       {
         test: /\.(js|jsx)$/,
@@ -60,9 +66,7 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: "[name].css",
+      filename: "[name]-[contenthash].css",
       chunkFilename: "[id].css"
     }), new CopyPlugin({
       patterns: [{
