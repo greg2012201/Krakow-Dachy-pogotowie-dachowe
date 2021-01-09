@@ -11,7 +11,7 @@ const env = process.env.NODE_ENV;
 module.exports = {
   entry: './src/index.js',
 
-  mode: 'development',
+  mode: 'production',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -35,15 +35,30 @@ module.exports = {
 
   module: {
     rules: [{
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[name][contenthash].[ext]',
-          outputPath: 'images',
-          publicPath: 'images',
+        test: /\.(jpg|png|svg|gif|jpeg)$/,
+        use: [{
+            loader: 'file-loader',
+            options: {
+              name: '[name][contenthash:6].[ext]',
+              outputPath: 'images',
+              publicPath: 'images',
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                quality: 70,
+                progresive: true,
+              }
 
-        }
+            }
+          }
+        ]
+
+
       },
+
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
