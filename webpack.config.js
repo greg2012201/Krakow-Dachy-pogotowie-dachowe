@@ -69,7 +69,7 @@ module.exports = {
         use: [
           env == 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader',
+          'sass-loader', 'postcss-loader'
         ]
       }
     ]
