@@ -12,7 +12,6 @@
     "sass"
   ],
   "license": "ISC",
-  "browserslist": "> 0.2%, not IE 11",
   "devDependencies": {
     "@babel/core": "7.12.10",
     "babel-cli": "6.26.0",
@@ -31,12 +30,10 @@
     "image-webpack-loader": "^7.0.1",
     "mini-css-extract-plugin": "1.3.3",
     "node-sass": "5.0.0",
-    "postcss": "^8.2.4",
-    "postcss-loader": "^4.1.0",
     "sass-loader": "10.1.0",
     "style-loader": "2.0.0",
     "webpack": "5.11.0",
-    "webpack-cli": "4.2.0",
+    "webpack-cli": "^4.3.1",
     "webpack-dev-server": "4.0.0-beta.0"
   },
   "dependencies": {}

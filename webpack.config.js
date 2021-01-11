@@ -28,7 +28,7 @@ module.exports = {
       watch: true,
 
     }],
-
+    host: 'localhost',
     port: 8080,
 
   },
@@ -69,7 +69,7 @@ module.exports = {
         use: [
           env == 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader', 'postcss-loader'
+          'sass-loader',
         ]
       }
     ]
