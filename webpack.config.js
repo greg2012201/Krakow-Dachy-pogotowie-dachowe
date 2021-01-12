@@ -1,5 +1,5 @@
 const path = require('path');
-const webpack = require('webpack');
+
 const {
   CleanWebpackPlugin
 } = require('clean-webpack-plugin');
@@ -16,22 +16,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
-    /*  publicPath: '/' */
-  },
-
-  devServer: {
-
-    open: true,
-    hot: true,
-    static: [{
-      directory: path.join(__dirname, 'public'),
-      watch: true,
-
-    }],
-    host: 'localhost',
-    port: 8080,
 
   },
+
+
 
   module: {
     rules: [{
@@ -79,7 +67,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/templates/template.html'
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[id].css"
