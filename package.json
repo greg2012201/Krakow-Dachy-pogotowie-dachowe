@@ -4,7 +4,7 @@
   "scripts": {
     "start": "webpack-cli serve  --config ./configuration/webpack.dev.config.js",
     "prod": "webpack --config ./configuration/webpack.prod.config.js",
-    "dev":"webpack --config ./configuration/webpack.dev.config.js",
+    "dev": "webpack --config ./configuration/webpack.dev.config.js",
     "env:dev": "cross-env NODE_ENV=development webpack"
   },
   "keywords": [
@@ -37,6 +37,8 @@
     "image-webpack-loader": "^7.0.1",
     "mini-css-extract-plugin": "1.3.3",
     "node-sass": "5.0.0",
+    "postcss": "^8.2.4",
+    "postcss-loader": "^4.1.0",
     "sass-loader": "10.1.0",
     "style-loader": "2.0.0",
     "webpack": "5.11.0",
