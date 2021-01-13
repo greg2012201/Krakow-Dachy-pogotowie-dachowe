@@ -2,7 +2,7 @@
   "name": "boilerplate",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-cli serve  --config ./configuration/webpack.dev.config.js",
+    "start": "webpack-cli serve --config ./configuration/webpack.dev.config.js",
     "prod": "webpack --config ./configuration/webpack.prod.config.js",
     "dev": "webpack --config ./configuration/webpack.dev.config.js",
     "env:dev": "cross-env NODE_ENV=development webpack"
