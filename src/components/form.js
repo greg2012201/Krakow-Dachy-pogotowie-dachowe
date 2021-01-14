@@ -1,4 +1,3 @@
-const FORMSPREE_EMAIL = '';
 const FORMSPREE_POST_URL = '';
 
 const form = document.querySelector('.form');

@@ -1,0 +1,179 @@
+.header {
+
+
+    position: relative;
+
+
+    transition: 1s;
+    animation: background-move 60s ease infinite alternate;
+    overflow: hidden;
+
+
+    background: url('https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-2762600_1280.jpg?raw=true') no-repeat fixed;
+    background-size: 702px 100vh;
+
+
+    @include for-phone-landscape {
+        background-size: 801px 100vh;
+    }
+
+    @include for-huge-phone {
+        background-size: 1101px 100vh;
+    }
+
+
+
+    @include for-tablet {
+
+        background-size: 1304px 100vh;
+    }
+
+    @include for-small-desktop {
+        background-image: url('https://raw.githubusercontent.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/master/assets/house-2762600_1920.jpg');
+        background-size: 1501px 100vh;
+    }
+
+    @include for-normal-desktoop {
+
+        background-size: 1901px auto;
+    }
+
+    @include for-big-desktop {
+        background-image: url('https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-huge.jpg?raw=true');
+        background-size: calc(100% + 200px) auto;
+    }
+
+    @include for-huge-desktop {
+        background-image: url('https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe/blob/master/assets/house-huge.jpg?raw=true');
+
+    }
+
+
+    &--mask {
+
+        @include position(absolute, 0, 0);
+
+        background-color: rgb(0, 0, 0);
+        width: 100%;
+        height: 100%;
+        opacity: 20%;
+
+    }
+
+    &__title,
+    &__slogan {
+        color: $main-font-color;
+        text-align: center;
+    }
+
+    &__title {
+        letter-spacing: .2rem;
+        margin-top: 30vh;
+        font: normal bold 3.125rem/3.687rem $title-font;
+        text-transform: uppercase;
+        transform: translate(-2px, -20px);
+
+
+
+        @include for-phone-landscape {
+            transform: translate(-20px, -25px);
+        }
+
+        @include for-small-tablet {
+            font-size: 3.5rem;
+        }
+
+        @include for-tablet {
+            transform: translate(-30px, -40px);
+            font-size: 4rem;
+            letter-spacing: .3rem;
+        }
+
+        @include for-small-desktop {
+            font-size: 4.7rem;
+
+
+            letter-spacing: .5rem;
+        }
+
+        @include for-normal-desktoop {
+            font-size: 5rem;
+
+
+            letter-spacing: .6rem;
+        }
+
+        @include for-big-desktop {
+            font-size: 5.5rem;
+
+
+            letter-spacing: .8rem;
+        }
+
+        @include for-huge-desktop {
+            font-size: 7rem;
+
+
+            letter-spacing: 1rem;
+        }
+
+        &--into-view {
+
+            animation: back-to-start-position 20s ease both;
+        }
+
+
+    }
+
+    &__slogan {
+
+        margin: 15vh auto;
+        width: 70%;
+        margin-top: 15vh;
+        font: italic normal 1.625rem/2.5rem $main-font;
+        opacity: 80%;
+
+
+
+        @include for-phone-landscape {
+            margin-top: 8vh;
+
+        }
+
+        @include for-huge-phone {
+
+            transform: translate(20px, 30px);
+        }
+
+        @include for-small-tablet {
+            font-size: 2rem;
+        }
+
+        @include for-tablet {
+            transform: translate(30px, 40px);
+            font-size: 2.2rem;
+        }
+
+        @include for-small-desktop {
+            font-size: 2.8rem;
+            line-height: 3.6rem;
+
+        }
+
+        @include for-big-desktop {
+            font-size: 3.5rem;
+
+        }
+
+        @include for-huge-desktop {
+            font-size: 3.9rem;
+
+        }
+
+        &--into-view {
+            animation: back-to-start-position 20s ease both;
+        }
+    }
+
+
+}
