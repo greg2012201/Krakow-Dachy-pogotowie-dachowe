@@ -6,7 +6,11 @@ module.exports = merge(webpackConfiguration, {
 
 
     mode: 'production',
+    output: {
+        path: path.resolve(__dirname, '../', 'dist'),
+        filename: '[name]-[contenthash].js',
 
+    },
 
 
 
