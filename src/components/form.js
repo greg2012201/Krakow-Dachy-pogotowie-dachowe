@@ -3,6 +3,17 @@ const form = document.querySelector('.form');
 const submitButton = document.querySelector('.form__button');
 
 
+const sending = (element) => {
+    element.classList.add('form__button--sending');
+    element.textContent = '';
+}
+const sended = (element) => {
+    element.classList.remove('form__button--sending');
+    element.classList.add('form__button--sended');
+    element.textContent = 'Wysłano';
+
+}
+
 // FORM FROM HTML  
 
 const formDataToJson = formData => {
@@ -24,10 +35,10 @@ const formDataToJson = formData => {
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
-
+    console.log('click');
     const formData = new FormData(this);
     formData.append('_subject', 'Zapytanie Kraków Dachy');
-
+    sending(submitButton);
     fetch(POST_URL, {
             method: 'POST',
             body: formDataToJson(formData),
@@ -38,13 +49,16 @@ form.addEventListener('submit', function (e) {
         .catch(e => console.log(e))
         .then(r => {
             console.log('wysyłanie...');
+
             return r.json()
         })
 
         .then(res => {
 
-            if (res.statusCode === 200) form.reset();
-            else throw Error(`coś poszło nie tak po stronie serwera: ${res.message}!`);
+            if (res.statusCode === 200) {
+                form.reset();
+                sended(submitButton);
+            } else throw Error(`coś poszło nie tak po stronie serwera: ${res.message}!`);
 
         })
 
