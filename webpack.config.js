@@ -1,5 +1,6 @@
 const path = require('path');
 
+const Dotenv = require('dotenv-webpack');
 const {
   CleanWebpackPlugin
 } = require('clean-webpack-plugin');
@@ -7,6 +8,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const env = process.env.NODE_ENV;
+
+
 
 
 module.exports = {
@@ -80,5 +83,6 @@ module.exports = {
       }]
     }),
     new CleanWebpackPlugin(),
+    new Dotenv(),
   ]
 };
