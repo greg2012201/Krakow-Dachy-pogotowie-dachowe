@@ -2,6 +2,9 @@ const POST_URL = process.env.PROXY_URL;
 const form = document.querySelector('.form');
 const submitButton = document.querySelector('.form__button');
 
+
+// FORM FROM HTML  
+
 const formDataToJson = formData => {
     const entries = formData.entries();
 
@@ -16,7 +19,7 @@ const formDataToJson = formData => {
     return JSON.stringify(dataObj);
 };
 
-
+//  SUBMITION AND REQUEST
 
 
 form.addEventListener('submit', function (e) {
@@ -34,23 +37,15 @@ form.addEventListener('submit', function (e) {
         })
         .catch(e => console.log(e))
         .then(r => {
-            console.log('wysyłanie');
+            console.log('wysyłanie...');
             return r.json()
         })
 
-        .then(response => {
+        .then(res => {
 
-            if (response.ok) {
-                console.log('wysłano');
-                console.log(response);
+            if (res.statusCode === 200) form.reset();
+            else throw Error(`coś poszło nie tak po stronie serwera: ${res.message}!`);
 
-            } else {
-                console.log('źle');
-            }
         })
-
-
-
-
 
 });
