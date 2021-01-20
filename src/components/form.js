@@ -1,5 +1,4 @@
-const FORMSPREE_POST_URL = '';
-
+const POST_URL = process.env.PROXY_URL;
 const form = document.querySelector('.form');
 const submitButton = document.querySelector('.form__button');
 
@@ -26,21 +25,23 @@ form.addEventListener('submit', function (e) {
     const formData = new FormData(this);
     formData.append('_subject', 'Zapytanie Kraków Dachy');
 
-    fetch(FORMSPREE_POST_URL, {
+    fetch(POST_URL, {
             method: 'POST',
             body: formDataToJson(formData),
             headers: {
                 'Content-Type': 'application/json'
             }
         })
-        .catch(e => {
-            console.log('error');
+        .catch(e => console.log(e))
+        .then(r => {
+            console.log('wysyłanie');
+            return r.json()
         })
-        .then(r => r.json())
 
         .then(response => {
 
             if (response.ok) {
+                console.log('wysłano');
                 console.log(response);
 
             } else {
