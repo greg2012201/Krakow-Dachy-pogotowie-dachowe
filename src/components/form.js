@@ -3,15 +3,20 @@ const form = document.querySelector('.form');
 const submitButton = document.querySelector('.form__button');
 
 
-const sending = (element) => {
-    element.classList.add('form__button--sending');
-    element.textContent = '';
+const sending = (button) => {
+    button.classList.add('form__button--sending');
+    button.textContent = '';
 }
-const sended = (element) => {
-    element.classList.remove('form__button--sending');
-    element.classList.add('form__button--sended');
+const sended = (button) => {
+    button.classList.remove('form__button--sending');
+    button.classList.add('form__button--sended');
 
 
+}
+
+const sendingError = (button) => {
+    button.classList.remove('form__button--sending');
+    button.classList.add('form__button--sending-error');
 }
 
 // FORM FROM HTML  
@@ -46,7 +51,11 @@ form.addEventListener('submit', function (e) {
                 'Content-Type': 'application/json'
             }
         })
-        .catch(e => console.log(e))
+        .catch(e => {
+
+            sendingError(submitButton);
+            console.log(e);
+        })
         .then(r => {
             console.log('wysyłanie...');
 
@@ -58,7 +67,10 @@ form.addEventListener('submit', function (e) {
             if (res.statusCode === 200) {
                 form.reset();
                 sended(submitButton);
-            } else throw Error(`coś poszło nie tak po stronie serwera: ${res.message}!`);
+            } else {
+                sendingError(submitButton);
+                throw Error(`coś poszło nie tak po stronie serwera: ${res.message}!`);
+            }
 
         })
 

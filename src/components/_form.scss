@@ -221,6 +221,31 @@
             }
         }
 
+        &--sending-error {
+            background-color: white;
+            border: white 1px solid;
+            color: red;
+            outline: none;
+
+
+            &::after {
+
+                content: 'Błąd !';
+                outline: hidden;
+
+
+
+            }
+
+            &:hover {
+
+                outline: none;
+                color: red;
+                box-shadow: none;
+                background-color: white;
+            }
+        }
+
         @include for-phone-landscape {
 
             flex-basis: 30%;
