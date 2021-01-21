@@ -10,7 +10,7 @@ const sending = (element) => {
 const sended = (element) => {
     element.classList.remove('form__button--sending');
     element.classList.add('form__button--sended');
-    element.textContent = 'Wysłano';
+
 
 }
 

@@ -150,10 +150,11 @@
     &__button {
         margin: 29.2px 0 29.2px;
         font-weight: bold;
-        padding: 0;
+        padding: 0 10px;
         text-transform: none;
         @include centering(20px);
-        width: 35%;
+        /* width: 35%; */
+        transition: .8s;
 
         border: 1px solid $transparent-blue;
         color: $transparent-blue;
@@ -167,9 +168,63 @@
             background-position: right center;
         }
 
+        &--sending {
+
+
+            outline: none;
+
+            &:hover {
+                box-shadow: none;
+                color: $transparent-blue;
+                background-color: #fff;
+
+
+
+
+            }
+
+            &::after {
+
+                content: 'Wysyłanie...';
+
+
+
+
+            }
+
+        }
+
+
+
+        &--sended {
+            background-color: white;
+            border: white 1px solid;
+            color: green;
+            outline: none;
+
+
+            &::after {
+
+                content: 'Wysłano !';
+                outline: hidden;
+
+
+
+            }
+
+            &:hover {
+
+                outline: none;
+                color: green;
+                box-shadow: none;
+                background-color: white;
+            }
+        }
+
         @include for-phone-landscape {
 
             flex-basis: 30%;
+            cursor: normal;
         }
     }
 }
