@@ -13,6 +13,7 @@
     border-top: solid 2px #1c89ff;
     border-radius: 50%;
     opacity: 0;
+    display: none;
 
     &__check {
         width: 100%;
@@ -50,26 +51,8 @@
     }
 
     &--active {
+        display: block;
         animation: loading 2s ease-in-out;
         animation-fill-mode: forwards;
-    }
-}
-
-
-@keyframes loading {
-    30% {
-        opacity: 1;
-    }
-
-    85% {
-        opacity: 1;
-        transform: rotate(1080deg);
-        border-color: #262626;
-    }
-
-    100% {
-        opacity: 1;
-        transform: rotate(1080deg);
-        border-color: #1c89ff;
     }
 }
