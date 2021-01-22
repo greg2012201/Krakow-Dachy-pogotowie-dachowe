@@ -19,6 +19,11 @@ const sendingError = (button) => {
     button.classList.add('form__button--sending-error');
 }
 
+const disableForm = () => [...form].forEach(element => element.disabled = true)
+
+
+
+
 // FORM FROM HTML  
 
 const formDataToJson = formData => {
@@ -67,6 +72,7 @@ form.addEventListener('submit', function (e) {
             if (res.statusCode === 200) {
                 form.reset();
                 sended(submitButton);
+                disableForm();
             } else {
                 sendingError(submitButton);
                 throw Error(`coś poszło nie tak po stronie serwera: ${res.message}!`);
