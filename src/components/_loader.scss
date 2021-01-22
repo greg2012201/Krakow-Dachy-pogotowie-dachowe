@@ -1,5 +1,13 @@
 @import '../sass/animations';
 
+
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .loader {
 
     display: flex;
@@ -9,7 +17,7 @@
     height: 40px;
     background: transparent;
     margin: 30px auto 0 auto;
-    border: solid 2px #424242;
+    border: solid 2px $transparent-blue;
     border-top: solid 2px #1c89ff;
     border-radius: 50%;
     opacity: 0;
@@ -25,28 +33,31 @@
         transform: translate3d(-4px, 50px, 0);
         opacity: 0;
 
-        &--first {
-            display: block;
-            width: 10px;
-            height: 2px;
-            background-color: green;
-            transform: rotate(45deg);
-        }
-
-        &--second {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background-color: green;
-            transform: rotate(-45deg) translate3d(14px, -4px, 0);
-            transform-origin: 100%;
-        }
 
         &--active {
             opacity: 1;
             transform: translate3d(-4px, 4px, 0);
             transition: all .5s cubic-bezier(.49, 1.74, .38, 1.74);
             transition-delay: .2s;
+
+            &::before {
+                content: '';
+                display: block;
+                width: 10px;
+                height: 2px;
+                background-color: green;
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                width: 20px;
+                height: 2px;
+                background-color: green;
+                transform: rotate(-45deg) translate3d(14px, -4px, 0);
+                transform-origin: 100%;
+            }
         }
     }
 
