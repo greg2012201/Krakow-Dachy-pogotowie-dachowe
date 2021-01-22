@@ -35,3 +35,21 @@
         transform: translate(0, 0);
     }
 }
+
+@keyframes loading {
+    30% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+        transform: rotate(1080deg);
+        border-color: #262626;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(1080deg);
+        border-color: #1c89ff;
+    }
+}
