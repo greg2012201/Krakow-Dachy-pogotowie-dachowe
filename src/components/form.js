@@ -1,15 +1,28 @@
 const POST_URL = process.env.PROXY_URL;
 const form = document.querySelector('.form');
 const submitButton = document.querySelector('.form__button');
+const loader = document.querySelector('.loader');
 
+const loaderActive = (loader) => loader.classList.add('loader--active');
+const loaderCheckActive = (loader) => {
+    const loaderCheck = loader.querySelector('.loader__check');
+
+    loaderCheck.classList.add('loader__check--active')
+
+}
 
 const sending = (button) => {
     button.classList.add('form__button--sending');
     button.textContent = '';
 }
 const sended = (button) => {
+
+
+
     button.classList.remove('form__button--sending');
     button.classList.add('form__button--sended');
+
+
 
 
 }
@@ -19,7 +32,10 @@ const sendingError = (button) => {
     button.classList.add('form__button--sending-error');
 }
 
-const disableForm = () => [...form].forEach(element => element.disabled = true)
+const disableForm = () => [...form].forEach(element => element.disabled = true);
+
+
+
 
 
 
@@ -49,6 +65,7 @@ form.addEventListener('submit', function (e) {
     const formData = new FormData(this);
     formData.append('_subject', 'Zapytanie Kraków Dachy');
     sending(submitButton);
+    loaderActive(loader);
     fetch(POST_URL, {
             method: 'POST',
             body: formDataToJson(formData),
@@ -71,7 +88,12 @@ form.addEventListener('submit', function (e) {
 
             if (res.statusCode === 200) {
                 form.reset();
-                sended(submitButton);
+                setTimeout(() => {
+                    loaderCheckActive(loader);
+                    sended(submitButton);
+                }, 1500)
+
+
                 disableForm();
             } else {
                 sendingError(submitButton);
