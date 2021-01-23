@@ -34,11 +34,18 @@
         opacity: 0;
 
 
-        &--active {
+        &--active,
+        &--error {
             opacity: 1;
             transform: translate3d(-4px, 4px, 0);
             transition: all .5s cubic-bezier(.49, 1.74, .38, 1.74);
             transition-delay: .2s;
+        }
+
+        &--active {
+
+            transform: translate3d(-4px, 4px, 0);
+
 
             &::before {
                 content: '';
@@ -51,6 +58,7 @@
 
             &::after {
                 content: '';
+                text-align: center;
                 display: block;
                 width: 20px;
                 height: 2px;
@@ -58,8 +66,34 @@
                 transform: rotate(-45deg) translate3d(14px, -4px, 0);
                 transform-origin: 100%;
             }
+
+
+        }
+
+        &--error {
+            &::after {
+
+                content: '!';
+                display: block;
+                color: red;
+                text-align: center;
+                font-family: $main-font;
+                font-weight: bold;
+                width: 100%;
+                font-size: 28px;
+                transform: translate3d(4px, -4px, 0);
+
+
+
+
+
+            }
+
+
         }
     }
+
+
 
     &--active {
         display: block;

@@ -2,13 +2,16 @@ const POST_URL = process.env.PROXY_URL;
 const form = document.querySelector('.form');
 const submitButton = document.querySelector('.form__button');
 const loader = document.querySelector('.loader');
-
+const loaderCheck = loader.querySelector('.loader__check');
 const loaderActive = (loader) => loader.classList.add('loader--active');
-const loaderCheckActive = (loader) => {
-    const loaderCheck = loader.querySelector('.loader__check');
+const loaderCheckActive = () => {
+
 
     loaderCheck.classList.add('loader__check--active')
 
+}
+const loaderError = () => {
+    loaderCheck.classList.add('loader__check--error')
 }
 
 const sending = (button) => {
@@ -76,6 +79,7 @@ form.addEventListener('submit', function (e) {
         .catch(e => {
 
             sendingError(submitButton);
+            loaderError();
             console.log(e);
         })
         .then(r => {
@@ -87,9 +91,10 @@ form.addEventListener('submit', function (e) {
         .then(res => {
 
             if (res.statusCode === 200) {
-                form.reset();
+
                 setTimeout(() => {
-                    loaderCheckActive(loader);
+                    form.reset();
+                    loaderCheckActive();
                     sended(submitButton);
                 }, 1500)
 
