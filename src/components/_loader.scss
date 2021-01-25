@@ -11,12 +11,10 @@
 .loader {
 
     display: flex;
-    /* justify-content: center; */
-    align-items: center;
     width: 40px;
     height: 40px;
     background: transparent;
-    margin: 30px auto 0 auto;
+    margin: 0px auto;
     border: solid 2px $transparent-blue;
     border-top: solid 2px #1c89ff;
     border-radius: 50%;
@@ -34,7 +32,7 @@
         opacity: 0;
 
 
-        &--active,
+        &--sucess,
         &--error {
             opacity: 1;
             transform: translate3d(-4px, 4px, 0);
@@ -42,7 +40,7 @@
             transition-delay: .2s;
         }
 
-        &--active {
+        &--sucess {
 
             transform: translate3d(-4px, 4px, 0);
 

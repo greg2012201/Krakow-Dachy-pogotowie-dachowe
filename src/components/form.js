@@ -3,16 +3,32 @@ const form = document.querySelector('.form');
 const submitButton = document.querySelector('.form__button');
 const loader = document.querySelector('.loader');
 const loaderCheck = loader.querySelector('.loader__check');
+
+
+
+/* LOADER */
+
+
 const loaderActive = (loader) => loader.classList.add('loader--active');
-const loaderCheckActive = () => {
 
 
-    loaderCheck.classList.add('loader__check--active')
+const changeColor = (color) => document.documentElement.style.setProperty('--loader-color', color);
+
+
+
+const loaderSucess = () => {
+
+
+    loaderCheck.classList.add('loader__check--sucess');
+    changeColor('green');
 
 }
 const loaderError = () => {
-    loaderCheck.classList.add('loader__check--error')
+    loaderCheck.classList.add('loader__check--error');
+    changeColor('red');
 }
+
+/* SUBMIT BUTTON */
 
 const sending = (button) => {
     button.classList.add('form__button--sending');
@@ -20,13 +36,8 @@ const sending = (button) => {
 }
 const sended = (button) => {
 
-
-
     button.classList.remove('form__button--sending');
     button.classList.add('form__button--sended');
-
-
-
 
 }
 
@@ -64,7 +75,6 @@ const formDataToJson = formData => {
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log('click');
     const formData = new FormData(this);
     formData.append('_subject', 'Zapytanie Kraków Dachy');
     sending(submitButton);
@@ -77,14 +87,15 @@ form.addEventListener('submit', function (e) {
             }
         })
         .catch(e => {
+            disableForm();
+            setTimeout(() => {
+                sendingError(submitButton);
+                loaderError();
+            }, 1500)
 
-            sendingError(submitButton);
-            loaderError();
             console.log(e);
         })
         .then(r => {
-            console.log('wysyłanie...');
-
             return r.json()
         })
 
@@ -94,14 +105,16 @@ form.addEventListener('submit', function (e) {
 
                 setTimeout(() => {
                     form.reset();
-                    loaderCheckActive();
+                    loaderSucess();
                     sended(submitButton);
                 }, 1500)
 
 
                 disableForm();
             } else {
-                sendingError(submitButton);
+                disableForm();
+                setTimeout(() => sendingError(submitButton), 1500)
+
                 throw Error(`coś poszło nie tak po stronie serwera: ${res.message}!`);
             }
 
