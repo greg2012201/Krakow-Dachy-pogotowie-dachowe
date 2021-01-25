@@ -42,25 +42,24 @@
 
         &--sucess {
 
-            transform: translate3d(-4px, 4px, 0);
 
-
-            &::before {
+            &::before,
+            &::after {
                 content: '';
                 display: block;
+                background-color: green;
+            }
+
+            &::before {
                 width: 10px;
                 height: 2px;
-                background-color: green;
                 transform: rotate(45deg);
             }
 
             &::after {
-                content: '';
                 text-align: center;
-                display: block;
                 width: 20px;
                 height: 2px;
-                background-color: green;
                 transform: rotate(-45deg) translate3d(14px, -4px, 0);
                 transform-origin: 100%;
             }
