@@ -3,8 +3,15 @@
 
 
 
-    &--resize-animation-stopper * {
-        transition: none !important;
-        animation: none !important;
+    &--resize-animation-stopper {
+
+        .header,
+        img,
+        .offer * {
+            transition: none !important;
+            animation: none !important;
+        }
+
+
     }
 }
