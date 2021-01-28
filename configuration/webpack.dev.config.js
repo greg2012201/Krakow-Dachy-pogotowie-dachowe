@@ -2,6 +2,8 @@ const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const webpackConfiguration = require('../webpack.config');
+const ip = require('ip');
+
 module.exports = merge(webpackConfiguration, {
 
 
@@ -26,7 +28,7 @@ module.exports = merge(webpackConfiguration, {
         }],
 
 
-        host: 'localhost',
+        host: ip.address(),
         port: 8080,
         // contentBase: './dist'
 
