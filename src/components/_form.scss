@@ -1,23 +1,13 @@
 .form {
     display: flex;
     flex-direction: column;
-    @include centering;
-    width: 100%;
-    max-width: 250px;
     padding: 30px;
-    /*  border: 1px solid gray; */
     border-radius: 10px;
     font-size: $root-font-size;
-    /* background-color: $transparent-gray; */
-    /* max-height: 100vh; */
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-
-    // inputy na boki przycisk mniejszy i wyśrodkowany
     @include for-phone-landscape {
-        // przy refaktorze trzeba wszystkie te selektory umieszczać tutaj (te co są w breakpointach)
-        width: 75%;
-        max-width: 350px;
+        width: 400px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -28,32 +18,13 @@
 
 
     @include for-small-tablet {
-        width: 70%;
-        max-width: 450px;
-
-
+        width: 450px;
 
     }
 
     @include for-small-desktop {
-        font-size: 1.2rem;
-        max-width: 650px;
+        font-size: 1.1rem;
 
-
-    }
-
-    @include for-normal-desktoop {
-        width: 50%;
-        font-size: 1.4rem;
-    }
-
-    @include for-big-desktop {
-        width: 50%;
-        font-size: 1.6rem;
-    }
-
-    @include for-huge-desktop {
-        font-size: 1.8rem;
     }
 
     &__header {
@@ -79,7 +50,7 @@
         color: $transparent-blue;
 
         @include for-phone-landscape {
-            flex-basis: 45%;
+            flex-basis: 100px;
             align-self: flex-start;
 
 
@@ -88,13 +59,14 @@
         &--name {
             @include for-phone-landscape {
                 order: -4;
+                flex-basis: 45%;
             }
         }
 
         &--email {
 
             @include for-phone-landscape {
-
+                flex-basis: 45%;
                 align-self: flex-end;
                 order: -3;
 
@@ -117,12 +89,10 @@
     &__input {
         padding: 3px 10px;
         font: normal normal 0.8em/1.5em $main-font;
-        flex-basis: 50%;
         border: none;
         box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
         border-radius: 5px;
         color: $transparent-blue;
-        //jeszcze do ostylowania pod względem wyglądu
 
         @include for-phone-landscape {
             flex-basis: 45%;
@@ -132,15 +102,21 @@
 
 
         &--name {
+            max-height: 30px;
+
+
             @include for-phone-landscape {
                 justify-self: flex-start;
+                flex-basis: 45%;
             }
         }
 
         &--email {
+            max-height: 30px;
+
 
             @include for-phone-landscape {
-                width: 45%;
+                flex-basis: 45%;
                 align-self: flex-end;
             }
 
@@ -148,18 +124,11 @@
 
         &--text-area {
             line-height: 1.2em;
-            height: 250px;
+            height: 150px;
 
             @include for-phone-landscape {
 
                 flex-basis: 100%;
-                max-height: 100px;
-            }
-
-            @include for-small-desktop {
-
-                max-height: 200px;
-
             }
 
         }
@@ -169,11 +138,10 @@
 
         font-weight: bold;
         padding: 0 10px;
-
+        line-height: 40px;
         text-transform: none;
         margin-top: 10px;
-
-        width: 50%;
+        width: 120px;
         transition: .8s;
         font-size: 1em;
 
@@ -200,19 +168,11 @@
                 color: $transparent-blue;
                 background-color: #fff;
                 border: 1px solid white;
-
-
-
-
+                pointer-events: none;
             }
 
             &::after {
-
                 content: 'Wysyłanie...';
-
-
-
-
             }
 
         }
@@ -256,9 +216,6 @@
                 content: 'Błąd !';
                 outline: hidden;
                 border: white 1px solid;
-
-
-
             }
 
             &:hover {
@@ -273,8 +230,16 @@
 
         @include for-phone-landscape {
 
-            flex-basis: 30%;
+            width: 120px;
             cursor: normal;
+        }
+
+        @include for-small-tablet {
+            width: 120px;
+        }
+
+        @include for-small-desktop {
+            width: 120px;
         }
     }
 }
