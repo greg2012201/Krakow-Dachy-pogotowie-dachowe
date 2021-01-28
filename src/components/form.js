@@ -9,17 +9,17 @@ const loaderCheck = loader.querySelector('.loader__check');
 /* LOADER */
 
 
-const loaderActive = (loader) => loader.classList.add('loader--active');
+const loaderActive = () => loader.classList.add('loader--active');
 
 
 const changeColor = (color) => document.documentElement.style.setProperty('--loader-color', color);
 
 
 
-const loaderSucess = () => {
+const loaderSuccess = () => {
 
 
-    loaderCheck.classList.add('loader__check--sucess');
+    loaderCheck.classList.add('loader__check--success');
     changeColor('green');
 
 }
@@ -78,7 +78,7 @@ form.addEventListener('submit', function (e) {
     const formData = new FormData(this);
     formData.append('_subject', 'Zapytanie Kraków Dachy');
     sending(submitButton);
-    loaderActive(loader);
+    loaderActive();
     fetch(POST_URL, {
             method: 'POST',
             body: formDataToJson(formData),
@@ -105,7 +105,7 @@ form.addEventListener('submit', function (e) {
 
                 setTimeout(() => {
                     form.reset();
-                    loaderSucess();
+                    loaderSuccess();
                     sended(submitButton);
                 }, 1500)
 
