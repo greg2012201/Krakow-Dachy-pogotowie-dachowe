@@ -11,10 +11,11 @@
 .loader {
 
     display: flex;
+
     width: 40px;
     height: 40px;
     background: transparent;
-    margin: 0px auto;
+    margin: 10px auto;
     border: solid 2px $transparent-blue;
     border-top: solid 2px #1c89ff;
     border-radius: 50%;
@@ -35,7 +36,6 @@
 
 
         &--success,
-        // popraw tą literówkę
         &--error {
             opacity: 1;
             transform: translate3d(-4px, 4px, 0);
