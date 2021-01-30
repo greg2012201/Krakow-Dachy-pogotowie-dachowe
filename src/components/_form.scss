@@ -5,6 +5,8 @@
     border-radius: 10px;
     font-size: $root-font-size;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    min-width: 230px;
+
 
     @include for-phone-landscape {
         width: 400px;
@@ -152,9 +154,9 @@
 
         &--privacy-political {
             align-self: center;
-            flex-basis: 25px;
-            height: 25px;
-            max-width: 25px;
+            height: 27px;
+            width: 27px;
+            max-width: 27px;
             background-color: white;
             box-shadow: none;
             border: 1px solid;
@@ -164,14 +166,12 @@
             appearance: none;
             transition: .4s;
 
-            &:hover {
-                background-color: lighten($transparent-blue, 35%)
-            }
+
 
             &:checked {
                 box-sizing: border-box;
                 display: flex;
-                align-self: center;
+                align-items: center;
                 justify-content: center;
                 padding: 0;
                 margin: 0;
@@ -181,13 +181,13 @@
 
 
                 &::after {
+                    padding: 0;
+                    height: 100%;
                     box-sizing: border-box;
                     display: flex;
-                    align-self: center;
-                    justify-content: center;
-                    display: block;
+                    align-items: center;
                     content: '\2716';
-                    font-size: 20px;
+                    font-size: 21px;
                     color: white;
 
 
