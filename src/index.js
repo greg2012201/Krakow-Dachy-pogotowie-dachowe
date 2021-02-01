@@ -3,7 +3,7 @@ import './components/menu';
 import './components/form';
 import './components/header';
 import './components/offer-list';
-import './components/checkbox';
+import './components/popup';
 import './tools/tools';
 
 
