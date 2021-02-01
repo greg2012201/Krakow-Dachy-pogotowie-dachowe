@@ -1,0 +1,54 @@
+.popup {
+    position: absolute;
+    font: normal normal 0.8em/1.3em $main-font;
+    color: white;
+    max-width: 400px;
+    width: 120%;
+    background-color: $main-button-color;
+    padding: 20px;
+    padding-right: 25px;
+    border-radius: 5px;
+    z-index: 100;
+    opacity: 80%;
+    transform: translateY(-105%);
+    top: 0;
+    left: 0;
+    display: none;
+
+
+    &__button {
+        position: absolute;
+        top: 0px;
+        right: 5px;
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        height: 20px;
+        width: 20px;
+        font-size: 20px;
+        transition: .2s;
+
+        @include for-small-desktop {
+            /*  &:hover {
+                color: $transparent-blue;
+            } */
+        }
+    }
+
+    &::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        content: '';
+        position: absolute;
+        height: 35px;
+        width: 35px;
+        bottom: 0;
+        left: 10%;
+        background-color: $main-button-color;
+        transform: translateY(50%) rotate(45deg);
+
+
+    }
+}
