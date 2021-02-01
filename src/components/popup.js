@@ -4,22 +4,20 @@ const popupBtn = document.querySelector('.popup__button');
 let isOpen;
 
 
-const isClickOutOfPopup = (e) => {
+const closeWhenClickOutOfPopup = (e) => {
 
-    if (e.target !== popup && isOpen && e.target !== link)
+    if (e.target !== popup && e.target.parentNode !== popup && isOpen && e.target !== link)
         close();
 
 }
-window.addEventListener('click', (e) => isClickOutOfPopup(e));
+window.addEventListener('click', (e) => closeWhenClickOutOfPopup(e));
 
 const popupManage = (e) => {
     e.preventDefault();
     if (!isOpen)
         open();
-    else {
+    else close();
 
-        close();
-    }
 
 
 }
