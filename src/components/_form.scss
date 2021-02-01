@@ -84,21 +84,11 @@
 
         }
 
-        &--privacy-political {
-            align-self: center;
-            flex-basis: 80%;
-            font-size: 0.7em;
 
-
-
-        }
-
-        &__link {
-            color: lighten(royalblue, 5%)
-        }
     }
 
     &__privacy-container {
+        position: relative;
         display: flex;
         justify-content: space-between;
         width: 100%;
@@ -154,53 +144,65 @@
 
         }
 
-        &--privacy-political {
-            align-self: center;
-            height: 27px;
-            width: 27px;
-            max-width: 27px;
-            background-color: white;
-            box-shadow: none;
-            border: 1px solid;
-            cursor: pointer;
-            border-radius: 2px;
-            outline: transparent;
-            appearance: none;
-            transition: .4s;
+
+    }
+
+    &__checkbox {
+
+        align-self: center;
+        height: 27px;
+        width: 27px;
+        max-width: 27px;
+        background-color: white;
+        box-shadow: none;
+        border: 1px solid;
+        cursor: pointer;
+        border-radius: 2px;
+        outline: transparent;
+        appearance: none;
+        transition: .4s;
 
 
 
-            &:checked {
+        &:checked {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            background-color: $transparent-blue;
+            width: 100%;
+
+
+
+            &::after {
+                padding: 0;
+                height: 100%;
                 box-sizing: border-box;
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                padding: 0;
-                margin: 0;
-                background-color: $transparent-blue;
-                width: 100%;
+                content: '\2716';
+                font-size: 21px;
+                color: white;
 
 
-
-                &::after {
-                    padding: 0;
-                    height: 100%;
-                    box-sizing: border-box;
-                    display: flex;
-                    align-items: center;
-                    content: '\2716';
-                    font-size: 21px;
-                    color: white;
-
-
-
-
-                }
 
 
             }
 
 
+        }
+
+        &--label {
+            align-self: center;
+            flex-basis: 80%;
+            font-size: 0.7em;
+        }
+
+        &--link {
+            color: lighten(royalblue, 5%);
+            font-style: italic;
         }
     }
 
