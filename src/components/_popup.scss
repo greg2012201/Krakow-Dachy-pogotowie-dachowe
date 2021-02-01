@@ -14,6 +14,7 @@
     top: 0;
     left: 0;
     display: none;
+    z-index: 10000;
 
 
     &__button {
@@ -50,5 +51,9 @@
         transform: translateY(50%) rotate(45deg);
 
 
+    }
+
+    &--active {
+        display: block;
     }
 }
