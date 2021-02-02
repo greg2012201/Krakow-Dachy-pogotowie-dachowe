@@ -8,26 +8,18 @@ let isOpen = false;
 const closeWhenClickOutOfPopup = (e) => {
 
 
-    if (e.target !== popup && e.target.parentNode !== popup && isOpen && e.target !== link)
-
-    {
-        popupManage();
-
+    if (e.target !== popup && e.target.parentNode !== popup && isOpen && e.target !== link) {
+        return popupManage();
     }
-
-
 }
-
 window.addEventListener('click', (e) => closeWhenClickOutOfPopup(e));
 
-const popupManage = (e) => {
-    if (e) {
-        e.preventDefault();
-    }
+const popupManage = () => {
+
     if (!isOpen) {
-        open();
+        return open();
     } else {
-        close();
+        return close();
     }
 
 
@@ -46,5 +38,8 @@ const open = () => {
 }
 
 
-link.addEventListener('click', (e) => popupManage(e));
+link.addEventListener('click', (e) => {
+    e.preventDefault();
+    popupManage();
+});
 popupBtn.addEventListener('click', close);
