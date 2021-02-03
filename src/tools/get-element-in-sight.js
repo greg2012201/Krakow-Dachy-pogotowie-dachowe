@@ -1,4 +1,9 @@
-const getElementToAddModifier = (elements, modifier, toggle = -1) => {
+import {
+    getElementPosition
+} from './getElementPosition';
+
+
+const getElementToAddModifier = (elements, modifier, toggle = -1 /* zamiast wartości liczbowej dać string 'toggle' domyślnie ma być false */ ) => {
 
     let arr;
     if (elements.find(element => element instanceof HTMLElement))
@@ -13,17 +18,9 @@ const getElementToAddModifier = (elements, modifier, toggle = -1) => {
 };
 const modifierManage = (elements, modifier, toggle) => {
     elements.forEach(element => {
-        if (isInView(getParameters(element))) setModifier(element, modifier);
+        if (isInView(getElementPosition(element))) setModifier(element, modifier);
         else if (toggle > 0) removeModifier(element, modifier);
     });
-};
-const getParameters = (element) => {
-    const rect = element.getBoundingClientRect();
-    return {
-        top: rect.top,
-        bottom: rect.bottom,
-        vieportHeight: window.innerHeight,
-    };
 };
 
 const isInView = ({
