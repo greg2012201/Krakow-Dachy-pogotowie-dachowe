@@ -19,28 +19,11 @@ const closeWhenClickOutOfPopup = (e) => {
     }
 }
 window.addEventListener('click', (e) => closeWhenClickOutOfPopup(e));
-const getPopupPosition = () => {
-    return {
-        height: getElementPosition(popup).height,
-        top: getElementPosition(popup).top,
-        bottom: getElementPosition(popup).bottom,
-    }
-
-}
-const getLinkPosition = () => {
-
-    return {
-        top: getElementPosition(link).top,
-        bottom: getElementPosition(link).bottom,
-    }
-
-}
-
 const popupManage = () => {
 
 
-    const popupHeight = getPopupPosition().height;
-    const linkPosition = getLinkPosition();
+    const popupHeight = getElementPosition(popup).height;
+    const linkPosition = getElementPosition(link);
     const up = linkPosition.top - popupHeight <= 0;
     const down = innerHeight - (linkPosition.bottom - popupHeight) <= 0;
 
@@ -59,7 +42,6 @@ const popupManage = () => {
         }
 
     } else {
-        console.log(isOpen);
         closeUp();
         closeDown();
         popupDisactive();
@@ -69,35 +51,17 @@ const popupManage = () => {
 
 
 
-}
-document.addEventListener('scroll', () => {
-
-
-    const popupPosition = getPopupPosition();
-    const up = popupPosition.top <= 0;
-    const down = innerHeight - popupPosition.bottom <= 0;
-
-    if (isOpen) {
-        if (up) {
-            openDown();
-            closeUp();
-
-        } else if (down) {
-            openUp();
-            closeDown();
-        }
-
-
-    }
-});
+};
 
 const popupActive = () => {
     isOpen = true;
     popup.classList.add('popup--active');
+    document.addEventListener('scroll', createEvent);
 }
 const popupDisactive = () => {
     isOpen = false;
     popup.classList.remove('popup--active');
+    document.removeEventListener('scroll', createEvent);
     closeUp();
     closeDown();
 }
@@ -126,3 +90,44 @@ link.addEventListener('click', (e) => {
     popupManage();
 });
 popupBtn.addEventListener('click', popupDisactive);
+
+
+/* events for scroll */
+
+const dispatch = (events) => {
+    const popupPosition = getElementPosition(popup);
+    const up = popupPosition.top <= 0;
+    const down = innerHeight - popupPosition.bottom <= 0;
+    const {
+        eventUp,
+        eventDown,
+    } = events
+
+
+    if (up) {
+        document.dispatchEvent(eventUp);
+    } else if (down) {
+        document.dispatchEvent(eventDown);
+    }
+}
+
+
+const createEvent = () => {
+    dispatch({
+        eventUp: new Event('popupUp'),
+        eventDown: new Event('popupDown'),
+    });
+
+}
+
+
+document.addEventListener('popupUp', () => {
+    closeUp();
+    closeDown();
+    openDown();
+});
+document.addEventListener('popupDown', () => {
+    closeDown();
+    closeUp();
+    openUp();
+});
