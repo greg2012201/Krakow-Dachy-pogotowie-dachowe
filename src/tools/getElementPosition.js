@@ -3,7 +3,7 @@ export const getElementPosition = (element) => { //getRectParams
     return {
         top: rect.top,
         bottom: rect.bottom,
-        bottom: rect.width,
+        width: rect.width,
         height: rect.height,
         vieportHeight: window.innerHeight,
     };
