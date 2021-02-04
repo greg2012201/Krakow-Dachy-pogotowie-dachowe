@@ -6,15 +6,15 @@ import {
 const popup = document.querySelector('.popup');
 const link = document.querySelector('.form__checkbox--link');
 const popupBtn = document.querySelector('.popup__button');
-let isOpen = false;
+let initialized = false;
 
 
 /* POPUP OPEN/CLOSE */
 
 const closeWhenClickOutOfPopup = (e) => {
+    const clickOutOfPopup = e.target !== popup && e.target.parentNode !== popup && initialized && e.target !== link;
 
-
-    if (e.target !== popup && e.target.parentNode !== popup && isOpen && e.target !== link) {
+    if (clickOutOfPopup) {
         return popupManage();
     }
 }
@@ -28,7 +28,7 @@ const popupManage = () => {
     const down = innerHeight - (linkPosition.bottom - popupHeight) <= 0;
 
 
-    if (!isOpen) {
+    if (!initialized) {
         popupActive();
         if (up) {
             openDown();
@@ -54,12 +54,12 @@ const popupManage = () => {
 };
 
 const popupActive = () => {
-    isOpen = true;
+    initialized = true;
     popup.classList.add('popup--active');
     document.addEventListener('scroll', createEvent);
 }
 const popupDisactive = () => {
-    isOpen = false;
+    initialized = false;
     popup.classList.remove('popup--active');
     document.removeEventListener('scroll', createEvent);
     closeUp();
