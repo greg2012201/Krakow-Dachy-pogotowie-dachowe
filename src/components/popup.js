@@ -9,6 +9,7 @@ const popupBtn = document.querySelector('.popup__button');
 let initialized = false;
 
 
+
 /* POPUP OPEN/CLOSE */
 
 const closeWhenClickOutOfPopup = (e) => {
@@ -23,19 +24,25 @@ const popupManage = () => {
 
 
     const popupHeight = getElementPosition(popup).height;
+    const popupPosition = getElementPosition(popup);
     const linkPosition = getElementPosition(link);
     const up = linkPosition.top - popupHeight <= 0;
-    const down = innerHeight - (linkPosition.bottom - popupHeight) <= 0;
+    const down = innerHeight <= (linkPosition.bottom + popupPosition.height + 24);
+    console.log(down);
+    console.log(up);
 
 
     if (!initialized) {
         popupActive();
-        if (up) {
+        if (up && down) {
+            openUp();
+        } else if (up) {
             openDown();
 
         } else if (down) {
-            openUp();
+
             closeDown();
+            openUp();
         } else {
             openUp();
 
@@ -96,15 +103,20 @@ popupBtn.addEventListener('click', popupDisactive);
 
 const dispatch = (events) => {
     const popupPosition = getElementPosition(popup);
+    const linkPosition = getElementPosition(link);
     const up = popupPosition.top <= 0;
     const down = innerHeight - popupPosition.bottom <= 0;
+
+    const isEnouthSpaceOnBottom = innerHeight >= (linkPosition.bottom + popupPosition.height + 24)
+
+    // to trzeba jeszcze dokończyć !!!
     const {
         eventUp,
         eventDown,
     } = events
 
 
-    if (up) {
+    if (up && isEnouthSpaceOnBottom) {
         document.dispatchEvent(eventUp);
     } else if (down) {
         document.dispatchEvent(eventDown);
