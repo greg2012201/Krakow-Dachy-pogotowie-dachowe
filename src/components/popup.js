@@ -11,64 +11,53 @@ let initialized = false;
 
 
 /* POPUP OPEN/CLOSE */
+const init = () => {
+
+    if (!initialized) {
+        popupActive();
+
+        document.addEventListener('scroll', createEvent);
+        document.addEventListener('popupUp', () => {
+            closeUp();
+            closeDown();
+            openDown();
+        });
+        document.addEventListener('popupDown', () => {
+            closeDown();
+            closeUp();
+            openUp();
+
+
+        });
+        window.addEventListener('click', (e) => closeWhenClickOutOfPopup(e));
+        popupBtn.addEventListener('click', popupDisactive);
+
+    } else {
+        popupDisactive();
+        document.removeEventListener('scroll', createEvent);
+    }
+
+
+}
 
 const closeWhenClickOutOfPopup = (e) => {
     const clickOutOfPopup = e.target !== popup && e.target.parentNode !== popup && initialized && e.target !== link;
 
     if (clickOutOfPopup) {
-        return popupManage();
+        return popupDisactive();
     }
 }
-window.addEventListener('click', (e) => closeWhenClickOutOfPopup(e));
-const popupManage = () => {
 
 
-    const popupHeight = getElementPosition(popup).height;
-    const popupPosition = getElementPosition(popup);
-    const linkPosition = getElementPosition(link);
-    const up = linkPosition.top - popupHeight <= 0;
-    const down = innerHeight <= (linkPosition.bottom + popupPosition.height + 24);
-    console.log(down);
-    console.log(up);
-
-
-    if (!initialized) {
-        popupActive();
-        if (up && down) {
-            openUp();
-        } else if (up) {
-            openDown();
-
-        } else if (down) {
-
-            closeDown();
-            openUp();
-        } else {
-            openUp();
-
-        }
-
-    } else {
-        closeUp();
-        closeDown();
-        popupDisactive();
-
-    }
-
-
-
-
-};
 
 const popupActive = () => {
     initialized = true;
     popup.classList.add('popup--active');
-    document.addEventListener('scroll', createEvent);
+
 }
 const popupDisactive = () => {
     initialized = false;
     popup.classList.remove('popup--active');
-    document.removeEventListener('scroll', createEvent);
     closeUp();
     closeDown();
 }
@@ -92,11 +81,8 @@ const openDown = () => {
     popup.classList.add('popup--down');
 }
 
-link.addEventListener('click', (e) => {
-    e.preventDefault();
-    popupManage();
-});
-popupBtn.addEventListener('click', popupDisactive);
+
+
 
 
 /* events for scroll */
@@ -107,9 +93,8 @@ const dispatch = (events) => {
     const up = popupPosition.top <= 0;
     const down = innerHeight - popupPosition.bottom <= 0;
 
-    const isEnouthSpaceOnBottom = innerHeight >= (linkPosition.bottom + popupPosition.height + 24)
+    const isEnouthSpaceOnBottom = innerHeight >= (linkPosition.bottom + popupPosition.height + 24);
 
-    // to trzeba jeszcze dokończyć !!!
     const {
         eventUp,
         eventDown,
@@ -131,15 +116,7 @@ const createEvent = () => {
     });
 
 }
-
-
-document.addEventListener('popupUp', () => {
-    closeUp();
-    closeDown();
-    openDown();
-});
-document.addEventListener('popupDown', () => {
-    closeDown();
-    closeUp();
-    openUp();
+link.addEventListener('click', (e) => {
+    e.preventDefault();
+    init();
 });
