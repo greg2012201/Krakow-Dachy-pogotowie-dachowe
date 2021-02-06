@@ -20,7 +20,7 @@ const init = () => {
 
         popupActive();
         document.addEventListener('popupUp', () => {
-            console.log('weszło');
+
             closeUp();
             closeDown();
             openDown();
@@ -35,7 +35,8 @@ const init = () => {
         createEvent();
 
 
-        document.addEventListener('scroll', createEvent);
+
+
 
         window.addEventListener('click', (e) => closeWhenClickOutOfPopup(e));
         popupBtn.addEventListener('click', popupDisactive);
@@ -119,14 +120,15 @@ const dispatch = (events) => {
 
 
 const createEvent = () => {
-    console.log('utworzenie');
-
-
-    dispatch({
+    const events = {
         eventUp: new Event('popupUp'),
         eventDown: new Event('popupDown'),
-    });
+    }
 
+    document.addEventListener('scroll', () => {
+        dispatch(events);
+    });
+    dispatch(events);
 }
 
 link.addEventListener('click', (e) => {
