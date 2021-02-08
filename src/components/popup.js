@@ -10,6 +10,7 @@ let initialized = false;
 
 
 
+
 /* POPUP OPEN/CLOSE */
 const init = () => {
 
@@ -19,6 +20,7 @@ const init = () => {
     if (!initialized) {
 
         popupActive();
+
         document.addEventListener('popupUp', () => {
 
             closeUp();
@@ -32,8 +34,8 @@ const init = () => {
 
 
         });
-        createEvent();
 
+        createEvent();
 
 
 
@@ -45,7 +47,6 @@ const init = () => {
         popupDisactive();
         document.removeEventListener('scroll', createEvent);
     }
-
 
 }
 
@@ -62,6 +63,7 @@ const closeWhenClickOutOfPopup = (e) => {
 const popupActive = () => {
     initialized = true;
     popup.classList.add('popup--active');
+    openUp();
 
 
 }
@@ -104,30 +106,32 @@ const dispatch = (events) => {
     const down = innerHeight - popupPosition.bottom <= 0;
 
     const isEnouthSpaceOnBottom = innerHeight >= (linkPosition.bottom + popupPosition.height + 24);
+    const isEnouthSpaceOnTop = innerHeight <= (linkPosition.top + popupPosition.height + 24);
 
     const {
         eventUp,
         eventDown,
     } = events
 
-
     if (up && isEnouthSpaceOnBottom) {
         document.dispatchEvent(eventUp);
-    } else if (down) {
+    } else if (down && isEnouthSpaceOnTop) {
         document.dispatchEvent(eventDown);
     }
 }
 
 
 const createEvent = () => {
+
+
     const events = {
         eventUp: new Event('popupUp'),
         eventDown: new Event('popupDown'),
     }
-
     document.addEventListener('scroll', () => {
         dispatch(events);
     });
+
     dispatch(events);
 }
 
