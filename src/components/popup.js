@@ -103,21 +103,32 @@ const openDown = () => {
 }
 
 
+const getDirection = () => {
+    const popupPosition = getElementPosition(popup);
+    const linkPosition = getElementPosition(link);
+    const popupLegHeight = getPopupLegHeight();
+    return {
 
+        up: popupPosition.top <= 0,
+        down: innerHeight - popupPosition.bottom <= 0,
+        isEnouthSpaceOnBottom: innerHeight >= (linkPosition.bottom + popupPosition.height + popupLegHeight),
+        isEnouthSpaceOnTop: innerHeight <= (linkPosition.top + popupPosition.height + popupLegHeight),
+    }
+}
 
 
 /* events for scroll */
 
 const dispatch = (events) => {
-    const popupPosition = getElementPosition(popup);
-    const linkPosition = getElementPosition(link);
 
-    const popupLegHeight = getPopupLegHeight();
-    const up = popupPosition.top <= 0;
-    const down = innerHeight - popupPosition.bottom <= 0;
-    const isEnouthSpaceOnBottom = innerHeight >= (linkPosition.bottom + popupPosition.height + popupLegHeight);
-    const isEnouthSpaceOnTop = innerHeight <= (linkPosition.top + popupPosition.height + popupLegHeight);
+    const directions = getDirection();
 
+    const {
+        up,
+        down,
+        isEnouthSpaceOnBottom,
+        isEnouthSpaceOnTop,
+    } = directions
     const {
         eventUp,
         eventDown,
