@@ -6,6 +6,8 @@ import {
 const popup = document.querySelector('.popup');
 const link = document.querySelector('.form__checkbox--link');
 const popupBtn = document.querySelector('.popup__button');
+
+
 let initialized = false;
 
 
@@ -58,7 +60,14 @@ const closeWhenClickOutOfPopup = (e) => {
     }
 }
 
+const getPopupLegHeight = () => {
 
+    const square = popup.querySelector('.popup__element-square');
+    return Math.hypot(getElementPosition(square).height, getElementPosition(square).width) / 2;
+
+
+
+}
 
 const popupActive = () => {
     initialized = true;
@@ -102,11 +111,12 @@ const openDown = () => {
 const dispatch = (events) => {
     const popupPosition = getElementPosition(popup);
     const linkPosition = getElementPosition(link);
+
+    const popupLegHeight = getPopupLegHeight();
     const up = popupPosition.top <= 0;
     const down = innerHeight - popupPosition.bottom <= 0;
-
-    const isEnouthSpaceOnBottom = innerHeight >= (linkPosition.bottom + popupPosition.height + 24);
-    const isEnouthSpaceOnTop = innerHeight <= (linkPosition.top + popupPosition.height + 24);
+    const isEnouthSpaceOnBottom = innerHeight >= (linkPosition.bottom + popupPosition.height + popupLegHeight);
+    const isEnouthSpaceOnTop = innerHeight <= (linkPosition.top + popupPosition.height + popupLegHeight);
 
     const {
         eventUp,
