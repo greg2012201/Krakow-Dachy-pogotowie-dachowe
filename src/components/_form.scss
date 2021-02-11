@@ -15,7 +15,7 @@
 
 
 
-    @include for-small-tablet {
+    @include for-phone-landscape {
 
         grid: repeat(10, auto) / 50% 50%;
         column-gap: 10px;
@@ -58,12 +58,13 @@
 
 
         grid-column: 1;
+        align-self: end;
 
         &--name {
 
 
 
-            @include for-small-tablet {
+            @include for-phone-landscape {
 
                 grid-column-start: 1;
                 grid-column-end: 2;
@@ -76,7 +77,7 @@
 
 
 
-            @include for-small-tablet {
+            @include for-phone-landscape {
                 grid-column-start: 2;
                 grid-column-end: 3;
                 grid-row-start: 2;
@@ -90,7 +91,9 @@
         }
 
         &--message {
-            @include for-small-tablet {
+
+
+            @include for-phone-landscape {
 
                 grid-row-start: 4;
                 grid-row-end: 4;
@@ -112,7 +115,7 @@
         grid-column: 1;
         grid-row: 8;
 
-        @include for-small-tablet {
+        @include for-phone-landscape {
             grid-row-start: 7;
             grid-row-end: 8;
             grid-column-start: 1;
@@ -134,7 +137,7 @@
             max-height: 30px;
 
 
-            @include for-small-tablet {
+            @include for-phone-landscape {
                 grid-row-start: 3;
                 grid-row-end: 4;
                 grid-column-start: 1;
@@ -147,7 +150,7 @@
             max-height: 30px;
 
 
-            @include for-small-tablet {
+            @include for-phone-landscape {
 
                 grid-row-start: 3;
                 grid-row-end: 4;
@@ -162,7 +165,7 @@
             height: 100px;
             grid-column: 1;
 
-            @include for-small-tablet {
+            @include for-phone-landscape {
 
                 grid-row-start: 5;
                 grid-row-end: 5;
