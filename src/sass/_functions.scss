@@ -1,0 +1,3 @@
+@function set-open-burger-elements-position ($burger-height, $burger-element-heigt) {
+    @return ($burger-height / 2) - ($burger-element-heigt / 2);
+}
