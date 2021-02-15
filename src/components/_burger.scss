@@ -1,7 +1,8 @@
 .burger {
     @include flex-box (row, center, center);
     flex-wrap: wrap;
-    @include rect (30px, 42px);
+    width: map-get($burger-dimensions, "width");
+    height: map-get($burger-dimensions, "height");
     margin-left: auto;
     padding: 0;
     background-color: transparent;
@@ -17,7 +18,9 @@
     &__element,
     &::before,
     &::after {
-        @include rect(5px, 95%);
+
+        height: map-get($burger-dimensions, "burger-span-height");
+        width: 95%;
         border-radius: 20px;
         background-color: $main-button-color;
 
@@ -49,14 +52,12 @@
 
     &--active::before {
 
-        transform: translate(0, 12.5px) rotate(45deg);
+        transform: translate(0, set-open-burger-elements-position(map-get($burger-dimensions, "height"), map-get($burger-dimensions, "burger-span-height"))) rotate(45deg);
     }
 
     &--active::after {
 
-        transform: translate(0, -12.5px) rotate(-45deg);
-        /* minus pół kontenera oraz pół wysokości elementu */
-        /* &--active::after */
+        transform: translate(0, set-open-burger-elements-position(- (map-get($burger-dimensions, "height")), - (map-get($burger-dimensions, "burger-span-height")))) rotate(-45deg);
     }
 
 
