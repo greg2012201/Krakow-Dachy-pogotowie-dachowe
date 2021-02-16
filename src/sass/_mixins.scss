@@ -54,6 +54,8 @@
     }
 }
 
+// dodaj jeszcze układ landscape do tego jeszcze taka dobra praktyka
+
 @mixin for-huge-phone {
     @media(min-width: 601px) {
         @content;

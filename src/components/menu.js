@@ -1,4 +1,7 @@
 /* MENU */
+
+
+/* menu musi się chować po odkliknieciu bo przeszkadza albo być mniejsze */
 const sections = [...document.querySelectorAll('.section')];
 const burger = document.querySelector('.burger');
 const dropDownMenu = document.querySelector('.menu');

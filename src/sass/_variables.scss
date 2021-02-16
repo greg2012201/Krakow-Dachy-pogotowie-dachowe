@@ -20,6 +20,8 @@ $root-font-size:16px;
 $main-spacing: 10px;
 
 
+$primary-font-color:#0f3a53;
+//#016492
 
 
 //menu
@@ -32,4 +34,5 @@ $burger-dimensions:("height" :30px, "width":42px, "burger-span-height": 5px);
 
 :root {
     --loader-color: #1c89ff;
+    /* font-size: $root-font-size; */
 }

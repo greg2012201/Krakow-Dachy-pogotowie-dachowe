@@ -1,6 +1,6 @@
 .offer {
 
-    padding: 2rem;
+    padding: $main-spacing * 3;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -21,35 +21,33 @@
 
     &__slogan {
         width: 100%;
-        margin: 2rem 0 4rem 0;
-        padding-right: 4rem;
-        font: italic 300 1.125rem/1.5em $main-font;
-        color: $gray;
+        margin: $main-spacing $main-spacing * 6 $main-spacing * 6 0;
+
+        font: italic 300 1.125em/1.5em $main-font;
+        color: $primary-font-color;
         animation: shake 3s 1s both linear infinite;
         text-align: left;
 
         @include for-huge-phone {
-            font-size: 1.3rem;
+            font-size: 1.3em;
         }
 
         @include for-small-tablet {
-            font-size: 1.5rem;
+            font-size: 1.5em;
         }
 
-        @include for-small-desktop {
-            font-size: 1.8rem;
-        }
+
 
         @include for-normal-desktoop {
-            font-size: 2.2rem;
+            font-size: 2em;
         }
 
         @include for-big-desktop {
-            font-size: 2.8rem;
+            font-size: 2.3em;
         }
 
         @include for-huge-desktop {
-            font-size: 3.2rem;
+            font-size: 2.9em;
         }
     }
 }

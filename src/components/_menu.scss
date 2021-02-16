@@ -1,11 +1,10 @@
 .menu {
-    $menu-height: 285px;
-    $nav-bar-heigth: 60px;
+
     position: fixed;
     width: 100%;
     max-width: 100%;
     height: $menu-height;
-    top: -$menu-height + $nav-bar-heigth;
+    top: - $menu-height + $nav-bar-heigth;
     left: 0;
 
     @include flex-box(row, end, space-between);
@@ -16,7 +15,7 @@
     z-index: 999;
     flex-wrap: wrap;
     transition: .3s .2s;
-    padding: 0 (32px / 2);
+    padding: 0 $main-spacing * 2; //$main-padding(spacing) dać jako 10px więc tutaj main-spacing * 2
     font-size: $root-font-size;
 
 
@@ -27,7 +26,7 @@
         height: auto;
         justify-content: space-between;
         align-items: center;
-        padding: 0 32px;
+        padding: 0 $main-spacing * 3;
 
     }
 
@@ -40,7 +39,7 @@
 
     &__logo {
         align-self: center;
-        width: 150px;
+        width: 200px;
         cursor: pointer;
         height: 100%;
         padding: 0;
@@ -112,12 +111,12 @@
 
         @include for-small-desktop {
             flex-basis: 10%;
-            margin-left: 3em;
+            margin-left: $main-spacing * 5;
         }
 
         @include for-normal-desktoop {
 
-            margin-left: 5em;
+            margin-left: $main-spacing * 8;
         }
 
 

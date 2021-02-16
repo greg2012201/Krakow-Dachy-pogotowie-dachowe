@@ -1,34 +1,21 @@
 .list-wrapper {
 
-
-    height:
-        50px;
+    height: 50px;
     transition: .5s;
-    width:
-        260px;
-
-
-
-
-
-
-
+    width: 260px;
+    font-size: $root-font-size;
 
     @include for-phone-landscape {
-        margin-bottom: 20px;
+        margin-bottom: $main-spacing * 2;
 
     }
 
     @include for-small-desktop {
-        width:
-
-            33%;
+        width: 33%;
     }
 
     @include for-normal-desktoop {
-        width:
-
-            32%;
+        width: 32%;
     }
 
     @include for-big-desktop {
@@ -38,6 +25,7 @@
     @include for-huge-desktop {
 
         width: 620px;
+
     }
 
 
@@ -45,11 +33,17 @@
         height: 100%;
         width: 100%;
         overflow: hidden;
+
+        @include for-huge-desktop {
+
+            padding-left: $main-spacing;
+
+        }
     }
 
     &__title {
         position: relative;
-        margin-right: 20px;
+        margin-right: $main-spacing * 2;
         background-image: url('../images/arrow-up-down.svg'
             );
         background-position: 95% 100%;
@@ -59,19 +53,25 @@
         @include for-normal-desktoop {
             background-image: url('../images/arrow-up-down-normal-desktop.svg'
                 );
+
+            font-size: 1.6em;
+            line-height: 59px;
         }
 
         @include for-big-desktop {
 
             background-image: url('../images/arrow-up-down-big-desktop.svg'
                 );
+            font-size: 1.8em;
+            line-height: 67px;
 
         }
 
         @include for-huge-desktop {
 
-            background-image: url('../images/arrow-up-down-huge-desktop.svg'
-                );
+            background-image: url('../images/arrow-up-down-huge-desktop.svg');
+            font-size: 2em;
+            line-height: 75px;
         }
 
         &--active {
@@ -89,41 +89,36 @@
         opacity: 0;
         transition: .5s;
         transform: translateY(-1000px);
-        margin-bottom: 10px;
+        margin-bottom: $main-spacing;
         height: 0px;
-        padding: 20px 70px 20px 25px;
+        padding: $main-spacing * 2 $main-spacing * 7 $main-spacing * 2 ($main-spacing * 2) + 5;
         z-index: -10;
         margin-left: 2px;
-        font: normal 300 1rem/1.5rem $main-font;
+        font: normal 300 1em/1.5rem $main-font;
         list-style-type: circle;
 
         @include for-small-desktop {
 
-            font-size: 1.2rem;
+            font-size: 1.2em;
             line-height: 1.7rem;
 
         }
 
         @include for-normal-desktoop {
 
-            font-size: 1.5rem;
+            font-size: 1.5em;
             line-height: 1.9rem;
 
         }
 
         @include for-big-desktop {
 
-            font-size: 1.8rem;
-            line-height: 2.2rem;
+            font-size: 1.8em;
+            line-height: 2rem;
 
         }
 
-        @include for-huge-desktop {
 
-            font-size: 2.1rem;
-            line-height: 2.5rem;
-
-        }
 
         &--active {
             opacity: 1;
@@ -137,12 +132,12 @@
     }
 
     &__item {
-        padding: 0.1rem 0;
-        margin-top: 0.5rem;
+        padding: $main-spacing - 8.4 0;
+        margin-top: $main-spacing - 2;
 
         @include for-normal-desktoop {
 
-            margin-top: 0.8rem;
+            margin-top: $main-spacing + 2.8;
 
         }
 
@@ -151,14 +146,8 @@
             color: $main-button-color;
 
 
+
         }
-
-
     }
-
-
-
-
-
 
 }

@@ -1,23 +1,13 @@
 import {
     getElementPosition
 } from '../tools/getElementPosition'
-
-
 const popup = document.querySelector('.popup');
 const link = document.querySelector('.form__checkbox--link');
 const popupBtn = document.querySelector('.popup__button');
-
-
 let initialized = false;
-
-
-
 
 /* POPUP OPEN/CLOSE */
 const init = () => {
-
-
-
 
     if (!initialized) {
 
@@ -36,12 +26,7 @@ const init = () => {
 
 
         });
-
         createEvent();
-
-
-
-
         window.addEventListener('click', (e) => closeWhenClickOutOfPopup(e));
         popupBtn.addEventListener('click', popupDisactive);
 
@@ -108,7 +93,6 @@ const getDirection = () => {
     const linkPosition = getElementPosition(link);
     const popupLegHeight = getPopupLegHeight();
     return {
-
         up: popupPosition.top <= 0,
         down: innerHeight - popupPosition.bottom <= 0,
         isEnouthSpaceOnBottom: innerHeight >= (linkPosition.bottom + popupPosition.height + popupLegHeight),

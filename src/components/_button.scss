@@ -1,6 +1,6 @@
 .button {
-    // przerobić buttona na takiego jak w form ? 
-    padding-left: 1rem;
+
+    padding-left: $main-spacing + 6;
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.5);
     ;
@@ -13,8 +13,10 @@
     -webkit-user-select: none;
 
 
+    font-size: $root-font-size;
+
     @include for-small-desktop {
-        font-size: 1.4rem;
+        font-size: 1.4em;
 
         &:hover {
             cursor: pointer;
@@ -25,21 +27,5 @@
 
     }
 
-    @include for-normal-desktoop {
-        font-size: 2rem;
-        line-height: 59px;
 
-    }
-
-    @include for-big-desktop {
-        font-size: 2.5rem;
-        line-height: 67px;
-
-    }
-
-    @include for-huge-desktop {
-        font-size: 3rem;
-        line-height: 75px;
-
-    }
 }
