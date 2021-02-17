@@ -1,29 +1,30 @@
 .footer {
     @include flex-box(column, space-evenly, center);
-
+    padding: 0 $main-spacing * 3;
     height: 10vh;
     width: 100%;
-
+    font-size: $root-font-size;
+    color: $primary-font-color;
 
     &__content {
 
 
-        font: 300 normal 0.5rem/3.125em $main-font;
+        font: 300 normal 0.5em/3.125em $main-font;
 
         @include for-huge-phone {
-            font-size: 0.6rem;
+            font-size: 0.6em;
         }
 
         @include for-small-desktop {
-            font-size: 0.8rem;
+            font-size: 0.8em;
         }
 
         @include for-normal-desktoop {
-            font-size: 1rem;
+            font-size: 1em;
         }
 
         @include for-huge-desktop {
-            font-size: 1.5rem;
+            font-size: 1.5em;
         }
     }
 

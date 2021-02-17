@@ -1,17 +1,7 @@
-$main-background-color:#E5E5E5;
-$main-font-color:#FCFDFB;
-$gray:#808080;
-$transparent-gray:rgba(90, 108, 121, 0.12);
-;
-$main-button-color:
-/* #5C52F7 */
-#0095da;
-$transparent-blue:
-/* #5C52F7 */
-rgba(0, 149, 218, 0.7);
+$primary-color:#0095da;
 
 
-
+$transparent-blue: rgba(0, 149, 218, 0.7);
 $title-font:'Roboto',
 sans-serif;
 $main-font: 'Roboto Condensed',
@@ -22,15 +12,29 @@ $main-spacing: 10px;
 
 $primary-font-color:#0f3a53;
 //#016492
+$secondary-font-color:#FCFDFB;
+
+
 
 
 //menu
 $menu-height: 285px;
 $nav-bar-heigth: 60px;
 
+
 //burger
 $burger-dimensions:("height" :30px, "width":42px, "burger-span-height": 5px);
+$burger-color:$primary-color;
+//header
 
+
+//button 
+
+$button-text-color: $primary-font-color;
+$button-border-color : $primary-font-color;
+$main-button-background-color:$primary-color;
+
+// list-wrapper
 
 :root {
     --loader-color: #1c89ff;

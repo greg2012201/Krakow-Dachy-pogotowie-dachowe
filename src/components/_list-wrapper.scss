@@ -5,6 +5,7 @@
     width: 260px;
     font-size: $root-font-size;
 
+
     @include for-phone-landscape {
         margin-bottom: $main-spacing * 2;
 
@@ -75,8 +76,8 @@
         }
 
         &--active {
-            background-color: $main-button-color;
-            color: $main-font-color;
+            background-color: $main-button-background-color;
+            color: $secondary-font-color;
             background-position-y: 3%;
         }
 
@@ -135,6 +136,7 @@
         padding: $main-spacing - 8.4 0;
         margin-top: $main-spacing - 2;
 
+
         @include for-normal-desktoop {
 
             margin-top: $main-spacing + 2.8;
@@ -143,7 +145,8 @@
 
         &::marker {
             content: '☞ ';
-            color: $main-button-color;
+            color: $primary-color;
+
 
 
 

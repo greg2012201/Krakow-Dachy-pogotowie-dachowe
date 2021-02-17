@@ -132,7 +132,7 @@
         font: normal normal 1.2em/2.5em $title-font;
         letter-spacing: .1rem;
         display: block;
-        color: $main-font-color;
+        color: $secondary-font-color;
         text-transform: uppercase;
         border-bottom: 1px solid white;
         transition: .2s;
@@ -151,8 +151,8 @@
 
         &:hover {
 
-            color: $main-button-color;
-            border-bottom: 1px solid $main-button-color;
+            color: $primary-color;
+            border-bottom: 1px solid $primary-color;
         }
     }
 

@@ -2,11 +2,11 @@
 
     padding-left: $main-spacing + 6;
     background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    ;
-    border-radius: 2px;
-    font: normal normal 1.125rem/45px $main-font;
+    border: 1px solid $button-border-color;
+    font: normal bold 1.125rem/45px $main-font;
+    color: $button-text-color;
     text-transform: uppercase;
+
     transition: .5s;
     -moz-user-select: none;
     -khtml-user-select: none;
@@ -20,7 +20,11 @@
 
         &:hover {
             cursor: pointer;
-            background-color: $main-button-color;
+            color: white;
+            background-color: $main-button-background-color;
+
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, $transparent-blue 0px 18px 36px -18px inset;
+            color: white;
 
 
         }

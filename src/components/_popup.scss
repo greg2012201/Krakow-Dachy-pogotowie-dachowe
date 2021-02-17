@@ -7,7 +7,7 @@
     color: white;
     max-width: 400px;
     width: 120%;
-    background-color: $main-button-color;
+    background-color: $primary-color;
     padding: 20px;
     padding-right: 25px;
     border-radius: 5px;
@@ -50,7 +50,7 @@
         position: absolute;
         height: 35px; // 49.35px
         width: 35px;
-        background-color: $main-button-color;
+        background-color: $primary-color;
 
         transform: translateY(50%) rotate(45deg);
         bottom: 0;

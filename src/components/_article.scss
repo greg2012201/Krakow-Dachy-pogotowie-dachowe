@@ -4,7 +4,6 @@
     flex-direction: column;
     font-size: $root-font-size;
 
-
     @include for-phone-landscape {
         flex-direction: row;
         justify-content: start;
