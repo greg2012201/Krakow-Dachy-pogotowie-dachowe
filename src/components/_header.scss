@@ -65,7 +65,7 @@
 
     &__title {
         letter-spacing: .2rem;
-        margin-top: ($main-spacing * 15) + 5; //30vh;
+        margin-top: 30vh; //30vh;
         font: normal bold 3.125em/3.687rem $title-font;
         text-transform: uppercase;
         transform: translate(-2px, -20px);
@@ -74,7 +74,8 @@
 
         @include for-phone-landscape {
             transform: translate(-20px, -25px);
-            margin-top: ($main-spacing * 12) + 5
+
+            /*   margin-top: 8vh; */
         }
 
         @include for-small-tablet {
@@ -88,6 +89,7 @@
         }
 
         @include for-small-desktop {
+            /*  margin-top: 32vh; */
             font-size: 4.7em;
 
 
@@ -133,7 +135,7 @@
 
 
         @include for-phone-landscape {
-            margin-top: 0;
+            margin-top: 8vh;
 
         }
 
