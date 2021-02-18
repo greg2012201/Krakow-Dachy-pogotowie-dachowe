@@ -1,12 +1,11 @@
 .popup {
 
     margin: 0;
-
     position: absolute;
     font: normal normal 0.8em/1.3em $main-font;
     color: white;
     max-width: 400px;
-    width: 120%;
+    width: $popup-width;
     background-color: $primary-color;
     padding: 20px;
     padding-right: 25px;
@@ -16,7 +15,6 @@
     transform: translateY(-105%);
     top: 0;
     left: 0;
-
     opacity: 0;
     z-index: -2;
     transition: .3s;
@@ -35,11 +33,6 @@
         font-size: 20px;
         transition: .2s;
 
-        @include for-small-desktop {
-            /*  &:hover {
-                color: $transparent-blue;
-            } */
-        }
     }
 
     &__element-square {
@@ -48,7 +41,7 @@
         padding: 0;
         display: block;
         position: absolute;
-        height: 35px; // 49.35px
+        height: 35px;
         width: 35px;
         background-color: $primary-color;
 

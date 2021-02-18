@@ -3,7 +3,10 @@
     padding-left: $main-spacing + 6;
     background: #FFFFFF;
     border: 1px solid $button-border-color;
-    font: normal bold 1.125rem/45px $main-font;
+    font-size: $root-font-size;
+    font-weight: bold;
+    line-height: $button-height;
+    font-family: $main-font;
     color: $button-text-color;
     text-transform: uppercase;
 

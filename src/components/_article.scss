@@ -24,14 +24,13 @@
         color: $primary-font-color;
 
         @include for-small-desktop {
-
-            line-height: 2rem;
             font-size: 1.5em;
+            line-height: 2rem;
         }
 
 
         @include for-big-desktop {
-            font-size: 2rem;
+            font-size: 2em;
             line-height: 1.7em;
         }
 

@@ -2,8 +2,9 @@
 
     height: 50px;
     transition: .5s;
-    width: 260px;
+    width: $list-wrapper-width;
     font-size: $root-font-size;
+    margin-right: $main-spacing;
 
 
     @include for-phone-landscape {
@@ -12,20 +13,20 @@
     }
 
     @include for-small-desktop {
-        width: 33%;
+        width: $list-wrapper-width + 42;
     }
 
     @include for-normal-desktoop {
-        width: 32%;
+        width: $list-wrapper-width + 120;
     }
 
     @include for-big-desktop {
-        width: 33%;
+        width: $list-wrapper-width + 220;
     }
 
     @include for-huge-desktop {
 
-        width: 620px;
+        width: ($list-wrapper-width * 2) + 100;
 
     }
 
@@ -43,6 +44,7 @@
     }
 
     &__title {
+        width: 100%;
         position: relative;
         margin-right: $main-spacing * 2;
         background-image: url('../images/arrow-up-down.svg'
@@ -56,7 +58,7 @@
                 );
 
             font-size: 1.6em;
-            line-height: 59px;
+            line-height: $button-height + 14;
         }
 
         @include for-big-desktop {
@@ -64,7 +66,7 @@
             background-image: url('../images/arrow-up-down-big-desktop.svg'
                 );
             font-size: 1.8em;
-            line-height: 67px;
+            line-height: $button-height + 22;
 
         }
 
@@ -72,7 +74,7 @@
 
             background-image: url('../images/arrow-up-down-huge-desktop.svg');
             font-size: 2em;
-            line-height: 75px;
+            line-height: $button-height + 30;
         }
 
         &--active {

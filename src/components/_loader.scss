@@ -12,10 +12,10 @@
 
     display: flex;
 
-    width: 40px;
-    height: 40px;
+    width: map-get($loader-dimensions, "height");
+    height: map-get($loader-dimensions, "width");
     background: transparent;
-    margin: 10px auto;
+    margin: $main-spacing auto;
     border: solid 2px $transparent-blue;
     border-top: solid 2px #1c89ff;
     border-radius: 50%;

@@ -1,42 +1,52 @@
-$primary-color:#0095da;
-
-
-$transparent-blue: rgba(0, 149, 218, 0.7);
+// fonts
 $title-font:'Roboto',
 sans-serif;
 $main-font: 'Roboto Condensed',
 sans-serif;
 $root-font-size:16px;
+
+// spacings
 $main-spacing: 10px;
 
-
+//colors
+$primary-color:#0095da;
+$transparent-blue: rgba(0, 149, 218, 0.7);
 $primary-font-color:#0f3a53;
-//#016492
 $secondary-font-color:#FCFDFB;
-
-
-
 
 //menu
 $menu-height: 285px;
 $nav-bar-heigth: 60px;
+$logo-width:165px;
 
 
 //burger
 $burger-dimensions:("height" :30px, "width":42px, "burger-span-height": 5px);
 $burger-color:$primary-color;
-//header
-
 
 //button 
-
+$button-height:45px;
 $button-text-color: $primary-font-color;
 $button-border-color : $primary-font-color;
 $main-button-background-color:$primary-color;
 
 // list-wrapper
+$list-wrapper-width:260px;
+//form
+$form-width:270px;
+$form-text-area-height:100px;
+$checkbox-dimensions:("height" :27px, "width":27px);
+
+//loader 
+$loader-dimensions:("height":40px, "width":40px);
+
+//popup
+$popup-width:120%;
 
 :root {
     --loader-color: #1c89ff;
-    /* font-size: $root-font-size; */
 }
+
+//footer 
+$footer-height:10vh;
+$footer-border-height:2px;

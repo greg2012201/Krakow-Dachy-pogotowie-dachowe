@@ -15,7 +15,7 @@
     z-index: 999;
     flex-wrap: wrap;
     transition: .3s .2s;
-    padding: 0 $main-spacing * 2; //$main-padding(spacing) dać jako 10px więc tutaj main-spacing * 2
+    padding: 0 $main-spacing * 2;
     font-size: $root-font-size;
 
 
@@ -39,9 +39,9 @@
 
     &__logo {
         align-self: center;
-        width: 200px;
+        width: $logo-width;
+        max-width: $logo-width;
         cursor: pointer;
-        height: 100%;
         padding: 0;
         margin: 0;
         display: block;
@@ -50,7 +50,7 @@
 
         @include for-small-desktop {
             height: 60px;
-            width: 170px;
+            width: $logo-width + 20px;
 
         }
 
