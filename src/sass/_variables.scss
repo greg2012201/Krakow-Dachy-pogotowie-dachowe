@@ -8,6 +8,10 @@ $root-font-size:16px;
 // spacings
 $main-spacing: 10px;
 
+//rwd 
+
+$breakpoints: ("extra-small":(min-width:501px), "very-small":(min-width:601px), "small": (min-width:701px), "medium":(min-width:901px), "extra-medium":(min-width:1029px), "large":(min-width:1281px), "very-large":(min-width:1601px), "extra-large":(min-width:1921px));
+
 //colors
 $primary-color:#0095da;
 $transparent-blue: rgba(0, 149, 218, 0.7);
