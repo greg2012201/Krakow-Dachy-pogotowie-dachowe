@@ -7,24 +7,24 @@
     margin-right: $main-spacing;
 
 
-    @include for-phone-landscape {
+    @include mq(extra-small) {
         margin-bottom: $main-spacing * 2;
 
     }
 
-    @include for-small-desktop {
+    @include mq(extra-medium) {
         width: $list-wrapper-width + 42;
     }
 
-    @include for-normal-desktoop {
+    @include mq(large) {
         width: $list-wrapper-width + 120;
     }
 
-    @include for-big-desktop {
+    @include mq(very-large) {
         width: $list-wrapper-width + 220;
     }
 
-    @include for-huge-desktop {
+    @include mq(extra-large) {
 
         width: ($list-wrapper-width * 2) + 100;
 
@@ -36,7 +36,7 @@
         width: 100%;
         overflow: hidden;
 
-        @include for-huge-desktop {
+        @include mq(extra-large) {
 
             padding-left: $main-spacing;
 
@@ -53,7 +53,7 @@
         background-repeat: no-repeat;
 
 
-        @include for-normal-desktoop {
+        @include mq(large) {
             background-image: url('../images/arrow-up-down-normal-desktop.svg'
                 );
 
@@ -61,7 +61,7 @@
             line-height: $button-height + 14;
         }
 
-        @include for-big-desktop {
+        @include mq(very-large) {
 
             background-image: url('../images/arrow-up-down-big-desktop.svg'
                 );
@@ -70,7 +70,7 @@
 
         }
 
-        @include for-huge-desktop {
+        @include mq(extra-large) {
 
             background-image: url('../images/arrow-up-down-huge-desktop.svg');
             font-size: 2em;
@@ -100,21 +100,21 @@
         font: normal 300 1em/1.5rem $main-font;
         list-style-type: circle;
 
-        @include for-small-desktop {
+        @include mq(extra-medium) {
 
             font-size: 1.2em;
             line-height: 1.7rem;
 
         }
 
-        @include for-normal-desktoop {
+        @include mq(large) {
 
             font-size: 1.5em;
             line-height: 1.9rem;
 
         }
 
-        @include for-big-desktop {
+        @include mq(very-large) {
 
             font-size: 1.8em;
             line-height: 2rem;
@@ -139,7 +139,7 @@
         margin-top: $main-spacing - 2;
 
 
-        @include for-normal-desktoop {
+        @include mq(large) {
 
             margin-top: $main-spacing + 2.8;
 

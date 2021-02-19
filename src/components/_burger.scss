@@ -11,7 +11,7 @@
     overflow: hidden;
     margin-top: 0;
 
-    @include for-small-desktop {
+    @include mq(extra-medium) {
         display: none;
     }
 

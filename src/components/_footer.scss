@@ -11,19 +11,19 @@
 
         font: 300 normal 0.5em/3.125em $main-font;
 
-        @include for-huge-phone {
+        @include mq(very-small) {
             font-size: 0.6em;
         }
 
-        @include for-small-desktop {
+        @include mq(extra-medium) {
             font-size: 0.8em;
         }
 
-        @include for-normal-desktoop {
+        @include mq(large) {
             font-size: 1em;
         }
 
-        @include for-huge-desktop {
+        @include mq(extra-large) {
             font-size: 1.5em;
         }
     }

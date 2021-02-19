@@ -18,7 +18,7 @@
 
     font-size: $root-font-size;
 
-    @include for-small-desktop {
+    @include mq(extra-medium) {
         font-size: 1.4em;
 
         &:hover {

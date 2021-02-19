@@ -4,7 +4,7 @@
     flex-direction: column;
     font-size: $root-font-size;
 
-    @include for-phone-landscape {
+    @include mq(extra-small) {
         flex-direction: row;
         justify-content: start;
         flex-wrap: wrap;
@@ -23,13 +23,13 @@
         transform: translateY(-4%);
         color: $primary-font-color;
 
-        @include for-small-desktop {
+        @include mq(extra-medium) {
             font-size: 1.5em;
             line-height: 2rem;
         }
 
 
-        @include for-big-desktop {
+        @include mq(very-large) {
             font-size: 2em;
             line-height: 1.7em;
         }
@@ -41,7 +41,7 @@
         }
 
 
-        @include for-phone-landscape {
+        @include mq(extra-small) {
             flex-basis: 60%;
             align-self: center;
         }
@@ -58,7 +58,7 @@
         opacity: 0;
 
 
-        @include for-phone-landscape {
+        @include mq(extra-small) {
             width: 40%;
             align-self: center;
         }
@@ -76,7 +76,7 @@
         transform: translateX(-100%) rotate(-360deg);
         opacity: 0;
 
-        @include for-phone-landscape {
+        @include mq(extra-small) {
             order: -1;
         }
     }

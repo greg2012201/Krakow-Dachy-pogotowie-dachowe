@@ -9,13 +9,13 @@
     min-width: 230px;
     font-size: $root-font-size;
 
-    @include for-phone-landscape {
+    @include mq (extra-small) {
         grid: repeat(10, auto) / 50% 50%;
         column-gap: 10px;
         width: ($form-width * 2) - 140px;
     }
 
-    @include for-small-desktop {
+    @include mq (extra-medium) {
         font-size: 1.1em;
     }
 
@@ -47,7 +47,7 @@
 
         &--name {
 
-            @include for-phone-landscape {
+            @include mq(extra-small) {
 
                 grid-column-start: 1;
                 grid-column-end: 2;
@@ -60,7 +60,7 @@
 
 
 
-            @include for-phone-landscape {
+            @include mq(extra-small) {
                 grid-column-start: 2;
                 grid-column-end: 3;
                 grid-row-start: 2;
@@ -71,7 +71,7 @@
 
         &--message {
 
-            @include for-phone-landscape {
+            @include mq(extra-small) {
                 grid-row-start: 4;
                 grid-row-end: 4;
                 grid-column-start: 1;
@@ -90,7 +90,7 @@
         grid-column: 1;
         grid-row: 8;
 
-        @include for-phone-landscape {
+        @include mq(extra-small) {
             grid-row-start: 7;
             grid-row-end: 8;
             grid-column-start: 1;
@@ -109,7 +109,7 @@
             max-height: 30px;
 
 
-            @include for-phone-landscape {
+            @include mq(extra-small) {
                 grid-row-start: 3;
                 grid-row-end: 4;
                 grid-column-start: 1;
@@ -122,7 +122,7 @@
             max-height: 30px;
 
 
-            @include for-phone-landscape {
+            @include mq(extra-small) {
 
                 grid-row-start: 3;
                 grid-row-end: 4;
@@ -140,7 +140,7 @@
             grid-column: 1;
 
 
-            @include for-phone-landscape {
+            @include mq(extra-small) {
 
                 grid-row-start: 5;
                 grid-row-end: 5;
@@ -302,17 +302,17 @@
             }
         }
 
-        @include for-phone-landscape {
+        @include mq(extra-small) {
 
             width: 120px;
             cursor: normal;
         }
 
-        @include for-small-tablet {
+        @include mq(small) {
             width: 120px;
         }
 
-        @include for-small-desktop {
+        @include mq(extra-medium) {
             width: 120px;
         }
     }
@@ -329,7 +329,7 @@
         grid-column-start: 1;
         grid-column-end: 3;
 
-        @include for-small-tablet {
+        @include mq(small) {
             grid-row-start: 8;
             grid-row-end: 11;
             grid-column-start: 1;

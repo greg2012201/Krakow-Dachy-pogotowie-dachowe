@@ -14,32 +14,32 @@
 
     font-size: $root-font-size;
 
-    @include for-phone-landscape {
+    @include mq(extra-small) {
         background-size: 801px 100vh;
     }
 
-    @include for-huge-phone {
+    @include mq(very-small) {
         background-size: 1101px 100vh;
     }
 
 
 
-    @include for-tablet {
+    @include mq(medium) {
 
         background-size: 1304px 100vh;
     }
 
-    @include for-small-desktop {
+    @include mq(extra-medium) {
         background-image: url('../images/house-2762600_1920.jpg');
         background-size: 1501px 100vh;
     }
 
-    @include for-normal-desktoop {
+    @include mq(large) {
 
         background-size: 1901px auto;
     }
 
-    @include for-big-desktop {
+    @include mq(very-large) {
         background-image: url('../images/house-huge.jpg');
         background-size: calc(100% + 200px) auto;
     }
@@ -65,30 +65,30 @@
 
     &__title {
         letter-spacing: .2rem;
-        margin-top: 30vh; //30vh;
+        margin-top: 30vh;
         font: normal bold 3.125em/3.687rem $title-font;
         text-transform: uppercase;
         transform: translate(-2px, -20px);
 
 
 
-        @include for-phone-landscape {
+        @include mq(extra-small) {
             transform: translate(-20px, -25px);
 
             /*   margin-top: 8vh; */
         }
 
-        @include for-small-tablet {
+        @include mq(small) {
             font-size: 3.5em;
         }
 
-        @include for-tablet {
+        @include mq(medium) {
             transform: translate(-30px, -40px);
             font-size: 4em;
             letter-spacing: .3rem;
         }
 
-        @include for-small-desktop {
+        @include mq(extra-medium) {
             /*  margin-top: 32vh; */
             font-size: 4.7em;
 
@@ -96,21 +96,21 @@
             letter-spacing: .5rem;
         }
 
-        @include for-normal-desktoop {
+        @include mq(large) {
             font-size: 5em;
 
 
             letter-spacing: .6rem;
         }
 
-        @include for-big-desktop {
+        @include mq(very-large) {
             font-size: 5.5em;
 
 
             letter-spacing: .8rem;
         }
 
-        @include for-huge-desktop {
+        @include mq(extra-large) {
             font-size: 7em;
 
 
@@ -134,37 +134,37 @@
 
 
 
-        @include for-phone-landscape {
+        @include mq(extra-small) {
             margin-top: 8vh;
 
         }
 
-        @include for-huge-phone {
+        @include mq(very-small) {
 
             transform: translate(20px, 30px);
         }
 
-        @include for-small-tablet {
+        @include mq(small) {
             font-size: 2em;
         }
 
-        @include for-tablet {
+        @include mq(medium) {
             transform: translate(30px, 40px);
             font-size: 2.2em;
         }
 
-        @include for-small-desktop {
+        @include mq(extra-medium) {
             font-size: 2.8em;
             line-height: 3.6rem;
 
         }
 
-        @include for-big-desktop {
+        @include mq(very-large) {
             font-size: 3.5em;
 
         }
 
-        @include for-huge-desktop {
+        @include mq(extra-large) {
             font-size: 3.9em;
 
         }

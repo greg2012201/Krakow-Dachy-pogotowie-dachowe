@@ -6,11 +6,11 @@
     flex-wrap: wrap;
 
 
-    @include for-phone-landscape {
+    @include mq(extra-small) {
         flex-direction: row;
     }
 
-    @include for-huge-desktop {
+    @include mq(extra-large) {
         justify-content: space-between;
     }
 
@@ -28,25 +28,23 @@
         animation: shake 3s 1s both linear infinite;
         text-align: left;
 
-        @include for-huge-phone {
+        @include mq(very-small) {
             font-size: 1.3em;
         }
 
-        @include for-small-tablet {
+        @include mq(small) {
             font-size: 1.5em;
         }
 
-
-
-        @include for-normal-desktoop {
+        @include mq(large) {
             font-size: 2em;
         }
 
-        @include for-big-desktop {
+        @include mq(very-large) {
             font-size: 2.3em;
         }
 
-        @include for-huge-desktop {
+        @include mq(extra-large) {
             font-size: 2.9em;
         }
     }
