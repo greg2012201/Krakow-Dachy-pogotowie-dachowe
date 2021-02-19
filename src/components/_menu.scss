@@ -49,8 +49,9 @@
         transform: translateY(4%);
 
         @include for-small-desktop {
-            height: 60px;
-            width: $logo-width + 20px;
+            height: 80px;
+            width: $logo-width + 50px;
+            max-width: $logo-width + 200px;
 
         }
 
