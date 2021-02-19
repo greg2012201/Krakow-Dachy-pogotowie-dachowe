@@ -44,60 +44,18 @@
 
 
 
+@mixin mq ($breakpoint) {
 
+    $size: map-get($breakpoints, $breakpoint);
 
-
-
-@mixin for-phone-landscape {
-    @media (min-width:501px) {
-        @content;
-    }
-}
-
-// dodaj jeszcze układ landscape do tego jeszcze taka dobra praktyka
-
-@mixin for-huge-phone {
-    @media(min-width: 601px) {
-        @content;
-    }
-}
-
-@mixin for-small-tablet {
-    @media(min-width: 701px) {
-        @content;
-    }
-}
-
-@mixin for-tablet {
-    @media(min-width:901px) {
-        @content;
-    }
-}
-
-@mixin for-small-desktop {
-    @media(min-width:1029px) {
-        @content;
-    }
-}
-
-
-
-@mixin for-normal-desktoop {
-    @media(min-width:1281px) {
-        @content;
-    }
-}
-
-@mixin for-big-desktop {
-    @media(min-width:1601px) {
-        @content;
+    @if($size) {
+        @media #{$size} {
+            @content;
+        }
     }
 
-}
-
-@mixin for-huge-desktop {
-    @media(min-width:1921px) {
-        @content;
+    @else {
+        @error 'No value found for `#{$breakpoint}`.'
     }
 
 }
