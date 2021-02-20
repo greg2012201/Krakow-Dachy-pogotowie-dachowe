@@ -1,8 +1,8 @@
 .page {
-    @include flex-box (row, start, stretch);
     @include centering;
+    display: flex;
+    justify-content: start;
     flex-wrap: wrap;
-
 }
 
 .header {

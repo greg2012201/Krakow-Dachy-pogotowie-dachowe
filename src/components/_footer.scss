@@ -1,5 +1,8 @@
 .footer {
-    @include flex-box(column, space-evenly, center);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     padding: 0 $main-spacing * 3;
     height: $footer-height;
     width: 100%;

@@ -1,5 +1,7 @@
 .burger {
-    @include flex-box (row, center, center);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     width: map-get($burger-dimensions, "width");
     height: map-get($burger-dimensions, "height");

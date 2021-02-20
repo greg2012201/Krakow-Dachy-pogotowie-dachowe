@@ -7,7 +7,10 @@
     top: - $menu-height + $nav-bar-heigth;
     left: 0;
 
-    @include flex-box(row, end, space-between);
+
+    display: flex;
+    justify-content: end;
+    align-items: space-between;
     align-items: flex-end;
     background-color: rgba(0, 0, 0, 0.21);
     box-shadow: inset 20px 20px 100px rgba(0, 0, 0, 0.25);
@@ -60,11 +63,10 @@
 
 
     &__nav-bar {
-        margin: 0 0;
-        padding: 0;
-        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex-basis: 100%;
-        @include flex-box(row, center, center);
         height: $nav-bar-heigth;
         ;
         cursor: pointer;
@@ -82,8 +84,10 @@
     }
 
     &__navigation {
+        display: flex;
+        justify-content: start;
+        align-items: space-between;
         flex-basis: 100%;
-        @include flex-box(row, start, space-between);
         flex-wrap: wrap;
         list-style: none;
         align-self: flex-start;
