@@ -93,10 +93,11 @@
         transition: .5s;
         transform: translateY(-1000px);
         margin-bottom: $main-spacing;
+        margin-left: 2px;
         height: 0px;
         padding: $main-spacing * 2 $main-spacing * 7 $main-spacing * 2 ($main-spacing * 2) + 5;
         z-index: -10;
-        margin-left: 2px;
+
         font: normal 300 1em/1.5rem $main-font;
         list-style-type: circle;
 

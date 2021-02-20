@@ -1,17 +1,17 @@
 .burger {
     display: flex;
+    /*   @include centering; */
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     width: map-get($burger-dimensions, "width");
     height: map-get($burger-dimensions, "height");
     margin-left: auto;
-    padding: 0;
     background-color: transparent;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border: none;
     overflow: hidden;
-    margin-top: 0;
+
 
     @include mq(extra-medium) {
         display: none;

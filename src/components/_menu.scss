@@ -45,10 +45,6 @@
         width: $logo-width;
         max-width: $logo-width;
         cursor: pointer;
-        padding: 0;
-        margin: 0;
-        display: block;
-        box-sizing: border-box;
         transform: translateY(4%);
 
         @include mq(extra-medium) {

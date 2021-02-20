@@ -1,6 +1,4 @@
 .popup {
-
-    margin: 0;
     position: absolute;
     font: normal normal 0.8em/1.3em $main-font;
     color: white;
@@ -37,14 +35,11 @@
 
     &__element-square {
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
         display: block;
         position: absolute;
         height: 35px;
         width: 35px;
         background-color: $primary-color;
-
         transform: translateY(50%) rotate(45deg);
         bottom: 0;
         left: 10%;
@@ -64,7 +59,7 @@
 
         .popup__element-square {
 
-            bottom: 0;
+            bottom: 0.5px;
             left: 10%;
             transform: translateY(50%) rotate(45deg);
 

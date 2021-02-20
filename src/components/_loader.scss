@@ -15,7 +15,7 @@
     width: map-get($loader-dimensions, "height");
     height: map-get($loader-dimensions, "width");
     background: transparent;
-    margin: $main-spacing auto;
+    @include centering($main-spacing);
     border: solid 2px $transparent-blue;
     border-top: solid 2px #1c89ff;
     border-radius: 50%;
