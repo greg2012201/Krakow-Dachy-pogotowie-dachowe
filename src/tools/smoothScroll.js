@@ -1,6 +1,5 @@
-export const smoothScroll = (link, duration) => {
+export const smoothScroll = (targetPosition, duration) => {
 
-    const targetPosition = document.querySelector(`.${link}`).offsetTop;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
     let startTime = null;

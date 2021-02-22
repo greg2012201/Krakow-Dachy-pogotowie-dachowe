@@ -95,11 +95,15 @@ document.addEventListener('mousemove', mouseOver)
 
 
 /* SCROLL TO */
+const getDestination = (link) => {
 
+    const destination = link.dataset.destination;
+    return document.querySelector(`.${destination}`).offsetTop;
+
+}
 
 navBtns.forEach(btn => btn.addEventListener('click', function (e) {
-    const link = this.dataset.destination;
-
+    const targetPosition = getDestination(this);
     e.preventDefault();
-    smoothScroll(link, 1000);
+    smoothScroll(targetPosition, 1000);
 }));
