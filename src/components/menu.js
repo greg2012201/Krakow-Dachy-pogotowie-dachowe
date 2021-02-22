@@ -1,12 +1,12 @@
 /* MENU */
-
-
-/* menu musi się chować po odkliknieciu bo przeszkadza albo być mniejsze */
+import {
+    smoothScroll
+} from '../tools/smoothScroll'
 const sections = [...document.querySelectorAll('.section')];
 const burger = document.querySelector('.burger');
 const dropDownMenu = document.querySelector('.menu');
 const navBar = document.querySelector('.menu__nav-bar');
-const header = document.querySelector('.header');
+const navBtns = document.querySelectorAll('.menu__link, .logo')
 
 let menuIsOpen = false;
 const openMenu = () => {
@@ -49,7 +49,7 @@ document.addEventListener('click', menuManage);
 /* HIDE MENU */
 const menu = document.querySelector('.menu');
 let startPagePosition = window.pageYOffset;
-let menuHidden = false;
+
 const hideNavBar = () => {
 
     if (!menuIsOpen) menu.classList.add('menu--hidden');
@@ -61,11 +61,14 @@ const showNavBar = () => {
 
 }
 const autoHideMenu = () => {
+
     let currentPagePosition = window.pageYOffset;
 
     let sectionsPosition = sections.find(element =>
-        output = element.offsetTop === parseInt(currentPagePosition.toFixed()));
 
+        {
+            return element.offsetTop === parseInt(currentPagePosition.toFixed())
+        });
 
     if (sectionsPosition) {
         hideNavBar();
@@ -92,35 +95,9 @@ document.addEventListener('mousemove', mouseOver)
 
 
 /* SCROLL TO */
-const smoothScroll = (link, duration) => {
 
-    const targetPosition = document.querySelector(`.${link}`).offsetTop;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    let startTime = null;
 
-    const animation = (currentTime) => {
-        if (startTime === null) startTime = currentTime;
-        const timeElapsed = currentTime - startTime;
-        const run = ease(timeElapsed, startPosition, distance, duration);
-
-        window.scrollTo(0, run);
-        if (timeElapsed < duration) requestAnimationFrame(animation);
-
-    }
-    const ease = (t, b, c, d) => {
-
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
-
-    }
-
-    requestAnimationFrame(animation)
-}
-
-const navBtns = document.querySelectorAll('.menu__link, .logo').forEach(btn => btn.addEventListener('click', function (e) {
+navBtns.forEach(btn => btn.addEventListener('click', function (e) {
     const link = this.dataset.destination;
 
     e.preventDefault();
