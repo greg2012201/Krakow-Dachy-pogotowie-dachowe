@@ -48,5 +48,7 @@
     "webpack-cli": "^4.3.1",
     "webpack-dev-server": "^4.0.0-beta.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "smooth-desktop-mobile-scroll": "^1.0.3"
+  }
 }

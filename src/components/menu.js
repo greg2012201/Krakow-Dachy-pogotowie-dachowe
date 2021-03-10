@@ -1,7 +1,6 @@
 /* MENU */
-import {
-    smoothScroll
-} from '../tools/smoothScroll'
+
+const smoothScroll = require('smooth-desktop-mobile-scroll');
 const sections = [...document.querySelectorAll('.section')];
 const burger = document.querySelector('.burger');
 const dropDownMenu = document.querySelector('.menu');
@@ -105,5 +104,6 @@ const getDestination = (link) => {
 navBtns.forEach(btn => btn.addEventListener('click', function (e) {
     const targetPosition = getDestination(this);
     e.preventDefault();
-    smoothScroll(targetPosition, 1000);
+    smoothScroll.smoothScrollTo(targetPosition, '2000ms', 'ease');
+
 }));
