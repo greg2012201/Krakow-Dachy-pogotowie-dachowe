@@ -22,8 +22,8 @@
 
 @keyframes background-move {
 
-    100% {
-        background-position-x: -200px;
+    to {
+        transform: translateX(-200px);
     }
 
 
