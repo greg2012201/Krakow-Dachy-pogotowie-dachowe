@@ -1,7 +1,14 @@
-// pasuje zrobić zbezpieczenie jak się wyjedze z intoView to wtedy jest opacity 0;
 const changeWhenScroling = (element) => {
 
-    const percent = element.getBoundingClientRect().bottom / element.getBoundingClientRect().height * 100
+    const parent = element.parentElement
+    const dimensions = getDimensions(element, parent);
+    const {
+        elementHeight,
+        parentTop,
+    } = dimensions
+
+    const percent = 100 - (-parentTop) / elementHeight * 100;
+    console.log(percent);
 
     if (percent >= 0) {
 
@@ -10,6 +17,16 @@ const changeWhenScroling = (element) => {
 
     } else return
 
+};
+
+const getDimensions = (element, parent) => {
+
+    return {
+        elementHeight: element.getBoundingClientRect().height,
+        parentTop: parent.getBoundingClientRect().top
+
+
+    }
 }
 
 document.addEventListener('scroll', () => changeWhenScroling(document.querySelector('.header')));
