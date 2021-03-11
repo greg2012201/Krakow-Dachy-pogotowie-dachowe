@@ -15,7 +15,9 @@ const changeWhenScroling = (element) => {
         element.style.opacity = `${percent}%`
 
 
-    } else return
+    } else {
+        element.style.opacity = '0';
+    }
 
 };
 
