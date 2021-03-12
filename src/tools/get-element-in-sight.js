@@ -3,7 +3,7 @@ import {
 } from './getElementPosition';
 
 
-const getElementToAddModifier = (elements, modifier, toggle = -1 /* zamiast wartości liczbowej dać string 'toggle' domyślnie ma być false */ ) => {
+const getElementToAddModifier = (elements, modifier, toggle = -1) => {
 
     let arr;
     if (elements.find(element => element instanceof HTMLElement))
@@ -27,7 +27,9 @@ const isInView = ({
     top,
     bottom,
     vieportHeight,
-} = parameters) => top - vieportHeight <= 0 && bottom >= 0;
+} = parameters) => {
+    return top - vieportHeight <= 0 && bottom >= 0;
+}
 
 
 const getClass = (element, index) => element.classList.item(index);
@@ -37,9 +39,14 @@ const removeModifier = (element, modifier) => {
     element.classList.remove(`${getClass(element, 0)}${modifier}`);
 };
 export const addModifier = (elements, modifier, toggle) => {
-    const init = () => getElementToAddModifier(elements, modifier, toggle)
+    const init = () => {
+        getElementToAddModifier(elements, modifier, toggle);
+        requestAnimationFrame(init);
 
+    };
+
+    getElementToAddModifier(elements, modifier, toggle);
     document.addEventListener('DOMContentLoaded', init);
-    window.addEventListener('scroll', init);
+
 
 };
