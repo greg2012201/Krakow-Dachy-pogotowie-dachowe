@@ -19,7 +19,13 @@
 }
 
 .about {
-    margin-top: 50vh;
+
+    margin-top: 42vh;
+
+    @include mq(small) {
+        margin-top: 55vh;
+    }
+
 }
 
 .section {

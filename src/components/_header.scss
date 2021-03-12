@@ -1,48 +1,18 @@
 .header {
-
-
-
     transition: .5s;
-    animation: background-move 60s ease infinite alternate;
     overflow: hidden;
-
-
-    background: url('../images/house-2762600_640.jpg') no-repeat fixed;
-    background-size: 702px 100vh;
 
     font-size: $root-font-size;
 
-    @include mq(extra-small) {
-        background-size: 801px 100vh;
+    &__image {
+        animation: background-move 60s ease infinite alternate;
+        width: calc(100% + 210px);
+        height: 100vh;
+
+        @include mq(extra-medium) {
+            height: auto;
+        }
     }
-
-    @include mq(very-small) {
-        background-size: 1101px 100vh;
-    }
-
-
-
-    @include mq(medium) {
-
-        background-size: 1304px 100vh;
-    }
-
-    @include mq(extra-medium) {
-        background-image: url('../images/house-2762600_1920.jpg');
-        background-size: 1501px 100vh;
-    }
-
-    @include mq(large) {
-
-        background-size: 1901px auto;
-    }
-
-    @include mq(very-large) {
-        background-image: url('../images/house-huge.jpg');
-        background-size: calc(100% + 200px) auto;
-    }
-
-
 
     &--mask {
 
