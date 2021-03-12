@@ -1,10 +1,10 @@
 const smoothScroll = require('smooth-desktop-mobile-scroll');
 import {
     addModifier
-} from './get-element-in-sight';
+} from './getElementInSight';
 import {
     animationStopperInit
-} from './resize-animation-stopper';
+} from './resizeAnimationStopper';
 
 const images = document.querySelectorAll('.article__image');
 const text = document.querySelectorAll('.article__content');
