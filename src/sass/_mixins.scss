@@ -12,27 +12,15 @@
     left: $left;
 }
 
-@mixin rect ($height, $width) {
-    height: $height;
-    width: $width;
 
-}
 
-@mixin text-border {
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
+
 
 @mixin link-style-reset {
 
     color: black;
     text-decoration: none;
 
-}
-
-@mixin title-font-style ($font-size, $line-height) {
-    text-transform: uppercase;
-    font: normal normal $font-size/$line-height;
-    font-family: $title-font;
 }
 
 
