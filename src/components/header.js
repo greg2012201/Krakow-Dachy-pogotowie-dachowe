@@ -8,7 +8,7 @@ const changeWhenScroling = (element) => {
     } = dimensions
 
     const percent = 100 - (-parentTop) / elementHeight * 100;
-    console.log(percent);
+
 
     if (percent >= 0) {
 
