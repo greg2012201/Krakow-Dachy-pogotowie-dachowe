@@ -8,12 +8,9 @@ import {
 
 const images = document.querySelectorAll('.article__image');
 const text = document.querySelectorAll('.article__content');
-const title = document.querySelector('.header__title');
-const slogan = document.querySelector('.header__slogan');
-const page = document.querySelector('.page');
-
-const scrollAnimationDuration = '1000ms';
-const scrollAnimationTimingFunction = 'cubic-bezier(0.23, 1, 0.32, 1)';
+const title = document.querySelector('.slogan__title');
+const motto = document.querySelector('.slogan__motto');
+const page = document.querySelector('.page');;
 
 const desktopScroll = {
     duration: '1000ms',
@@ -28,7 +25,7 @@ const desktopVieport = 1281;
 
 animationStopperInit(page);
 addModifier([images, text], '--into-view');
-addModifier([title, slogan], '--into-view', 1);
+addModifier([title, motto], '--into-view', 1);
 if (innerWidth > desktopVieport) {
     smoothScroll.smoothScrollInit(desktopScroll.duration, desktopScroll.ease);
 } else {
