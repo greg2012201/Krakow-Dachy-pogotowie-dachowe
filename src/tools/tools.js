@@ -1,11 +1,13 @@
-const smoothScroll = require('smooth-desktop-mobile-scroll');
+/* const smoothScroll = require('smooth-desktop-mobile-scroll'); */
 import {
     addModifier
 } from './getElementInSight';
 import {
     animationStopperInit
 } from './resizeAnimationStopper';
-
+import {
+    smoothScrollInit
+} from 'smooth-desktop-mobile-scroll'
 const images = document.querySelectorAll('.article__image');
 const text = document.querySelectorAll('.article__content');
 const title = document.querySelector('.slogan__title');
@@ -27,7 +29,7 @@ animationStopperInit(page);
 addModifier([images, text], '--into-view');
 addModifier([title, motto], '--into-view', 1);
 if (innerWidth > desktopVieport) {
-    smoothScroll.smoothScrollInit(desktopScroll.duration, desktopScroll.ease);
+    smoothScrollInit(desktopScroll.duration, desktopScroll.ease);
 } else {
-    smoothScroll.smoothScrollInit(mobileScroll.duration, mobileScroll.ease);
+    smoothScrollInit(mobileScroll.duration, mobileScroll.ease);
 }
