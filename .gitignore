@@ -16,3 +16,7 @@ desktop.ini
 
 ## dist 
 /dist
+
+## files form VSC 
+
+.vscode
