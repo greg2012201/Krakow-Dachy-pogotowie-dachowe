@@ -2,6 +2,7 @@
 
     overflow: hidden;
     font-size: $root-font-size;
+    background-color: $main-background-color;
 
     &__title {
         margin-bottom: $main-spacing * 5;
