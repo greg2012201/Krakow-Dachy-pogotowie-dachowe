@@ -1,4 +1,4 @@
-const button = document.querySelectorAll('.accordion__title');
+const button = document.querySelectorAll('.accordion__button');
 const accordions = document.querySelectorAll('.accordion');
 
 const setDataset = () => {
@@ -30,7 +30,7 @@ button.forEach(btn => btn.addEventListener('click', (e) => {
 
     if (parent.dataset.key === e.target.dataset.key) {
 
-        e.target.classList.toggle('accordion__title--active')
+        e.target.classList.toggle('accordion__button--active')
         const containerHeight = parent.getBoundingClientRect().height;
         let listHeight;
         let btnHeight = e.target.getBoundingClientRect().height;

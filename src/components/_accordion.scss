@@ -43,7 +43,7 @@
         }
     }
 
-    &__title {
+    &__button {
         width: 100%;
         position: relative;
         margin-right: $main-spacing * 2;
@@ -51,7 +51,7 @@
             );
         background-position: 95% 100%;
         background-repeat: no-repeat;
-
+        text-align: left;
 
         @include mq(large) {
             background-image: url('../images/arrow-up-down-normal-desktop.svg'
