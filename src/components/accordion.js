@@ -1,10 +1,10 @@
-const button = document.querySelectorAll('.list-wrapper__title');
-const listWrappers = document.querySelectorAll('.list-wrapper');
+const button = document.querySelectorAll('.accordion__title');
+const accordions = document.querySelectorAll('.accordion');
 
 const setDataset = () => {
 
 
-    listWrappers.forEach((wrapp, i) => {
+    accordions.forEach((wrapp, i) => {
         wrapp.dataset.key = i;
         wrapp.firstElementChild.dataset.key = i;
 
@@ -15,7 +15,7 @@ setDataset();
 
 const getDefaultListWrapperHeight = () => {
     const output = [];
-    listWrappers.forEach(wrapp =>
+    accordions.forEach(wrapp =>
         output.push(wrapp.offsetHeight));
 
 
@@ -30,13 +30,13 @@ button.forEach(btn => btn.addEventListener('click', (e) => {
 
     if (parent.dataset.key === e.target.dataset.key) {
 
-        e.target.classList.toggle('list-wrapper__title--active')
+        e.target.classList.toggle('accordion__title--active')
         const containerHeight = parent.getBoundingClientRect().height;
         let listHeight;
         let btnHeight = e.target.getBoundingClientRect().height;
-        const list = parent.querySelector('.list-wrapper__list');
+        const list = parent.querySelector('.accordion__list');
 
-        list.classList.toggle('list-wrapper__list--active')
+        list.classList.toggle('accordion__list--active')
 
         listHeight = list.getBoundingClientRect().height;
 
