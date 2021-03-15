@@ -16,8 +16,6 @@
     -webkit-user-select: none;
 
 
-    font-size: $root-font-size;
-
     @include mq(extra-medium) {
         font-size: 1.4em;
 

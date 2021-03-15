@@ -1,11 +1,9 @@
 .contact {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     font-size: $root-font-size;
 
     &__title {
-
         width: 100%;
     }
 }

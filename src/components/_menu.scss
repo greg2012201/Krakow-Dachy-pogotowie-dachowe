@@ -91,12 +91,7 @@
         @include mq(extra-medium) {
             align-self: center;
             justify-content: flex-end;
-
             flex-basis: 70%;
-
-
-
-
         }
 
 
@@ -107,9 +102,6 @@
 
         flex-basis: 80%;
 
-        padding: 0;
-
-
         @include mq(extra-medium) {
             flex-basis: 10%;
             margin-left: $main-spacing * 5;
@@ -119,9 +111,6 @@
 
             margin-left: $main-spacing * 8;
         }
-
-
-
     }
 
     &__link {
@@ -139,10 +128,6 @@
         text-transform: uppercase;
         border-bottom: 1px solid white;
         transition: .2s;
-        padding: 0;
-
-
-
 
         @include mq(extra-medium) {
 
@@ -151,21 +136,16 @@
 
         }
 
-
         &:hover {
-
             color: $primary-color;
             border-bottom: 1px solid $primary-color;
         }
     }
 
-
     &--open {
         top: 0;
         left: 0;
         background-color: rgba(#111, 0.70);
-        ;
-
     }
 
     &--hidden {

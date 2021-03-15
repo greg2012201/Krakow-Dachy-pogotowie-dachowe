@@ -1,17 +1,6 @@
-@import '../sass/animations';
-
-
-*::after,
-*::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 .loader {
 
     display: flex;
-
     width: map-get($loader-dimensions, "height");
     height: map-get($loader-dimensions, "width");
     background: transparent;
@@ -49,7 +38,6 @@
             &::before,
             &::after {
                 content: '';
-                display: block;
                 background-color: green;
             }
 
@@ -72,9 +60,7 @@
 
         &--error {
             &::after {
-
                 content: '!';
-                display: block;
                 color: red;
                 text-align: center;
                 font-family: $main-font;
@@ -82,21 +68,17 @@
                 width: 100%;
                 font-size: 28px;
                 transform: translate3d(4px, -4px, 0);
-
-
-
-
-
             }
-
-
         }
     }
 
-
-
+    &--error,
     &--active {
         display: block;
+    }
+
+    &--active {
+
         animation: loading 2s ease-in-out;
         animation-fill-mode: forwards;
     }

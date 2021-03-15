@@ -45,12 +45,12 @@ $checkbox-dimensions:("height" :27px, "width":27px);
 //loader 
 $loader-dimensions:("height":40px, "width":40px);
 
-//popup
-$popup-width:120%;
-
 :root {
     --loader-color: #1c89ff;
 }
+
+//popup
+$popup-width:120%;
 
 //footer 
 $footer-height:10vh;
