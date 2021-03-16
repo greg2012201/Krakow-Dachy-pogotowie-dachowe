@@ -26,8 +26,15 @@
                 </li>
                                 
                         </ul>
-                           <div class="menu__nav-bar"> <img class="menu__logo logo" src="images/logo.svg" alt="człowiek na dachu" data-destination="header"> <!-- logo do przerobienia tekst trzeba wyjąć koniecznie z tego bo nie będzie to semantyczne -->
-                
+                           <div class="menu__nav-bar"> 
+                               <div class="logo" data-destination ="header">
+                               <img class="logo__image" src="images/logo.svg" alt="człowiek
+                                na dachu" data-destination="header">
+                                <div class="logo__text-container">
+                                <p class="logo__text">Mar-Bud<br> Marcin Sieńko</p> 
+                                <p class="logo__text">Pogotowie Dachowe prace wysokościowe</p> 
+                            </div>
+                            </div>
                             <button class="burger" ><!-- type="menu" -->
                                 <span class="burger__element"></span>
                             </button>
@@ -76,7 +83,7 @@
             <h3 class="offer__title section__title">oferta</h3>
             <h4 class="offer__slogan">Oględziny oraz wycena wszelkich prac na terenie Krakowa, bezpłatnie. </h4>
             <div class="accordion">
-                <h5 class="accordion__title button">pogotowie dachowe</h5>
+                <button class="accordion__button button">pogotowie dachowe</button>
                 <div class="accordion__list-container">
                 <ul class="accordion__list">
                     <li class="accordion__item">szybkie prace zabezpieczające dach przed przeciekaniem</li>
@@ -89,7 +96,7 @@
             
             </div>
             <div class="accordion">
-                <h5 class="accordion__title button">usługi dekarskie</h5>
+                <button class="accordion__button button">usługi dekarskie</button>
                 <div class="accordion__list-container">
                 <ul class="accordion__list">
                     <li class="accordion__item">naprawa dachów pokrytych papą termozgrzewalną</li>
@@ -111,7 +118,7 @@
             
             </div>
             <div class="accordion">
-                <h5 class="accordion__title button">prace wysokościowe </h5>
+                <button class="accordion__button button">prace wysokościowe </button>
                 <div class="accordion__list-container">
                 <ul class="accordion__list">
                     <li class="accordion__item">mycie fasad pod ciśnieniem</li>
