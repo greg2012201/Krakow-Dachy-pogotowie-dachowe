@@ -39,25 +39,6 @@
         justify-content: space-between;
     }
 
-
-    &__logo {
-        align-self: center;
-        width: $logo-width;
-        max-width: $logo-width;
-        cursor: pointer;
-        transform: translateY(4%);
-
-        @include mq(extra-medium) {
-            height: 80px;
-            width: $logo-width + 50px;
-            max-width: $logo-width + 200px;
-
-        }
-
-    }
-
-
-
     &__nav-bar {
         display: flex;
         justify-content: center;
@@ -114,7 +95,7 @@
     }
 
     &__link {
-
+        
         @include link-style-reset;
         box-sizing: border-box;
         width: 100%;
@@ -128,7 +109,7 @@
         text-transform: uppercase;
         border-bottom: 1px solid white;
         transition: .2s;
-
+        outline-color: $primary-color;
         @include mq(extra-medium) {
 
             font-size: 1.2em;

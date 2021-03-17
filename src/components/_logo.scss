@@ -6,8 +6,9 @@
     width: $logo-width;
     max-width: $logo-width;
     font-size: $root-font-size;
+    outline-color: $primary-color;
     cursor: pointer;
-
+    
     &__image {
         height: 45px;
 
