@@ -1,35 +1,30 @@
-/* const smoothScroll = require('smooth-desktop-mobile-scroll'); */
-import {
-    addModifier
-} from './getElementInSight';
-import {
-    animationStopperInit
-} from './resizeAnimationStopper';
-import {
-    smoothScrollInit
-} from 'smooth-desktop-mobile-scroll'
+import {animationStopperInit} from './resizeAnimationStopper';
+import {isElementInSight} from './isElementInSight';
+import {smoothScrollInit} from 'smooth-desktop-mobile-scroll';
 const images = document.querySelectorAll('.article__image');
 const text = document.querySelectorAll('.article__content');
 const title = document.querySelector('.slogan__title');
 const motto = document.querySelector('.slogan__motto');
-const page = document.querySelector('.page');;
+const page = document.querySelector('.page');
 
 const desktopScroll = {
-    duration: '1000ms',
-    ease: 'cubic-bezier(0.23, 1, 0.32, 1)',
-}
+  duration: '1000ms',
+  ease: 'cubic-bezier(0.23, 1, 0.32, 1)',
+};
 const mobileScroll = {
-    duration: '0ms',
-    ease: 'linear',
-}
+  duration: '0ms',
+  ease: 'linear',
+};
 
 const desktopVieport = 1281;
 
 animationStopperInit(page);
-addModifier([images, text], '--into-view');
-addModifier([title, motto], '--into-view', 1);
+
+isElementInSight([...images, ...text], false);
+isElementInSight([title, motto], true);
+
 if (innerWidth > desktopVieport) {
-    smoothScrollInit(desktopScroll.duration, desktopScroll.ease);
+  smoothScrollInit(desktopScroll.duration, desktopScroll.ease);
 } else {
-    smoothScrollInit(mobileScroll.duration, mobileScroll.ease);
+  smoothScrollInit(mobileScroll.duration, mobileScroll.ease);
 }
