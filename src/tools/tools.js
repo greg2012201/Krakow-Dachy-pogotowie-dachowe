@@ -1,5 +1,5 @@
 import {animationStopperInit} from './resizeAnimationStopper';
-import {isElementInSight} from './isElementInSight';
+import {isElementInSight} from './isElementsInSight';
 import {smoothScrollInit} from 'smooth-desktop-mobile-scroll';
 const images = document.querySelectorAll('.article__image');
 const text = document.querySelectorAll('.article__content');
