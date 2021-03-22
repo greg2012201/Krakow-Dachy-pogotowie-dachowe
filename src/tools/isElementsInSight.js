@@ -20,6 +20,5 @@ export const isElementInSight = (elements, toggle) => {
     requestAnimationFrame(init);
   };
 
-  getElementToAddModifier(elements, '--into-view', toggle);
   document.addEventListener('DOMContentLoaded', init);
 };
