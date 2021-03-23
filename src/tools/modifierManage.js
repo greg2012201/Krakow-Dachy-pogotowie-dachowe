@@ -11,7 +11,7 @@ export const modifierManage = (elements, modifier, remove) => {
 
 const argValidation = (elements, modifier, remove) => {
   const isElements =
-    Array.isArray(elements) && elements === '[object NodeList]';
+    Array.isArray(elements) && elements !== '[object NodeList]';
   const regex = /--[a-z0-9]/;
   const isModifier = regex.test(modifier);
   const isRemove = typeof remove === 'boolean';
