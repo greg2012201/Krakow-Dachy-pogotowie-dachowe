@@ -4,12 +4,16 @@ import {
   loaderError,
   loaderSuccess,
 } from './loader';
+import {
+  sendingButtonState,
+  sendingErrorButtonState,
+  successButtonState,
+} from './submitButton';
 
 const POST_URL = process.env.PROXY_URL;
 const form = document.querySelector('.form');
-const submitButton = document.querySelector('.form__button');
 
-/* MAIN SUCCESS/ERROR FUNCTION */
+/* MAIN SUCCESS/ERROR FUNCTIONS */
 
 const success = () => {
   loaderSuccess();
@@ -24,22 +28,6 @@ const error = () => {
 
 const disableForm = () =>
   [...form].forEach((element) => (element.disabled = true));
-
-/* SUBMIT BUTTON */
-
-const sendingButtonState = () => {
-  submitButton.classList.add('form__button--sending');
-  submitButton.textContent = '';
-};
-const successButtonState = () => {
-  submitButton.classList.remove('form__button--sending');
-  submitButton.classList.add('form__button--sended');
-};
-
-const sendingErrorButtonState = () => {
-  submitButton.classList.remove('form__button--sending');
-  submitButton.classList.add('form__button--sending-error');
-};
 
 // SUCCESS/ERROR FIELDS COLOR
 const setSuccessColor = () => {
