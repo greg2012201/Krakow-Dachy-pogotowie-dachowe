@@ -1,10 +1,13 @@
 import { modifierManage } from '../tools/modifierManage';
+import {
+  loaderActive,
+  loaderError,
+  loaderSuccess,
+} from './loader';
 
 const POST_URL = process.env.PROXY_URL;
 const form = document.querySelector('.form');
 const submitButton = document.querySelector('.form__button');
-const loader = document.querySelector('.loader');
-const loaderCheck = loader.querySelector('.loader__check');
 
 /* MAIN SUCCESS/ERROR FUNCTION */
 
@@ -21,22 +24,6 @@ const error = () => {
 
 const disableForm = () =>
   [...form].forEach((element) => (element.disabled = true));
-
-/* LOADER */
-
-const loaderActive = () => loader.classList.add('loader--active');
-
-const changeColor = (color) =>
-  document.documentElement.style.setProperty('--loader-color', color);
-
-const loaderSuccess = () => {
-  loaderCheck.classList.add('loader__check--success');
-  changeColor('green');
-};
-const loaderError = () => {
-  loaderCheck.classList.add('loader__check--error');
-  changeColor('red');
-};
 
 /* SUBMIT BUTTON */
 
