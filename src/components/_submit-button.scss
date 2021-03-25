@@ -1,0 +1,125 @@
+
+
+.submit-button  {
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include centering($main-spacing);
+        width: 52%;
+        grid-column: 1/3;
+        grid-row: 9;
+    
+        @include mq(small) {
+            grid-column: 1/3;
+            grid-row: 8/11;
+        }
+    }
+
+        padding: 0 $main-spacing;
+        @include centering($main-spacing);
+        line-height: $button-height - 5;
+        text-transform: none;
+        width: 100%;
+        font-size: 1rem;
+        border-color: $transparent-blue;
+        color: $transparent-blue;
+        background-size: 200% auto;
+        outline-color: $primary-color;
+
+
+        &:hover {
+
+            background-position: right center;
+        }
+
+        &--sending {
+
+            border: none;
+            outline: none;
+            border: 1px solid white;
+
+            &:hover {
+                box-shadow: none;
+                color: $transparent-blue;
+                background-color: #fff;
+                border: 1px solid white;
+                pointer-events: none;
+            }
+
+            &::after {
+                content: 'Wysyłanie...';
+            }
+
+        }
+
+
+
+        &--sended {
+            background-color: white;
+            border: white 1px solid;
+            color: green;
+            outline: none;
+
+
+            &::after {
+
+                content: 'Wysłano !';
+                outline: hidden;
+
+
+
+            }
+
+            &:hover {
+                cursor: auto;
+                outline: none;
+                color: green;
+                box-shadow: none;
+                background-color: white;
+            }
+        }
+
+        &--sending-error {
+            background-color: white;
+            border: white 1px solid;
+            color: red;
+            outline: none;
+
+
+            &::after {
+
+                content: 'Błąd !';
+                outline: hidden;
+                border: white 1px solid;
+            }
+
+            &:hover {
+
+                outline: none;
+                color: red;
+                box-shadow: none;
+                background-color: white;
+                border: 1px solid white
+            }
+        }
+
+        @include mq(extra-small) {
+
+            width: 120px;
+            cursor: normal;
+        }
+
+        @include mq(small) {
+            width: 120px;
+        }
+
+        @include mq(extra-medium) {
+            width: 120px;
+        }
+    }
+
+    
+
