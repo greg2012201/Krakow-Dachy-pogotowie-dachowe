@@ -319,3 +319,24 @@
         }
     }
 }
+.form--error,.form--success{
+    .form__input:not(.form__checkbox) {
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 4px;
+    }
+}
+    .form--error {
+       
+        .form__input:not(.form__checkbox) {
+            border-color: red;
+            
+        }
+    }
+    .form--success {
+       
+        .form__input:not(.form__checkbox) {
+            border-color:  green;
+           
+        }
+    }
