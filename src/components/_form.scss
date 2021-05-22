@@ -198,7 +198,7 @@
         }
     }
 
-    /* &__button {
+    &__button {
 
 
         padding: 0 $main-spacing;
@@ -318,8 +318,8 @@
             grid-row: 8/11;
         }
     }
-} */
 }
+
 .form--error,.form--success{
     .form__input:not(.form__checkbox) {
         border-width: 2px;
