@@ -1,9 +1,5 @@
-import { modifierManage } from '../tools/modifierManage';
-import {
-  loaderActive,
-  loaderError,
-  loaderSuccess,
-} from './loader';
+import {modifierManage} from '../tools/modifierManage';
+import {loaderActive, loaderError, loaderSuccess} from './loader';
 import {
   sendingButtonState,
   sendingErrorButtonState,
@@ -68,30 +64,20 @@ form.addEventListener('submit', function (e) {
       'Content-Type': 'application/json',
     },
   })
+    .then(() => {
+      setTimeout(() => {
+        success();
+      }, 1500);
+
+      disableForm();
+    })
     .catch((e) => {
       disableForm();
       setTimeout(() => {
         error();
       }, 1500);
+      setTimeout(() => sendingError(submitButton), 1500);
 
-      console.log(e);
-    })
-    .then((r) => {
-      return r.json();
-    })
-
-    .then((res) => {
-      if (res.statusCode === 200) {
-        setTimeout(() => {
-          success();
-        }, 1500);
-
-        disableForm();
-      } else {
-        disableForm();
-        setTimeout(() => sendingError(submitButton), 1500);
-
-        throw Error(`coś poszło nie tak po stronie serwera: ${res.message}!`);
-      }
+      throw Error(`coś poszło nie tak po stronie serwera: ${res.message}!`);
     });
 });
