@@ -1,6 +1,6 @@
 import {animationStopperInit} from './resizeAnimationStopper';
 import {isElementInSight} from './isElementsInSight';
-import {smoothScrollInit} from 'smooth-desktop-mobile-scroll';
+
 const images = document.querySelectorAll('.article__image');
 const text = document.querySelectorAll('.article__content');
 const title = document.querySelector('.slogan__title');
@@ -22,9 +22,3 @@ animationStopperInit(page);
 
 isElementInSight([...images, ...text], false);
 isElementInSight([title, motto], true);
-
-if (innerWidth > desktopVieport) {
-  smoothScrollInit(desktopScroll.duration, desktopScroll.ease);
-} else {
-  smoothScrollInit(mobileScroll.duration, mobileScroll.ease);
-}

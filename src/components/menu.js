@@ -1,50 +1,39 @@
 /* MENU */
-
-import {
-    smoothScrollTo
-} from 'smooth-desktop-mobile-scroll';
+import {smoothScroll} from './../tools/smoothScroll';
 const sections = [...document.querySelectorAll('.section')];
 const burger = document.querySelector('.burger');
 const dropDownMenu = document.querySelector('.menu');
 const navBar = document.querySelector('.menu__nav-bar');
-const navBtns = document.querySelectorAll('.menu__link, .logo')
+const navBtns = document.querySelectorAll('.menu__link, .logo');
 
 let menuIsOpen = false;
 const openMenu = () => {
-    dropDownMenu.classList.add('menu--open');
+  dropDownMenu.classList.add('menu--open');
 };
 
 const closeMenu = () => {
-
-    dropDownMenu.classList.remove('menu--open');
-
-}
+  dropDownMenu.classList.remove('menu--open');
+};
 const burgerClassToggle = () => {
-    burger.classList.toggle('burger--active');
-
-}
-
+  burger.classList.toggle('burger--active');
+};
 
 const menuManage = (e) => {
-
-
-
-    if (e.target === burger || e.target.parentNode === burger) {
-        if (!menuIsOpen) {
-            openMenu();
-            burgerClassToggle();
-            menuIsOpen = true;
-
-        } else if (menuIsOpen) {
-            closeMenu();
-            burgerClassToggle();
-            menuIsOpen = false;
-        }
-    } else if (dropDownMenu.classList.contains('menu--open') && menuIsOpen) {
-        closeMenu();
-        burgerClassToggle();
-        menuIsOpen = false;
+  if (e.target === burger || e.target.parentNode === burger) {
+    if (!menuIsOpen) {
+      openMenu();
+      burgerClassToggle();
+      menuIsOpen = true;
+    } else if (menuIsOpen) {
+      closeMenu();
+      burgerClassToggle();
+      menuIsOpen = false;
     }
+  } else if (dropDownMenu.classList.contains('menu--open') && menuIsOpen) {
+    closeMenu();
+    burgerClassToggle();
+    menuIsOpen = false;
+  }
 };
 document.addEventListener('click', menuManage);
 /* HIDE MENU */
@@ -52,60 +41,48 @@ const menu = document.querySelector('.menu');
 let startPagePosition = window.pageYOffset;
 
 const hideNavBar = () => {
-
-    if (!menuIsOpen) menu.classList.add('menu--hidden');
-
-}
+  if (!menuIsOpen) menu.classList.add('menu--hidden');
+};
 const showNavBar = () => {
-
-    menu.classList.remove('menu--hidden');
-
-}
+  menu.classList.remove('menu--hidden');
+};
 const autoHideMenu = () => {
+  let currentPagePosition = window.pageYOffset;
 
-    let currentPagePosition = window.pageYOffset;
+  let sectionsPosition = sections.find((element) => {
+    return element.offsetTop === parseInt(currentPagePosition.toFixed());
+  });
 
-    let sectionsPosition = sections.find(element =>
+  if (sectionsPosition) {
+    hideNavBar();
+  } else if (currentPagePosition < startPagePosition) {
+    showNavBar();
+  } else hideNavBar();
 
-        {
-            return element.offsetTop === parseInt(currentPagePosition.toFixed())
-        });
-
-    if (sectionsPosition) {
-        hideNavBar();
-    } else if (currentPagePosition < startPagePosition) {
-        showNavBar();
-    } else hideNavBar();
-
-    startPagePosition = currentPagePosition;
-}
+  startPagePosition = currentPagePosition;
+};
 document.addEventListener('scroll', autoHideMenu);
 /* SHOW MENU  */
 
-
 const mouseOver = (e) => {
-
-    const navBarHeight = navBar.getBoundingClientRect().height;
-    if (e.clientY <= navBarHeight) {
-        showNavBar();
-    }
-
-
-}
-document.addEventListener('mousemove', mouseOver)
-
+  const navBarHeight = navBar.getBoundingClientRect().height;
+  if (e.clientY <= navBarHeight) {
+    showNavBar();
+  }
+};
+document.addEventListener('mousemove', mouseOver);
 
 /* SCROLL TO */
 const getDestination = (link) => {
+  const destination = link.dataset.destination;
+  return document.querySelector(`.${destination}`).offsetTop;
+};
 
-    const destination = link.dataset.destination;
-    return document.querySelector(`.${destination}`).offsetTop;
+navBtns.forEach((btn) =>
+  btn.addEventListener('click', function (e) {
+    const link = this.dataset.destination;
 
-}
-
-navBtns.forEach(btn => btn.addEventListener('click', function (e) {
-    const targetPosition = getDestination(this);
     e.preventDefault();
-    smoothScrollTo(targetPosition, '2000ms', 'ease');
-
-}));
+    smoothScroll(link, 1000);
+  })
+);
