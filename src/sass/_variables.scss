@@ -10,7 +10,7 @@ $main-spacing: 10px;
 
 //rwd 
 
-$breakpoints: ("extra-small":(min-width:501px), "very-small":(min-width:601px), "small": (min-width:701px), "medium":(min-width:901px), "extra-medium":(min-width:1029px), "large":(min-width:1281px), "very-large":(min-width:1601px), "extra-large":(min-width:1921px));
+$breakpoints: ("extra-small":501px, "very-small":601px, "small": 701px, "medium":901px, "extra-medium":1029px, "large":1281px, "very-large":1601px, "extra-large":1921px);
 
 //colors
 $primary-color:#0095da;

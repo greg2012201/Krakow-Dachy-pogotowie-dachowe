@@ -27,11 +27,12 @@
 
 @mixin mq ($breakpoint) {
 
-    $size: map-get($breakpoints, $breakpoint);
+   
 
-    @if($size) {
-        @media #{$size} {
-            @content;
+    @if map-has-key($breakpoints, $breakpoint) {
+    
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+          @content;
         }
     }
 
