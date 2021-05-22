@@ -66,5 +66,14 @@
         max-width: 100%;
         font: normal 200 0.7em/1.5em $title-font;
         color: rgb(0, 149, 218);
+        
+        &--link { 
+            display: block;
+            text-decoration: none;
+            cursor: pointer;
+            
+        }
+        
     }
+   
 }
