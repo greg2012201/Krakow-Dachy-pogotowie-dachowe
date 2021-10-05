@@ -6,7 +6,7 @@ import {
   successButtonState,
 } from './submitButton';
 
-const POST_URL = process.env.PROXY_URL;
+const POST_URL = process.env.FORM_SPREE_URL;
 const form = document.querySelector('.form');
 
 /* MAIN SUCCESS/ERROR FUNCTIONS */
