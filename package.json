@@ -4,8 +4,7 @@
   "scripts": {
     "start": "webpack-cli serve --config ./configuration/webpack.dev.config.js",
     "prod": "cross-env NODE_ENV=production webpack --config ./configuration/webpack.prod.config.js",
-    "dev": "cross-env NODE_ENV=development webpack --config ./configuration/webpack.dev.config.js",
-    "env:dev": "cross-env NODE_ENV=development webpack"
+    "dev": "cross-env NODE_ENV=development webpack --config ./configuration/webpack.dev.config.js"
   },
   "keywords": [
     "webpack",
