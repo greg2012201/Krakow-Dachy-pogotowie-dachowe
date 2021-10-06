@@ -1,7 +1,7 @@
 # Krakow Dachy pogotowie dachowe
 fo to the :point_right: :point_right: [LIVE](https://nervous-goodall-65749c.netlify.app/) :point_left: :point_left:
 
-Simple landing page :airplane: of a roofing company written in HTML, SCSS, and vanillaJS, contains lots of animations and modern UI featres:
+Simple landing page :airplane: of a roofing company written in HTML, SCSS, and vanillaJS, contains lots of animations and modern UI features:
 
   <br/>:bulb: menu hamburger,
   <br/>:bulb: smooth scroll to section,
