@@ -21,7 +21,7 @@ Simple landing page :airplane: of a roofing company written in HTML, SCSS, and v
 
 This project was built and bundled using Webpack. :package:
 
-If you want to install this project on your local machine, you need to fallow these steps:
+If you want to install this project on your local machine, you need to fallow these steps in the project root directory:
 
  <br/> :heavy_check_mark: clone this repository `git clone https://github.com/greg2012201/Krakow-Dachy-pogotowie-dachowe.git`,
  <br/> :heavy_check_mark: install dependencies `npm install`.
