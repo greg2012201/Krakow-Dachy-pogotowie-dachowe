@@ -1,12 +1,14 @@
 .informations {
 
-    display: grid;
-    grid: 50% 50% / auto auto;
-    grid-gap: $main-spacing;
+    display: flex;
+   /* move this to the flex */
+    width:100%;
+    flex-wrap: wrap;
+
     align-items: center;
-    justify-content: center;
-    height: 380px;
-    margin: ($main-spacing * 2) 0 ($main-spacing * 2);
+  /*   justify-content: space-evenly; */
+/*     height: 380px; */
+   /*  margin: ($main-spacing * 2) 0 ($main-spacing * 2); */
     font-size: $root-font-size;
 
     @include mq(small) {
@@ -14,14 +16,11 @@
     }
 
     @include mq(medium) {
+    
         @include centering;
-        align-self: center;
-        grid: none;
-        display: flex;
-        justify-content: space-around;
-        align-items: baseline;
-        height: 20%;
-        width: 50%;
+     /*    align-self: center; */
+        
+    
 
 
     }
