@@ -1,14 +1,8 @@
 .informations {
-
     display: flex;
-   /* move this to the flex */
     width:100%;
     flex-wrap: wrap;
-
     align-items: center;
-  /*   justify-content: space-evenly; */
-/*     height: 380px; */
-   /*  margin: ($main-spacing * 2) 0 ($main-spacing * 2); */
     font-size: $root-font-size;
 
     @include mq(small) {
@@ -16,12 +10,8 @@
     }
 
     @include mq(medium) {
-    
-        @include centering;
-     /*    align-self: center; */
-        
-    
 
+        @include centering;
 
     }
 
@@ -44,20 +34,6 @@
         margin-top: $main-spacing * 2;
         margin-left: max(5px);
         text-align: center;
-
-        @include mq(extra-small) {
-            flex-basis: 31.1%;
-
-        }
-
-        @include mq(very-small) {
-            flex-basis: 20%;
-        }
-
-        @include mq(extra-medium) {
-
-            flex-basis: 35%;
-        }
 
     }
 
