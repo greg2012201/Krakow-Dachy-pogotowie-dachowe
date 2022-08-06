@@ -1,5 +1,5 @@
 .slogan {
-
+    width:100%;
     font-size: $root-font-size;
 
     &__title,
@@ -11,7 +11,7 @@
     &__title {
         letter-spacing: .2rem;
         margin-top: 30vh;
-        font: normal bold 3.125em/3.687rem $title-font;
+        font: normal bold 2.4em/3.687rem $title-font;
         text-transform: uppercase;
         transform: translate(-2px, -20px);
 
@@ -63,7 +63,7 @@
 
         @include centering($main-spacing * 4);
         width: 70%;
-        font: italic normal 1.625em/2.5rem $main-font;
+        font: italic normal 1.5em/2.5rem $main-font;
         opacity: 80%;
 
         @include mq(extra-small) {
