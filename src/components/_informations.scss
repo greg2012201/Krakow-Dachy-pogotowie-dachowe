@@ -1,9 +1,14 @@
 .informations {
     display: flex;
     width:100%;
+    flex-direction: column;
+
+@media(min-width:400px) {
     flex-wrap: wrap;
+    flex-direction:row;
     align-items: center;
     font-size: $root-font-size;
+}
 
     @include mq(small) {
         @include centering;
